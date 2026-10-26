@@ -4,6 +4,7 @@ import { Plugin } from 'payload'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { ecommercePlugin } from '@payloadcms/plugin-ecommerce'
+import { EUR } from '@payloadcms/plugin-ecommerce'
 
 import { stripeAdapter } from '@payloadcms/plugin-ecommerce/payments/stripe'
 
@@ -17,7 +18,7 @@ import { isAdmin } from '@/access/isAdmin'
 import { isDocumentOwner } from '@/access/isDocumentOwner'
 
 const generateTitle: GenerateTitle<Product | Page> = ({ doc }) => {
-  return doc?.title ? `${doc.title} | Payload Ecommerce Template` : 'Payload Ecommerce Template'
+  return doc?.title ? `${doc.title} | Dadelsteen` : 'Dadelsteen'
 }
 
 const generateURL: GenerateURL<Product | Page> = ({ doc }) => {
@@ -83,6 +84,10 @@ export const plugins: Plugin[] = [
       customerOnlyFieldAccess,
       isAdmin,
       isDocumentOwner,
+    },
+    currencies: {
+      defaultCurrency: 'EUR',
+      supportedCurrencies: [EUR],
     },
     customers: {
       slug: 'users',

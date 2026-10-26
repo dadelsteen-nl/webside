@@ -12,6 +12,8 @@ import {
 } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
+import { en } from '@payloadcms/translations/languages/en'
+import { nl } from '@payloadcms/translations/languages/nl'
 import { fileURLToPath } from 'url'
 
 import { Categories } from '@/collections/Categories'
@@ -81,6 +83,18 @@ export default buildConfig({
   //email: nodemailerAdapter(),
   endpoints: [],
   globals: [Header, Footer],
+  i18n: {
+    fallbackLanguage: 'nl',
+    supportedLanguages: { nl, en },
+  },
+  localization: {
+    locales: [
+      { code: 'nl', label: 'Nederlands' },
+      { code: 'en', label: 'English' },
+    ],
+    defaultLocale: 'nl',
+    fallback: true,
+  },
   plugins,
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
