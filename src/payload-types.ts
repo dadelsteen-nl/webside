@@ -129,10 +129,14 @@ export interface Config {
   };
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('nl' | 'en') | ('nl' | 'en')[];
   globals: {
+    'site-settings': SiteSetting;
+    homepage: Homepage;
     header: Header;
     footer: Footer;
   };
   globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
+    homepage: HomepageSelect<false> | HomepageSelect<true>;
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
@@ -1781,6 +1785,95 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  companyName?: string | null;
+  kvkNumber?: string | null;
+  vatNumber?: string | null;
+  iban?: string | null;
+  address?: {
+    street?: string | null;
+    postalCode?: string | null;
+    city?: string | null;
+    country?: string | null;
+  };
+  email?: string | null;
+  phone?: string | null;
+  openingHours?: string | null;
+  /**
+   * International format without + or spaces, e.g. 31612345678
+   */
+  whatsappNumber?: string | null;
+  /**
+   * Shown in the floating social bar and footer, in this order.
+   */
+  socialLinks?:
+    | {
+        platform: 'instagram' | 'tiktok' | 'facebook' | 'linkedin' | 'youtube';
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * E.g. "Free delivery & installation in NL and BE"
+   */
+  shippingNote?: string | null;
+  warrantyYears?: number | null;
+  returnDays?: number | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage".
+ */
+export interface Homepage {
+  id: number;
+  heroTitle?: string | null;
+  heroSubtitle?: string | null;
+  /**
+   * MP4/WebM, muted loop, ideally < 8 MB
+   */
+  heroVideo?: (number | null) | Media;
+  /**
+   * Still image shown before the video loads (and on reduced motion)
+   */
+  heroPoster?: (number | null) | Media;
+  featuredProduct?: (number | null) | Product;
+  hotspotImage?: (number | null) | Media;
+  hotspots?:
+    | {
+        /**
+         * Left, %
+         */
+        x: number;
+        /**
+         * Top, %
+         */
+        y: number;
+        title: string;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  gallery?:
+    | {
+        media: number | Media;
+        caption?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  calcGymMonthly?: number | null;
+  calcTrainerSession?: number | null;
+  calcSessionsPerMonth?: number | null;
+  calcYears?: number | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header".
  */
 export interface Header {
@@ -1826,6 +1919,76 @@ export interface Footer {
     | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  companyName?: T;
+  kvkNumber?: T;
+  vatNumber?: T;
+  iban?: T;
+  address?:
+    | T
+    | {
+        street?: T;
+        postalCode?: T;
+        city?: T;
+        country?: T;
+      };
+  email?: T;
+  phone?: T;
+  openingHours?: T;
+  whatsappNumber?: T;
+  socialLinks?:
+    | T
+    | {
+        platform?: T;
+        url?: T;
+        id?: T;
+      };
+  shippingNote?: T;
+  warrantyYears?: T;
+  returnDays?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "homepage_select".
+ */
+export interface HomepageSelect<T extends boolean = true> {
+  heroTitle?: T;
+  heroSubtitle?: T;
+  heroVideo?: T;
+  heroPoster?: T;
+  featuredProduct?: T;
+  hotspotImage?: T;
+  hotspots?:
+    | T
+    | {
+        x?: T;
+        y?: T;
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  gallery?:
+    | T
+    | {
+        media?: T;
+        caption?: T;
+        id?: T;
+      };
+  calcGymMonthly?: T;
+  calcTrainerSession?: T;
+  calcSessionsPerMonth?: T;
+  calcYears?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

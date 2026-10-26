@@ -6,12 +6,15 @@ import { unstable_cache } from 'next/cache'
 
 type Global = keyof Config['globals']
 
-async function getGlobal<T extends Global>(slug: T, depth = 0) {
+type Locale = Config['locale']
+
+async function getGlobal<T extends Global>(slug: T, depth = 0, locale?: Locale) {
   const payload = await getPayload({ config: configPromise })
 
   const global = await payload.findGlobal({
     slug,
     depth,
+    locale,
   })
 
   return global
@@ -20,7 +23,7 @@ async function getGlobal<T extends Global>(slug: T, depth = 0) {
 /**
  * Returns a unstable_cache function mapped with the cache tag for the slug
  */
-export const getCachedGlobal = <T extends Global>(slug: T, depth = 0) =>
-  unstable_cache(async () => getGlobal<T>(slug, depth), [slug], {
+export const getCachedGlobal = <T extends Global>(slug: T, depth = 0, locale?: Locale) =>
+  unstable_cache(async () => getGlobal<T>(slug, depth, locale), [slug, String(depth), locale ?? 'default'], {
     tags: [`global_${slug}`],
   })
