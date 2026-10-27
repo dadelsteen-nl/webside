@@ -12,5 +12,20 @@
   "account": "Account",
   "language": "Taal",
   "menu": "Menu",
-  "close": "Sluiten"
+  "close": "Sluiten",
+  "returns": "Retourneren",
+  "terms": "Algemene voorwaarden",
+  "privacy": "Privacy",
+  "cookies": "Cookies",
+  "mainNav": "Hoofdnavigatie",
+  "mobileNav": "Mobiele navigatie",
+  "openMenu": "Menu openen",
+  "closeMenu": "Menu sluiten",
+  "homeLink": "Dadelsteen — naar de homepage",
+  "switchLanguage": "Kies taal",
+  "languages": {
+    "nl": "Nederlands",
+    "en": "English"
+  },
+  "cartLabel": "Winkelwagen openen"
 }

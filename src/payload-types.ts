@@ -76,6 +76,12 @@ export interface Config {
     pages: Page;
     categories: Category;
     media: Media;
+    faqs: Faq;
+    testimonials: Testimonial;
+    posts: Post;
+    'demo-requests': DemoRequest;
+    'contact-requests': ContactRequest;
+    'b2b-requests': B2BRequest;
     forms: Form;
     'form-submissions': FormSubmission;
     addresses: Address;
@@ -109,6 +115,12 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    faqs: FaqsSelect<false> | FaqsSelect<true>;
+    testimonials: TestimonialsSelect<false> | TestimonialsSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
+    'demo-requests': DemoRequestsSelect<false> | DemoRequestsSelect<true>;
+    'contact-requests': ContactRequestsSelect<false> | ContactRequestsSelect<true>;
+    'b2b-requests': B2BRequestsSelect<false> | B2BRequestsSelect<true>;
     forms: FormsSelect<false> | FormsSelect<true>;
     'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
     addresses: AddressesSelect<false> | AddressesSelect<true>;
@@ -305,6 +317,51 @@ export interface Product {
   priceInEUREnabled?: boolean | null;
   priceInEUR?: number | null;
   relatedProducts?: (number | Product)[] | null;
+  shortDescription?: string | null;
+  /**
+   * Short selling points, e.g. "Gratis levering & installatie"
+   */
+  badges?:
+    | {
+        text: string;
+        id?: string | null;
+      }[]
+    | null;
+  specs?:
+    | {
+        label: string;
+        value: string;
+        id?: string | null;
+      }[]
+    | null;
+  features?:
+    | {
+        title: string;
+        text?: string | null;
+        /**
+         * lucide-react icon name, e.g. "dumbbell"
+         */
+        icon?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  hotspotImage?: (number | null) | Media;
+  hotspots?:
+    | {
+        /**
+         * Left, %
+         */
+        x: number;
+        /**
+         * Top, %
+         */
+        y: number;
+        title: string;
+        text?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  video?: (number | null) | Media;
   meta?: {
     title?: string | null;
     /**
@@ -314,6 +371,8 @@ export interface Product {
     description?: string | null;
   };
   categories?: (number | Category)[] | null;
+  productType: 'device' | 'accessory';
+  b2bAvailable?: boolean | null;
   /**
    * When enabled, the slug will auto-generate from the title field on save and autosave.
    */
@@ -1018,6 +1077,138 @@ export interface Address {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs".
+ */
+export interface Faq {
+  id: number;
+  question: string;
+  answer: string;
+  category: 'product' | 'shop' | 'delivery' | 'business' | 'general';
+  order?: number | null;
+  showOnHome?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Seeded testimonials are PLACEHOLDERS. Replace with real customer reviews before launch.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: number;
+  name: string;
+  /**
+   * Role or location
+   */
+  role?: string | null;
+  quote: string;
+  rating?: number | null;
+  photo?: (number | null) | Media;
+  audience?: ('home' | 'business') | null;
+  published?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  title: string;
+  excerpt?: string | null;
+  heroImage?: (number | null) | Media;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  meta?: {
+    title?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+    description?: string | null;
+  };
+  publishedAt?: string | null;
+  categories?: (number | Category)[] | null;
+  /**
+   * When enabled, the slug will auto-generate from the title field on save and autosave.
+   */
+  generateSlug?: boolean | null;
+  slug: string;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "demo-requests".
+ */
+export interface DemoRequest {
+  id: number;
+  name: string;
+  email: string;
+  phone?: string | null;
+  preferredDate?: string | null;
+  preferredTime?: ('morning' | 'afternoon' | 'evening') | null;
+  location?: ('showroom' | 'at-home' | 'online') | null;
+  audience?: ('private' | 'business') | null;
+  companyName?: string | null;
+  message?: string | null;
+  locale?: ('nl' | 'en') | null;
+  status: 'new' | 'contacted' | 'scheduled' | 'done';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-requests".
+ */
+export interface ContactRequest {
+  id: number;
+  name: string;
+  email: string;
+  phone?: string | null;
+  subject?: string | null;
+  message: string;
+  locale?: ('nl' | 'en') | null;
+  status: 'new' | 'contacted' | 'scheduled' | 'done';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "b2b-requests".
+ */
+export interface B2BRequest {
+  id: number;
+  companyName: string;
+  contactName: string;
+  email: string;
+  phone?: string | null;
+  businessType?: ('gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other') | null;
+  units?: number | null;
+  message?: string | null;
+  locale?: ('nl' | 'en') | null;
+  status: 'new' | 'contacted' | 'scheduled' | 'done';
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "form-submissions".
  */
 export interface FormSubmission {
@@ -1072,6 +1263,30 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'faqs';
+        value: number | Faq;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: number | Testimonial;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'demo-requests';
+        value: number | DemoRequest;
+      } | null)
+    | ({
+        relationTo: 'contact-requests';
+        value: number | ContactRequest;
+      } | null)
+    | ({
+        relationTo: 'b2b-requests';
+        value: number | B2BRequest;
       } | null)
     | ({
         relationTo: 'forms';
@@ -1387,6 +1602,109 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faqs_select".
+ */
+export interface FaqsSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
+  category?: T;
+  order?: T;
+  showOnHome?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials_select".
+ */
+export interface TestimonialsSelect<T extends boolean = true> {
+  name?: T;
+  role?: T;
+  quote?: T;
+  rating?: T;
+  photo?: T;
+  audience?: T;
+  published?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  title?: T;
+  excerpt?: T;
+  heroImage?: T;
+  content?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        image?: T;
+        description?: T;
+      };
+  publishedAt?: T;
+  categories?: T;
+  generateSlug?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "demo-requests_select".
+ */
+export interface DemoRequestsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  phone?: T;
+  preferredDate?: T;
+  preferredTime?: T;
+  location?: T;
+  audience?: T;
+  companyName?: T;
+  message?: T;
+  locale?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact-requests_select".
+ */
+export interface ContactRequestsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  phone?: T;
+  subject?: T;
+  message?: T;
+  locale?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "b2b-requests_select".
+ */
+export interface B2BRequestsSelect<T extends boolean = true> {
+  companyName?: T;
+  contactName?: T;
+  email?: T;
+  phone?: T;
+  businessType?: T;
+  units?: T;
+  message?: T;
+  locale?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "forms_select".
  */
 export interface FormsSelect<T extends boolean = true> {
@@ -1623,6 +1941,39 @@ export interface ProductsSelect<T extends boolean = true> {
   priceInEUREnabled?: T;
   priceInEUR?: T;
   relatedProducts?: T;
+  shortDescription?: T;
+  badges?:
+    | T
+    | {
+        text?: T;
+        id?: T;
+      };
+  specs?:
+    | T
+    | {
+        label?: T;
+        value?: T;
+        id?: T;
+      };
+  features?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+        icon?: T;
+        id?: T;
+      };
+  hotspotImage?: T;
+  hotspots?:
+    | T
+    | {
+        x?: T;
+        y?: T;
+        title?: T;
+        text?: T;
+        id?: T;
+      };
+  video?: T;
   meta?:
     | T
     | {
@@ -1631,6 +1982,8 @@ export interface ProductsSelect<T extends boolean = true> {
         description?: T;
       };
   categories?: T;
+  productType?: T;
+  b2bAvailable?: T;
   generateSlug?: T;
   slug?: T;
   updatedAt?: T;

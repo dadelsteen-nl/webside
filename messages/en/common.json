@@ -9,5 +9,69 @@
   "inclVat": "incl. VAT",
   "readMore": "Read more",
   "contactUs": "Contact us",
-  "whatsappMessage": "Hello Dadelsteen, I have a question about imbody."
+  "whatsappMessage": "Hello Dadelsteen, I have a question about imbody.",
+  "skipToContent": "Skip to content",
+  "social": {
+    "follow": "Follow",
+    "open": "Open social media",
+    "close": "Close social media",
+    "whatsapp": "Chat on WhatsApp",
+    "followOn": "Follow Dadelsteen on {platform}"
+  },
+  "footer": {
+    "statement": "Calm, strength and attention — at home, in your own time.",
+    "eyebrow": "Dadelsteen",
+    "shop": "Shop",
+    "company": "About Dadelsteen",
+    "service": "Service",
+    "contact": "Contact",
+    "shopAll": "All products",
+    "imbody": "imbody Pro S",
+    "bookDemo": "Book a demo",
+    "kvk": "CoC",
+    "vat": "VAT",
+    "openingHours": "Opening hours",
+    "rights": "All rights reserved.",
+    "payments": "Secure payment with",
+    "trademark": "imbody is a trademark of its respective owner. Dadelsteen is an independent reseller.",
+    "cookieSettings": "Cookie settings",
+    "language": "Language",
+    "followUs": "Follow us"
+  },
+  "cookies": {
+    "title": "Your privacy",
+    "body": "We use necessary cookies to make this website work. With your consent, we also use analytics and marketing cookies to improve the site and show relevant content.",
+    "policy": "Read our cookie policy",
+    "acceptAll": "Accept all",
+    "necessaryOnly": "Only necessary",
+    "preferences": "Preferences",
+    "save": "Save preferences",
+    "back": "Back",
+    "necessary": "Necessary",
+    "necessaryDesc": "Required for core features such as your cart and language choice. Always active.",
+    "analytics": "Analytics",
+    "analyticsDesc": "Helps us understand how visitors use the site, so we can improve it.",
+    "marketing": "Marketing",
+    "marketingDesc": "Used to show relevant ads and content on other platforms.",
+    "alwaysOn": "Always on"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "This page has slipped into silence.",
+    "body": "The page you are looking for does not exist (anymore) or has moved. Take a breath, and find your way back from here.",
+    "home": "Back to home",
+    "shop": "Visit the shop"
+  },
+  "error": {
+    "eyebrow": "Something went wrong",
+    "title": "A brief moment of unrest.",
+    "body": "An unexpected error occurred. Please try again — if the problem persists, feel free to contact us.",
+    "retry": "Try again",
+    "home": "Back to home",
+    "reference": "Reference"
+  },
+  "meta": {
+    "title": "Dadelsteen — imbody AI smart mirror home gym",
+    "description": "Dadelsteen brings the imbody AI smart mirror to the Netherlands and Belgium: personal training at home, guided by AI. Book a demo or explore the collection."
+  }
 }

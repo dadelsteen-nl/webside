@@ -12,5 +12,20 @@
   "account": "Account",
   "language": "Language",
   "menu": "Menu",
-  "close": "Close"
+  "close": "Close",
+  "returns": "Returns",
+  "terms": "Terms & conditions",
+  "privacy": "Privacy",
+  "cookies": "Cookies",
+  "mainNav": "Main navigation",
+  "mobileNav": "Mobile navigation",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "homeLink": "Dadelsteen — go to homepage",
+  "switchLanguage": "Choose language",
+  "languages": {
+    "nl": "Nederlands",
+    "en": "English"
+  },
+  "cartLabel": "Open cart"
 }

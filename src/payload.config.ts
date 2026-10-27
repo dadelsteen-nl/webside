@@ -20,6 +20,12 @@ import { Categories } from '@/collections/Categories'
 import { Media } from '@/collections/Media'
 import { Pages } from '@/collections/Pages'
 import { Users } from '@/collections/Users'
+import { Faqs } from '@/collections/Faqs'
+import { Testimonials } from '@/collections/Testimonials'
+import { Posts } from '@/collections/Posts'
+import { DemoRequests } from '@/collections/DemoRequests'
+import { ContactRequests } from '@/collections/ContactRequests'
+import { B2BRequests } from '@/collections/B2BRequests'
 import { Footer } from '@/globals/Footer'
 import { Header } from '@/globals/Header'
 import { Homepage } from '@/globals/Homepage'
@@ -41,7 +47,18 @@ export default buildConfig({
     },
     user: Users.slug,
   },
-  collections: [Users, Pages, Categories, Media],
+  collections: [
+    Users,
+    Pages,
+    Categories,
+    Media,
+    Faqs,
+    Testimonials,
+    Posts,
+    DemoRequests,
+    ContactRequests,
+    B2BRequests,
+  ],
   db: sqliteAdapter({
     client: {
       url: process.env.DATABASE_URL || '',
@@ -56,7 +73,7 @@ export default buildConfig({
         OrderedListFeature(),
         UnorderedListFeature(),
         LinkFeature({
-          enabledCollections: ['pages'],
+          enabledCollections: ['pages', 'posts'],
           fields: ({ defaultFields }) => {
             const defaultFieldsWithoutUrl = defaultFields.filter((field) => {
               if ('name' in field && field.name === 'url') return false

@@ -18,7 +18,67 @@ import {
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
+import type { Field } from 'payload'
 import { DefaultDocumentIDType, Where } from 'payload'
+
+const sidebarFields: Field[] = [
+  {
+    name: 'productType',
+    type: 'select',
+    required: true,
+    defaultValue: 'device',
+    options: [
+      { label: 'Device', value: 'device' },
+      { label: 'Accessory', value: 'accessory' },
+    ],
+    admin: { position: 'sidebar' },
+  },
+  { name: 'b2bAvailable', type: 'checkbox', defaultValue: false, admin: { position: 'sidebar' } },
+]
+
+const showcaseFields: Field[] = [
+  { name: 'shortDescription', type: 'textarea', localized: true },
+  {
+    name: 'badges',
+    type: 'array',
+    admin: { description: 'Short selling points, e.g. "Gratis levering & installatie"' },
+    fields: [{ name: 'text', type: 'text', localized: true, required: true }],
+  },
+  {
+    name: 'specs',
+    type: 'array',
+    fields: [
+      { name: 'label', type: 'text', localized: true, required: true },
+      { name: 'value', type: 'text', localized: true, required: true },
+    ],
+  },
+  {
+    name: 'features',
+    type: 'array',
+    fields: [
+      { name: 'title', type: 'text', localized: true, required: true },
+      { name: 'text', type: 'textarea', localized: true },
+      { name: 'icon', type: 'text', admin: { description: 'lucide-react icon name, e.g. "dumbbell"' } },
+    ],
+  },
+  { name: 'hotspotImage', type: 'upload', relationTo: 'media' },
+  {
+    name: 'hotspots',
+    type: 'array',
+    fields: [
+      {
+        type: 'row',
+        fields: [
+          { name: 'x', type: 'number', min: 0, max: 100, required: true, admin: { description: 'Left, %' } },
+          { name: 'y', type: 'number', min: 0, max: 100, required: true, admin: { description: 'Top, %' } },
+        ],
+      },
+      { name: 'title', type: 'text', localized: true, required: true },
+      { name: 'text', type: 'textarea', localized: true },
+    ],
+  },
+  { name: 'video', type: 'upload', relationTo: 'media' },
+]
 
 export const ProductsCollection: CollectionOverride = ({ defaultCollection }) => ({
   ...defaultCollection,
@@ -54,7 +114,7 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
     meta: true,
   },
   fields: [
-    { name: 'title', type: 'text', required: true },
+    { name: 'title', type: 'text', required: true, localized: true },
     {
       type: 'tabs',
       tabs: [
@@ -63,6 +123,7 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
             {
               name: 'description',
               type: 'richText',
+              localized: true,
               editor: lexicalEditor({
                 features: ({ rootFeatures }) => {
                   return [
@@ -168,6 +229,7 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
           ],
           label: 'Product Details',
         },
+        { label: 'Showcase', fields: showcaseFields },
         {
           name: 'meta',
           label: 'SEO',
@@ -179,12 +241,13 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
             }),
             MetaTitleField({
               hasGenerateFn: true,
+              overrides: { localized: true },
             }),
             MetaImageField({
               relationTo: 'media',
             }),
 
-            MetaDescriptionField({}),
+            MetaDescriptionField({ overrides: { localized: true } }),
             PreviewField({
               // if the `generateUrl` function is configured
               hasGenerateFn: true,
@@ -207,6 +270,7 @@ export const ProductsCollection: CollectionOverride = ({ defaultCollection }) =>
       hasMany: true,
       relationTo: 'categories',
     },
+    ...sidebarFields,
     slugField(),
   ],
 })
