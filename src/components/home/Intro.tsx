@@ -89,7 +89,7 @@ export function Intro({ productSlug }: { productSlug: string }) {
           </p>
           <div className="mt-12 flex flex-col gap-8 border-t border-ink/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4 text-olive-grey">
-              <LogoIcon className="h-7 w-5 shrink-0 text-bronze" />
+              <LogoIcon className="h-8 shrink-0" />
               <span className="font-sans text-xs uppercase tracking-[0.22em]">{t('signature')}</span>
             </div>
             <Link

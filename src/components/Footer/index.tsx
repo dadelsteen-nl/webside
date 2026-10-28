@@ -72,7 +72,7 @@ export async function Footer() {
         {/* Statement */}
         <div className="flex flex-col gap-10 border-b border-cream/10 py-20 md:flex-row md:items-end md:justify-between md:py-28">
           <div className="max-w-3xl">
-            <LogoIcon className="mb-8 h-10 w-7 text-bronze" />
+            <LogoIcon className="mb-8 h-16" />
             <p className="font-display text-[2.25rem] leading-[1.08] font-light tracking-[-0.015em] text-balance sm:text-5xl lg:text-6xl">
               {t('statement')}
             </p>

@@ -15,7 +15,7 @@ export async function HomeJsonLd({ locale, sameAs = [] }: { locale: string; same
         '@type': 'Organization',
         areaServed: ['NL', 'BE'],
         description: t('organizationDescription'),
-        logo: `${base}/favicon.svg`,
+        logo: `${base}/brand/dadelsteen-logo.png`,
         name: 'Dadelsteen',
         url: `${base}/${locale}`,
         ...(sameAs.length ? { sameAs } : {}),

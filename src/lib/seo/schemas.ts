@@ -11,7 +11,7 @@ export function organizationJsonLd(settings?: Partial<SiteSetting> | null) {
     '@id': absoluteUrl('/#organization'),
     name: settings?.companyName || 'Dadelsteen',
     url: absoluteUrl('/'),
-    logo: absoluteUrl('/favicon.svg'),
+    logo: absoluteUrl('/brand/dadelsteen-logo.png'),
     areaServed: ['NL', 'BE'],
     ...(settings?.email ? { email: settings.email } : {}),
     ...(settings?.phone ? { telephone: settings.phone } : {}),
@@ -70,7 +70,7 @@ export function articleJsonLd(input: {
     publisher: {
       '@type': 'Organization',
       name: input.publisherName || 'Dadelsteen',
-      logo: { '@type': 'ImageObject', url: absoluteUrl('/favicon.svg') },
+      logo: { '@type': 'ImageObject', url: absoluteUrl('/brand/dadelsteen-logo.png') },
     },
   }
 }

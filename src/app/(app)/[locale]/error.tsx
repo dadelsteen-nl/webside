@@ -25,7 +25,7 @@ export default function Error({ error, retry, reset }: Props) {
   return (
     <section className="flex min-h-[75vh] items-center px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
-        <LogoIcon className="mb-10 h-14 w-10 text-bronze" />
+        <LogoIcon className="mb-10 h-16" />
         <p className="mb-6 text-[0.625rem] font-medium uppercase tracking-[0.36em] text-bronze-deep">
           {t('eyebrow')}
         </p>

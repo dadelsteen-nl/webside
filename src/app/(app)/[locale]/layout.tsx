@@ -72,7 +72,8 @@ export async function generateMetadata({
     },
     twitter: { card: 'summary_large_image' },
     icons: {
-      icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+      icon: [{ url: '/icon.png', type: 'image/png', sizes: '512x512' }],
+      apple: [{ url: '/apple-icon.png', sizes: '180x180' }],
     },
   }
 }
