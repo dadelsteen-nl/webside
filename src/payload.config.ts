@@ -41,6 +41,11 @@ const dirname = path.dirname(filename)
 const databaseURL = process.env.DATABASE_URL || process.env.POSTGRES_URL || ''
 const isPostgres = /^postgres(ql)?:\/\//.test(databaseURL)
 
+// Vercel has no persistent disk, so SQLite cannot work there.
+if (process.env.VERCEL && !isPostgres) {
+  throw new Error('DATABASE_URL must be a Postgres URL on Vercel: connect a Neon database under Storage.')
+}
+
 export default buildConfig({
   admin: {
     components: {
