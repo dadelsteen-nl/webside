@@ -34,7 +34,7 @@ export async function Hero({ poster, productSlug, subtitle, title, video }: Prop
         <HeroMedia label={t('videoLabel')} poster={poster} video={video} />
         {/* legibility: top for the transparent header, bottom-left for copy */}
         <div className="absolute inset-0 bg-gradient-to-b from-ink/55 via-ink/10 to-ink/80" />
-        <div className="absolute inset-0 bg-[radial-gradient(90%_70%_at_0%_100%,rgba(26,26,26,0.65),transparent_70%)]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/30 to-transparent md:via-ink/20" />
       </div>
 
       <div className="container relative pb-[clamp(5rem,12vh,9rem)] pt-36">
@@ -45,7 +45,7 @@ export async function Hero({ poster, productSlug, subtitle, title, video }: Prop
         </Reveal>
 
         <h1
-          className="max-w-[14ch] font-display text-[clamp(3.25rem,10.5vw,10.5rem)] font-light leading-[0.9] tracking-[-0.035em]"
+          className="max-w-[14ch] font-display text-[clamp(3rem,8.4vw,8.5rem)] font-light leading-[0.9] tracking-[-0.035em]"
           id="home-hero-title"
         >
           <SplitLines delay={0.25} lines={lines} stagger={0.14} trigger="mount" />

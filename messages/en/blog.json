@@ -1,1 +1,60 @@
-{}
+{
+  "journal": {
+    "meta": {
+      "title": "Journal",
+      "description": "Stories, knowledge and inspiration on strength training at home, recovery and living with a smart home gym."
+    },
+    "eyebrow": "Journal",
+    "title": "Knowledge and stories on strength, calm and recovery",
+    "intro": "Practical guides and quiet inspiration for training at home — without the noise.",
+    "featured": "Latest article",
+    "all": "All articles",
+    "readMore": "Read article",
+    "minRead": "{minutes} min read",
+    "empty": {
+      "title": "More stories coming soon",
+      "body": "We are writing the first articles. Check back soon, or book a demo in the meantime.",
+      "cta": "Book a demo"
+    },
+    "post": {
+      "back": "Back to the journal",
+      "by": "By Dadelsteen",
+      "related": "Keep reading",
+      "ctaLabel": "Experience it yourself",
+      "ctaTitle": "Feel how strength training at home really works",
+      "ctaBody": "Book a personal demo and discover imbody at your own pace.",
+      "ctaButton": "Book a demo",
+      "breadcrumbHome": "Home"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Frequently asked questions",
+      "description": "Answers about imbody, delivery, installation, payment, returns and business use."
+    },
+    "eyebrow": "FAQ",
+    "title": "Clear, honest answers",
+    "intro": "Can't find your question? Our team is happy to help you personally.",
+    "searchLabel": "Search the FAQ",
+    "searchPlaceholder": "Search a question…",
+    "all": "All",
+    "categoriesLabel": "Categories",
+    "results": "{count, plural, =0 {No results} one {# result} other {# results}}",
+    "noResults": "No questions found for “{query}”. Try another keyword or get in touch.",
+    "empty": "The frequently asked questions will be added soon.",
+    "categories": {
+      "product": "Product",
+      "shop": "Ordering",
+      "delivery": "Delivery",
+      "business": "Business",
+      "general": "General"
+    },
+    "contact": {
+      "label": "Personal advice",
+      "title": "Still have a question?",
+      "body": "Send us a message or chat directly via WhatsApp. We usually reply within one working day.",
+      "whatsapp": "Chat on WhatsApp",
+      "contact": "Get in touch"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import sharp from 'sharp'
 import type { Media } from '@/payload-types'
 
 import { accessories, categoriesContent, faqs, posts, proS, testimonials } from './content'
+import { postImages as postSources, productImages, type SeedImage } from './media'
 
 type Locale = 'nl' | 'en'
 
@@ -30,7 +31,7 @@ const collections: CollectionSlug[] = [
 
 const escapeXml = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-/** Solid-colour placeholder image with a label, generated offline with sharp. */
+/** Solid-colour fallback image with a label, used only when a photo cannot be downloaded (offline seed). */
 async function placeholder(name: string, label: string, color: string, w = 1600, h = 1200): Promise<File> {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
     <rect width="100%" height="100%" fill="${color}"/>
@@ -102,25 +103,43 @@ export const seed = async ({
     }
   }
 
-  payload.logger.info('— Seeding media (generated placeholders)...')
-  const mk = async (name: string, label: string, color: string, alt: string, w?: number, h?: number) =>
-    (await payload.create({
+  payload.logger.info('— Seeding media (imbody photos)...')
+  const upload = async (src: SeedImage, color = '#e4dacb') => {
+    let file: File
+    try {
+      const res = await fetch(src.url)
+      if (!res.ok) throw new Error(`${res.status} ${src.url}`)
+      const data = Buffer.from(await res.arrayBuffer())
+      file = { name: src.name, data, mimetype: src.name.endsWith('.png') ? 'image/png' : 'image/jpeg', size: data.byteLength }
+    } catch (err) {
+      payload.logger.warn(`Could not download ${src.url}, using a plain fallback: ${String(err)}`)
+      file = await placeholder(src.name.replace(/\.\w+$/, ''), src.alt.en, color)
+    }
+    const doc = (await payload.create({
       collection: 'media',
-      data: { alt },
-      file: await placeholder(name, label, color, w, h),
+      locale: 'nl',
+      data: { alt: src.alt.nl },
+      file,
       context: ctx,
     })) as Media
-
-  const heroImage = await mk('hero', 'imbody Pro S', '#e4dacb', 'Placeholder: imbody Pro S in a living room', 2000, 1200)
-  const proImage = await mk('imbody-pro-s', 'imbody Pro S', '#d9cdb9', 'Placeholder: imbody Pro S smart mirror')
-  const hotspotImage = await mk('imbody-pro-s-hotspots', 'imbody Pro S - detail', '#e9dfd0', 'Placeholder: imbody Pro S detail view')
-  const accessoryImages: Media[] = []
-  for (const a of accessories) {
-    accessoryImages.push(await mk(a.slug, a.title.en, a.color, `Placeholder: ${a.title.en}`))
+    await payload.update({ collection: 'media', id: doc.id, locale: 'en', data: { alt: src.alt.en }, context: ctx })
+    return doc
   }
-  const postImages: Media[] = []
+  const uploadAll = async (slug: string, color?: string) => {
+    const docs: Media[] = []
+    for (const src of productImages[slug] ?? []) docs.push(await upload(src, color))
+    return docs
+  }
+
+  const proImages = await uploadAll(proS.slug)
+  const accessoryImages: Media[][] = []
+  for (const a of accessories) {
+    accessoryImages.push(await uploadAll(a.slug, a.color))
+  }
+  const postImages: (Media | undefined)[] = []
   for (const p of posts) {
-    postImages.push(await mk(`post-${p.slug}`, p.title.en, '#cfc1ab', `Placeholder: ${p.title.en}`, 1600, 900))
+    const src = postSources[p.slug]
+    postImages.push(src ? await upload(src) : undefined)
   }
 
   payload.logger.info('— Seeding categories...')
@@ -166,14 +185,14 @@ export const seed = async ({
       productType: 'device',
       b2bAvailable: true,
       layout: [],
-      gallery: [{ image: proImage.id }],
-      hotspotImage: hotspotImage.id,
+      gallery: proImages.map((m) => ({ image: m.id })),
+      hotspotImage: proImages[0]?.id,
       categories: [cats['toestellen'].id],
       enableVariants: false,
       priceInEUREnabled: true,
       priceInEUR: proS.price,
       inventory: 25,
-      meta: { ...localeProduct('nl').meta, image: proImage.id },
+      meta: { ...localeProduct('nl').meta, image: proImages[0]?.id },
     },
   })
   await payload.update({
@@ -205,13 +224,13 @@ export const seed = async ({
         productType: 'accessory',
         b2bAvailable: a.b2b,
         layout: [],
-        gallery: [{ image: accessoryImages[i].id }],
+        gallery: accessoryImages[i].map((m) => ({ image: m.id })),
         categories: [cats['accessoires'].id],
         enableVariants: false,
         priceInEUREnabled: true,
         priceInEUR: a.price,
         inventory: 100,
-        meta: { ...nlData.meta, image: accessoryImages[i].id },
+        meta: { ...nlData.meta, image: accessoryImages[i][0]?.id },
       },
     })
     await payload.update({
@@ -254,7 +273,7 @@ export const seed = async ({
     })
   }
 
-  payload.logger.info('— Seeding testimonials (placeholders)...')
+  payload.logger.info('— Seeding testimonials...')
   for (const t of testimonials) {
     const created = await payload.create({
       collection: 'testimonials',
@@ -281,7 +300,7 @@ export const seed = async ({
         title: p.title.nl,
         slug: p.slug,
         excerpt: p.excerpt.nl,
-        heroImage: postImages[i].id,
+        heroImage: postImages[i]?.id,
         content: richText(p.body.nl),
         publishedAt: p.date,
         _status: 'published',
@@ -358,9 +377,8 @@ export const seed = async ({
     context: ctx,
     data: {
       ...homeL('nl'),
-      heroPoster: heroImage.id,
+      // Hero poster and spotlight image fall back to the brand media in code
       featuredProduct: proCreated.id,
-      hotspotImage: hotspotImage.id,
     },
   })
   const homeNl = await payload.findGlobal({ slug: 'homepage', locale: 'nl', depth: 0 })

@@ -1,1 +1,279 @@
-{}
+{
+  "ui": {
+    "draftNote": "Draft — legal review required",
+    "lastUpdated": "Last updated",
+    "toc": "Contents",
+    "print": "Print",
+    "home": "Home",
+    "contactTitle": "Questions about this text?",
+    "contactBody": "Get in touch via {email}.",
+    "legal": "Legal",
+    "cookieName": "Cookie",
+    "cookiePurpose": "Purpose",
+    "cookieDuration": "Retention"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy policy",
+      "description": "How Dadelsteen handles your personal data, in line with the GDPR."
+    },
+    "title": "Privacy policy",
+    "intro": "Dadelsteen respects your privacy. This policy explains which personal data we process, why, for how long and what rights you have.",
+    "sections": [
+      {
+        "id": "controller",
+        "title": "Who is responsible?",
+        "body": [
+          "{company} (KvK {kvk}, VAT {vat}), located at {address}, is the data controller under the General Data Protection Regulation (GDPR).",
+          "You can reach us at {email}."
+        ]
+      },
+      {
+        "id": "data",
+        "title": "What data do we process?",
+        "body": ["Depending on how you use our website and services, we process:"],
+        "list": [
+          "Contact details: name, email address, phone number, company name.",
+          "Order and payment details: delivery and billing address, order history and payment status (payment details themselves are handled by our payment provider).",
+          "Demo and contact requests: the information you enter in our forms.",
+          "Technical data: IP address, device and browser data and browsing behaviour, only where you consent via the cookie banner."
+        ]
+      },
+      {
+        "id": "purposes",
+        "title": "Purposes and legal bases",
+        "body": ["We process personal data on the following legal bases:"],
+        "list": [
+          "Performance of a contract: processing, delivering, installing and invoicing orders and handling warranty claims.",
+          "Legal obligation: for example the seven-year tax retention requirement.",
+          "Consent: analytics and marketing cookies, and sending newsletters. You can withdraw consent at any time.",
+          "Legitimate interest: security, fraud prevention and improving our service."
+        ]
+      },
+      {
+        "id": "sharing",
+        "title": "Sharing with third parties",
+        "body": [
+          "We only share data with parties needed to deliver our service, such as the payment provider, carriers and installers, hosting, email delivery and accounting. We have data processing agreements with these processors. We never sell your data.",
+          "Where data is processed outside the European Economic Area, we ensure appropriate safeguards such as standard contractual clauses."
+        ]
+      },
+      {
+        "id": "retention",
+        "title": "Retention periods",
+        "body": [
+          "We do not keep data longer than necessary. Order and invoice data is kept for seven years; contact requests for up to two years after being handled; account data for as long as your account exists."
+        ]
+      },
+      {
+        "id": "rights",
+        "title": "Your rights",
+        "body": ["You have the right to access, rectification, erasure, restriction of processing, objection and data portability. Send a request to {email}; we respond within one month."]
+      },
+      {
+        "id": "security",
+        "title": "Security",
+        "body": ["We take appropriate technical and organisational measures, such as encrypted connections (HTTPS), access control and regular updates."]
+      },
+      {
+        "id": "complaints",
+        "title": "Making a complaint",
+        "body": ["Have a complaint about how we process your data? Please contact us first. You also always have the right to lodge a complaint with the Dutch Data Protection Authority (autoriteitpersoonsgegevens.nl)."]
+      }
+    ]
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms and conditions",
+      "description": "Dadelsteen's terms and conditions for consumers and business customers."
+    },
+    "title": "Terms and conditions",
+    "intro": "These terms apply to all offers, orders and agreements of {company}.",
+    "sections": [
+      {
+        "id": "definitions",
+        "title": "Article 1 — Definitions",
+        "body": [
+          "Trader: {company}, KvK {kvk}, VAT {vat}, {address}. Consumer: a natural person not acting in the course of a trade or business. Distance contract: an agreement concluded through the website."
+        ]
+      },
+      {
+        "id": "offer",
+        "title": "Article 2 — Offer and prices",
+        "body": [
+          "All prices on the website are in euros and include VAT unless stated otherwise. Business customers can see prices excluding VAT on request. We reserve the right to correct obvious errors in prices and images.",
+          "Offers apply while stocks last. If a product you ordered turns out to be unavailable, we will inform you immediately."
+        ]
+      },
+      {
+        "id": "agreement",
+        "title": "Article 3 — Formation of the agreement",
+        "body": [
+          "The agreement is concluded when we confirm your order by email. After ordering you receive an order confirmation with all relevant details."
+        ]
+      },
+      {
+        "id": "payment",
+        "title": "Article 4 — Payment",
+        "body": [
+          "Payment is made through the payment methods offered on the website. For invoice payment (business) a payment term of 14 days applies unless agreed otherwise. In case of late payment we may charge statutory interest and collection costs."
+        ]
+      },
+      {
+        "id": "delivery",
+        "title": "Article 5 — Delivery and installation",
+        "body": [
+          "We aim to deliver within the period stated on the website or order confirmation. A stated delivery time is an indication, not a strict deadline. If delivery is delayed by more than 30 days, you may dissolve the agreement free of charge.",
+          "Risk of damage or loss passes to the consumer upon delivery. Installation takes place by appointment; please ensure the location is accessible and meets the stated requirements."
+        ]
+      },
+      {
+        "id": "withdrawal",
+        "title": "Article 6 — Right of withdrawal",
+        "body": [
+          "As a consumer you may withdraw from the agreement within {returnDays} days of receipt without giving a reason. See our returns policy for the full procedure and the model form."
+        ]
+      },
+      {
+        "id": "warranty",
+        "title": "Article 7 — Warranty and conformity",
+        "body": [
+          "We deliver products that conform to the agreement. Our products carry the statutory warranty, supplemented by a manufacturer warranty of {warrantyYears} years where stated. Warranty lapses in case of improper use, self-repair or normal wear."
+        ]
+      },
+      {
+        "id": "liability",
+        "title": "Article 8 — Liability",
+        "body": [
+          "Our liability is limited to direct damage and to the invoice amount of the order concerned, except in case of intent or deliberate recklessness. Liability that cannot be excluded by law remains unaffected. You train at your own risk; consult a doctor first if in doubt.",
+          "Additional arrangements for business customers are set out in the quotation or contract."
+        ]
+      },
+      {
+        "id": "complaints",
+        "title": "Article 9 — Complaints",
+        "body": [
+          "You can submit complaints to {email}. We respond within 14 days. If we cannot resolve it together, you can use the European ODR platform (ec.europa.eu/consumers/odr)."
+        ]
+      },
+      {
+        "id": "law",
+        "title": "Article 10 — Governing law",
+        "body": [
+          "Dutch law applies to all agreements. Mandatory consumer protection law of the country where you live (for example Belgium) remains unaffected."
+        ]
+      }
+    ]
+  },
+  "cookies": {
+    "meta": {
+      "title": "Cookie policy",
+      "description": "Which cookies Dadelsteen uses and how to manage your preferences."
+    },
+    "title": "Cookie policy",
+    "intro": "We use cookies to make the website work, to measure usage and — only with your consent — to show relevant communication.",
+    "manage": "Change cookie preferences",
+    "sections": [
+      {
+        "id": "what",
+        "title": "What are cookies?",
+        "body": [
+          "Cookies are small text files stored on your device. They remember, for example, what is in your cart or which cookie preferences you chose."
+        ]
+      },
+      {
+        "id": "consent",
+        "title": "Your consent",
+        "body": [
+          "On your first visit we ask for consent for non-essential cookies. Your choice is stored in the dadelsteen_consent cookie (12 months). You can change it at any time with the button below or via “Cookie settings” in the footer."
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "necessary",
+        "title": "Necessary",
+        "body": "These cookies are required for the website to work (cart, login, security, cookie preferences). They cannot be switched off.",
+        "cookies": [
+          { "name": "dadelsteen_consent", "purpose": "Remembers your cookie preferences", "duration": "12 months" },
+          { "name": "NEXT_LOCALE", "purpose": "Remembers your language choice", "duration": "12 months" },
+          { "name": "payload-token", "purpose": "Keeps you logged in to your account", "duration": "Session / 2 hours" },
+          { "name": "cartSecret", "purpose": "Links your cart to this device", "duration": "Session" }
+        ]
+      },
+      {
+        "id": "analytics",
+        "title": "Analytics",
+        "body": "Help us understand how the website is used so we can improve it. Only active after consent.",
+        "cookies": [
+          { "name": "_ga, _ga_*", "purpose": "Google Analytics: anonymous statistics about visits and behaviour", "duration": "Up to 24 months" }
+        ]
+      },
+      {
+        "id": "marketing",
+        "title": "Marketing",
+        "body": "Used to measure advertising and make it more relevant. Only active after consent.",
+        "cookies": [
+          { "name": "_fbp", "purpose": "Meta Pixel: measuring ad results", "duration": "3 months" },
+          { "name": "_gcl_au", "purpose": "Google Ads: measuring conversions", "duration": "3 months" }
+        ]
+      }
+    ]
+  },
+  "returns": {
+    "meta": {
+      "title": "Returns policy",
+      "description": "Returns and withdrawal at Dadelsteen: 14-day cooling-off period, warranty and the steps."
+    },
+    "title": "Returns policy",
+    "intro": "Not quite what you were looking for? You have a legal right to a cooling-off period. This is how returns work at Dadelsteen.",
+    "sections": [
+      {
+        "id": "cooling-off",
+        "title": "{returnDays}-day cooling-off period",
+        "body": [
+          "As a consumer you may cancel an online order within {returnDays} days of receipt without giving a reason. If your delivery contains multiple products, the period starts when you receive the last product.",
+          "To use your right of withdrawal, let us know within that period at {email}, stating your order number and a clear statement. You may also use the European model withdrawal form."
+        ]
+      },
+      {
+        "id": "returning",
+        "title": "How to return",
+        "body": ["After your notification we send you a confirmation and return instructions."],
+        "list": [
+          "Send the product back within 14 days of your notification, preferably in its original packaging.",
+          "For large products such as the imbody we arrange collection in consultation. Please contact us.",
+          "The direct cost of returning is at your expense unless we agreed otherwise."
+        ]
+      },
+      {
+        "id": "refund",
+        "title": "Refund",
+        "body": [
+          "We refund the purchase price, including standard shipping costs, no later than 14 days after your notification, once we have received the product or you have shown that you returned it. Refunds are made through the same payment method."
+        ]
+      },
+      {
+        "id": "condition",
+        "title": "Condition of the product",
+        "body": [
+          "You may try the product as you would in a shop. You can be held liable for diminished value resulting from careless handling. Products that have already been installed are assessed case by case."
+        ]
+      },
+      {
+        "id": "exceptions",
+        "title": "Exceptions",
+        "body": [
+          "The right of withdrawal does not apply to products made to your specifications or clearly personalised, nor to business customers unless agreed otherwise in writing."
+        ]
+      },
+      {
+        "id": "warranty",
+        "title": "Defective or not as described?",
+        "body": [
+          "If a product is defective or does not conform to the agreement, the statutory warranty applies instead of the cooling-off period (plus the {warrantyYears}-year manufacturer warranty where stated). Please tell us as soon as possible at {email}; we will arrange repair, replacement or a refund."
+        ]
+      }
+    ]
+  }
+}

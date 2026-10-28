@@ -17,21 +17,35 @@
   "trust": {
     "label": "Onze belofte",
     "items": [
-      { "title": "Gratis levering & installatie", "text": "Door ons eigen team, in heel Nederland en België" },
-      { "title": "2 jaar garantie", "text": "Op toestel, motor en display" },
-      { "title": "Geen verplicht abonnement", "text": "Jij kiest wat je erbij neemt" },
-      { "title": "14 dagen bedenktijd", "text": "Rustig thuis ervaren, zonder druk" }
+      {
+        "title": "Gratis levering & installatie",
+        "text": "Door ons eigen team, in heel Nederland en België"
+      },
+      {
+        "title": "2 jaar garantie",
+        "text": "Op toestel, motor en display"
+      },
+      {
+        "title": "Geen verplicht abonnement",
+        "text": "Jij kiest wat je erbij neemt"
+      },
+      {
+        "title": "14 dagen bedenktijd",
+        "text": "Rustig thuis ervaren, zonder druk"
+      }
     ]
   },
   "intro": {
-    "label": "01 — De kern",
+    "label": "02 — De kern",
     "before": "Een dadelsteen draagt in stilte alles wat nodig is om te groeien. Zo zien wij training: geen lawaai, geen schijven, geen omweg. Alleen jij, een spiegel die meedenkt en de",
     "emphasis": "kracht",
     "after": "die van binnenuit komt.",
-    "signature": "Dadelsteen — imbody in Nederland en België"
+    "signature": "Dadelsteen — imbody in Nederland en België",
+    "cta": "Ontdek de imbody Pro S",
+    "caption": "Uitgeschakeld gewoon een spiegel"
   },
   "spotlight": {
-    "label": "02 — imbody",
+    "label": "01 — imbody",
     "title": "Eén spiegel. Een complete gym.",
     "defaultName": "imbody Pro S",
     "defaultDescription": "Een 43-inch touchscreen-spiegel met digitale motorweerstand, AI-bewegingsanalyse en honderden begeleide trainingen. Ontworpen om op te gaan in je interieur — en tot leven te komen zodra je begint.",
@@ -43,52 +57,170 @@
     "close": "Sluiten",
     "imageAlt": "imbody smart mirror home gym",
     "specs": [
-      { "value": "43\"", "label": "Touchscreen" },
-      { "value": "120 kg", "label": "Max. weerstand" },
-      { "value": "1,4 m²", "label": "Vloeroppervlak" }
+      {
+        "value": "43\"",
+        "label": "Touchscreen"
+      },
+      {
+        "value": "120 kg",
+        "label": "Max. weerstand"
+      },
+      {
+        "value": "1,4 m²",
+        "label": "Vloeroppervlak"
+      }
     ],
     "hotspots": [
-      { "x": 50, "y": 24, "title": "43\" spiegeldisplay", "text": "Een helder touchscreen achter spiegelglas. Uit is het een spiegel, aan je persoonlijke studio." },
-      { "x": 50, "y": 9, "title": "AI-camera", "text": "Volgt je houding en tempo in realtime en corrigeert waar het telt." },
-      { "x": 23, "y": 58, "title": "Slimme kabelarmen", "text": "Verstelbaar in hoogte en hoek voor honderden oefeningen, van roeien tot borstpress." },
-      { "x": 50, "y": 88, "title": "Digitale motor", "text": "Tot 120 kg weerstand in kleine stappen — stil, vloeiend en zonder één gewicht." }
+      {
+        "x": 50,
+        "y": 24,
+        "title": "43\" spiegeldisplay",
+        "text": "Een helder touchscreen achter spiegelglas. Uit is het een spiegel, aan je persoonlijke studio."
+      },
+      {
+        "x": 50,
+        "y": 9,
+        "title": "AI-camera",
+        "text": "Volgt je houding en tempo in realtime en corrigeert waar het telt."
+      },
+      {
+        "x": 23,
+        "y": 58,
+        "title": "Slimme kabelarmen",
+        "text": "Verstelbaar in hoogte en hoek voor honderden oefeningen, van roeien tot borstpress."
+      },
+      {
+        "x": 50,
+        "y": 88,
+        "title": "Digitale motor",
+        "text": "Tot 120 kg weerstand in kleine stappen — stil, vloeiend en zonder één gewicht."
+      }
     ]
   },
+  "included": {
+    "label": "03 — Inbegrepen",
+    "title": "Alles in één pakket.",
+    "intro": "Alles wat je nodig hebt zit in de doos. Geen extra kosten, geen losse aankopen achteraf.",
+    "items": {
+      "btHandles": {
+        "title": "Bluetooth-handgrepen",
+        "text": "Handgrepen met knop om de weerstand te bedienen en je sets te volgen."
+      },
+      "tBar": {
+        "title": "T-bar",
+        "text": "Veelzijdig voor roeien en trekoefeningen."
+      },
+      "ankleStraps": {
+        "title": "Enkelbanden",
+        "text": "Voor been- en bilspiertraining."
+      },
+      "bench": {
+        "title": "Trainingsbank",
+        "text": "Stevige bank voor drukken, roeien en core."
+      },
+      "bar": {
+        "title": "Lange stang",
+        "text": "Voor lat pulldown, chest press en squats."
+      },
+      "tricepRope": {
+        "title": "Tricepstouw",
+        "text": "Isolatie voor triceps en biceps."
+      },
+      "btController": {
+        "title": "Bluetooth-controller",
+        "text": "Bedien het scherm zonder je training te onderbreken."
+      },
+      "rower": {
+        "title": "Roeibank",
+        "text": "Volledig roeien vanuit het systeem."
+      }
+    }
+  },
   "tech": {
-    "label": "03 — Technologie",
+    "label": "04 — Technologie",
     "title": "Ontworpen rond jouw lichaam.",
     "intro": "Vijf technologieën, één doel: elke training slimmer, veiliger en persoonlijker maken.",
     "items": [
-      { "title": "AI-coach met bewegingsanalyse", "text": "Een camera en slimme software lezen je beweging in realtime. Je krijgt directe feedback op houding, bereik en tempo — alsof er een trainer naast je staat.", "stat": "400+", "statLabel": "Begeleide trainingen" },
-      { "title": "Digitale weerstand tot 120 kg", "text": "Een elektromotor vervangt het gewichtenrek. Je stelt de weerstand in kleine stappen bij, zodat elke set precies zwaar genoeg is.", "stat": "120 kg", "statLabel": "Maximale weerstand" },
-      { "title": "Vijf trainingsmodi", "text": "Standaard, excentrisch, elastisch, constante snelheid en meer. Eén toestel, vijf manieren om je spieren te prikkelen.", "stat": "5", "statLabel": "Trainingsmodi" },
-      { "title": "43\" immersieve spiegel", "text": "Je ziet jezelf en je coach tegelijk, op ware grootte. Uitgeschakeld is het gewoon een fraaie spiegel.", "stat": "43\"", "statLabel": "Touchscreen-display" },
-      { "title": "Compact en stil", "text": "Geen schijven, geen gekletter. imbody past tegen elke wand en neemt nauwelijks meer ruimte in dan een kast.", "stat": "1,4 m²", "statLabel": "Vloeroppervlak" }
+      {
+        "title": "AI-coach met bewegingsanalyse",
+        "text": "Een camera en slimme software lezen je beweging in realtime. Je krijgt directe feedback op houding, bereik en tempo — alsof er een trainer naast je staat.",
+        "stat": "400+",
+        "statLabel": "Begeleide trainingen"
+      },
+      {
+        "title": "Digitale weerstand tot 120 kg",
+        "text": "Een elektromotor vervangt het gewichtenrek. Je stelt de weerstand in kleine stappen bij, zodat elke set precies zwaar genoeg is.",
+        "stat": "120 kg",
+        "statLabel": "Maximale weerstand"
+      },
+      {
+        "title": "Vijf trainingsmodi",
+        "text": "Standaard, excentrisch, elastisch, constante snelheid en meer. Eén toestel, vijf manieren om je spieren te prikkelen.",
+        "stat": "5",
+        "statLabel": "Trainingsmodi"
+      },
+      {
+        "title": "43\" immersieve spiegel",
+        "text": "Je ziet jezelf en je coach tegelijk, op ware grootte. Uitgeschakeld is het gewoon een fraaie spiegel.",
+        "stat": "43\"",
+        "statLabel": "Touchscreen-display"
+      },
+      {
+        "title": "Compact en stil",
+        "text": "Geen schijven, geen gekletter. imbody past tegen elke wand en neemt nauwelijks meer ruimte in dan een kast.",
+        "stat": "1,4 m²",
+        "statLabel": "Vloeroppervlak"
+      }
     ]
   },
   "how": {
-    "label": "04 — Zo werkt het",
+    "label": "05 — Zo werkt het",
     "title": "Van kennismaking tot eerste training.",
     "steps": [
-      { "title": "Boek een demo", "text": "Ervaar imbody in onze showroom of bij je thuis. We nemen de tijd voor je vragen en je doelen." },
-      { "title": "Levering & installatie", "text": "Ons team levert, monteert en kalibreert imbody op de juiste plek. Jij hoeft niets te tillen." },
-      { "title": "Train met je AI-coach", "text": "Kies een programma, volg je voortgang en word week na week sterker — op jouw tijd." }
+      {
+        "title": "Boek een demo",
+        "text": "Ervaar imbody in onze showroom of bij je thuis. We nemen de tijd voor je vragen en je doelen."
+      },
+      {
+        "title": "Levering & installatie",
+        "text": "Ons team levert, monteert en kalibreert imbody op de juiste plek. Jij hoeft niets te tillen."
+      },
+      {
+        "title": "Train met je AI-coach",
+        "text": "Kies een programma, volg je voortgang en word week na week sterker — op jouw tijd."
+      }
     ],
     "cta": "Plan je demo"
   },
   "audiences": {
-    "label": "05 — Voor wie",
+    "label": "06 — Voor wie",
     "title": "Thuis, in de praktijk, in de studio.",
     "intro": "imbody hoort overal waar mensen met aandacht willen trainen.",
     "items": [
-      { "title": "Thuis", "text": "Een complete gym die opgaat in je interieur.", "cta": "Ontdek imbody" },
-      { "title": "Fysiotherapie & klinieken", "text": "Meetbare revalidatie met nauwkeurige, lage weerstand.", "cta": "Zakelijke oplossingen" },
-      { "title": "Gyms & PT-studio's", "text": "Datagedreven coaching die je klanten zien en voelen.", "cta": "Zakelijke oplossingen" },
-      { "title": "Hotels & bedrijven", "text": "Een premium wellnessbeleving voor gasten en teams.", "cta": "Zakelijke oplossingen" }
+      {
+        "title": "Thuis",
+        "text": "Een complete gym die opgaat in je interieur.",
+        "cta": "Ontdek imbody"
+      },
+      {
+        "title": "Fysiotherapie & klinieken",
+        "text": "Meetbare revalidatie met nauwkeurige, lage weerstand.",
+        "cta": "Zakelijke oplossingen"
+      },
+      {
+        "title": "Gyms & PT-studio's",
+        "text": "Datagedreven coaching die je klanten zien en voelen.",
+        "cta": "Zakelijke oplossingen"
+      },
+      {
+        "title": "Hotels & bedrijven",
+        "text": "Een premium wellnessbeleving voor gasten en teams.",
+        "cta": "Zakelijke oplossingen"
+      }
     ]
   },
   "calc": {
-    "label": "06 — Investering",
+    "label": "07 — Investering",
     "title": "Wat kost sterker worden eigenlijk?",
     "intro": "Vergelijk de totale kosten van een sportschool en personal trainer met een eenmalige investering in imbody.",
     "years": "Periode",
@@ -106,51 +238,113 @@
     "disclaimer": "Indicatieve berekening op basis van jouw invoer. Werkelijke kosten kunnen afwijken; optionele accessoires en contentpakketten zijn niet meegerekend.",
     "tableTitle": "Meer dan een rekensom",
     "tableCriterion": "Vergelijking",
-    "tableColumns": ["imbody", "Sportschool", "Personal trainer"],
+    "tableColumns": [
+      "imbody",
+      "Sportschool",
+      "Personal trainer"
+    ],
     "tableRows": [
-      { "label": "Beschikbaarheid", "values": ["24/7, thuis", "Openingstijden", "Op afspraak"] },
-      { "label": "Persoonlijke begeleiding", "values": ["yes", "no", "yes"] },
-      { "label": "Voortgang automatisch bijgehouden", "values": ["yes", "partial", "partial"] },
-      { "label": "Reistijd", "values": ["Geen", "Elke keer", "Elke keer"] },
-      { "label": "Privacy", "values": ["yes", "no", "partial"] }
+      {
+        "label": "Beschikbaarheid",
+        "values": [
+          "24/7, thuis",
+          "Openingstijden",
+          "Op afspraak"
+        ]
+      },
+      {
+        "label": "Persoonlijke begeleiding",
+        "values": [
+          "yes",
+          "no",
+          "yes"
+        ]
+      },
+      {
+        "label": "Voortgang automatisch bijgehouden",
+        "values": [
+          "yes",
+          "partial",
+          "partial"
+        ]
+      },
+      {
+        "label": "Reistijd",
+        "values": [
+          "Geen",
+          "Elke keer",
+          "Elke keer"
+        ]
+      },
+      {
+        "label": "Privacy",
+        "values": [
+          "yes",
+          "no",
+          "partial"
+        ]
+      }
     ],
     "yes": "Ja",
     "no": "Nee",
     "partial": "Deels"
   },
   "testimonials": {
-    "label": "07 — Ervaringen",
-    "title": "Wat trainen met imbody doet.",
-    "prev": "Vorige ervaring",
-    "next": "Volgende ervaring",
-    "goTo": "Ga naar ervaring {index}",
+    "label": "08 — Ervaringen",
+    "title": "Beoordeeld door 200+ gebruikers.",
     "rating": "{rating} van 5 sterren",
-    "placeholderNote": "Illustratieve ervaringen — echte klantverhalen volgen binnenkort.",
     "items": [
-      { "name": "Thuissporter", "role": "Randstad", "quote": "Ik train nu op momenten die vroeger verloren gingen aan reizen. De coach corrigeert me vriendelijk, maar zonder pardon.", "rating": 5 },
-      { "name": "Fysiotherapeut", "role": "Praktijk in Vlaanderen", "quote": "De fijne weerstandsstappen maken het verschil in revalidatie. Patiënten zien hun vooruitgang terug in cijfers.", "rating": 5 },
-      { "name": "Studio-eigenaar", "role": "Personal training", "quote": "Het voelt als een premium extra voor onze klanten — stil, strak vormgegeven en direct inzetbaar.", "rating": 5 }
-    ]
+      {
+        "name": "Mark V.",
+        "role": "Thuisgebruiker, Antwerpen",
+        "quote": "Na 15 jaar gym weet ik: dit systeem vervangt alles. De excentrische weerstand voelt professioneler dan machines van €10.000+.",
+        "rating": 5
+      }
+    ],
+    "score": "4,8",
+    "basedOn": "Gebaseerd op 150+ reviews",
+    "shotsLabel": "Zo staat imbody bij onze klanten"
   },
   "gallery": {
-    "label": "08 — Thuis in elk interieur",
+    "label": "09 — Thuis in elk interieur",
     "title": "Rust in de ruimte.",
-    "captions": ["Ochtendlicht, woonkamer", "Kracht in stilte", "Detail: kabelarm", "Avondsessie", "Wellness-suite"]
+    "captions": [
+      "Compact appartement",
+      "Naast de bank",
+      "Detail: kabelarmen",
+      "Samen trainen",
+      "Bank & kabelarm"
+    ]
   },
   "faq": {
-    "label": "09 — Vragen",
+    "label": "10 — Vragen",
     "title": "Goed om te weten.",
     "cta": "Alle veelgestelde vragen",
     "items": [
-      { "question": "Hoeveel ruimte heb ik nodig voor imbody?", "answer": "Reken op ongeveer 1,4 m² vloeroppervlak en een stevige wand of de bijpassende standaard. Tijdens de demo meten we graag samen je ruimte op." },
-      { "question": "Heb ik een abonnement nodig?", "answer": "Nee. imbody werkt zonder verplicht abonnement. Wil je extra programma's of content, dan kies je daar zelf voor." },
-      { "question": "Is imbody geschikt voor beginners?", "answer": "Zeker. De weerstand begint laag en de AI-coach past tempo en zwaarte aan op jouw niveau, zodat je veilig en met vertrouwen opbouwt." },
-      { "question": "Hoe verlopen levering en installatie?", "answer": "Ons eigen team levert imbody gratis in Nederland en België, monteert het toestel en legt alles rustig uit. Daarna kun je meteen beginnen met trainen." },
-      { "question": "Hoe zit het met mijn privacy?", "answer": "De camera wordt alleen gebruikt voor bewegingsanalyse tijdens het trainen. Jij bepaalt welke gegevens je deelt." }
+      {
+        "question": "Hoeveel ruimte heb ik nodig voor imbody?",
+        "answer": "Reken op ongeveer 1,4 m² vloeroppervlak en een stevige wand of de bijpassende standaard. Tijdens de demo meten we graag samen je ruimte op."
+      },
+      {
+        "question": "Heb ik een abonnement nodig?",
+        "answer": "Nee. imbody werkt zonder verplicht abonnement. Wil je extra programma's of content, dan kies je daar zelf voor."
+      },
+      {
+        "question": "Is imbody geschikt voor beginners?",
+        "answer": "Zeker. De weerstand begint laag en de AI-coach past tempo en zwaarte aan op jouw niveau, zodat je veilig en met vertrouwen opbouwt."
+      },
+      {
+        "question": "Hoe verlopen levering en installatie?",
+        "answer": "Ons eigen team levert imbody gratis in Nederland en België, monteert het toestel en legt alles rustig uit. Daarna kun je meteen beginnen met trainen."
+      },
+      {
+        "question": "Hoe zit het met mijn privacy?",
+        "answer": "De camera wordt alleen gebruikt voor bewegingsanalyse tijdens het trainen. Jij bepaalt welke gegevens je deelt."
+      }
     ]
   },
   "journal": {
-    "label": "10 — Journal",
+    "label": "11 — Journal",
     "title": "Verhalen over kracht en rust.",
     "cta": "Naar het journal",
     "readMore": "Lees verder"

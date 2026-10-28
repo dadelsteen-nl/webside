@@ -1,69 +1,58 @@
 import type { Order } from '@/payload-types'
 import type { Metadata } from 'next'
 
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-
-import { OrderItem } from '@/components/OrderItem'
-import { headers as getHeaders } from 'next/headers'
 import configPromise from '@payload-config'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { headers as getHeaders } from 'next/headers'
 import { getPayload } from 'payload'
-import { redirect } from 'next/navigation'
 
-export default async function Orders() {
-  const headers = await getHeaders()
-  const payload = await getPayload({ config: configPromise })
-  const { user } = await payload.auth({ headers })
+import { OrderList } from '@/components/account/OrderList'
+import { getPathname, redirect } from '@/i18n/navigation'
+import { type Locale } from '@/i18n/routing'
 
-  let orders: Order[] | null = null
+type Props = { params: Promise<{ locale: string }> }
 
-  if (!user) {
-    redirect(`/login?warning=${encodeURIComponent('Please login to access your orders.')}`)
-  }
-
-  try {
-    const ordersResult = await payload.find({
-      collection: 'orders',
-      limit: 0,
-      pagination: false,
-      user,
-      overrideAccess: false,
-      where: {
-        customer: {
-          equals: user?.id,
-        },
-      },
-    })
-
-    orders = ordersResult?.docs || []
-  } catch (error) {}
-
-  return (
-    <>
-      <div className="border p-8 rounded-lg bg-primary-foreground w-full">
-        <h1 className="text-3xl font-medium mb-8">Orders</h1>
-        {(!orders || !Array.isArray(orders) || orders?.length === 0) && (
-          <p className="">You have no orders.</p>
-        )}
-
-        {orders && orders.length > 0 && (
-          <ul className="flex flex-col gap-6">
-            {orders?.map((order, index) => (
-              <li key={order.id}>
-                <OrderItem order={order} />
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </>
-  )
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale }
+  const t = await getTranslations({ locale, namespace: 'checkout.meta' })
+  return { robots: { index: false }, title: t('orders') }
 }
 
-export const metadata: Metadata = {
-  description: 'Your orders.',
-  openGraph: mergeOpenGraph({
-    title: 'Orders',
-    url: '/orders',
-  }),
-  title: 'Orders',
+export default async function OrdersPage({ params }: Props) {
+  const { locale } = (await params) as { locale: Locale }
+  setRequestLocale(locale)
+  const payload = await getPayload({ config: configPromise })
+  const { user } = await payload.auth({ headers: await getHeaders() })
+
+  if (!user) {
+    const back = getPathname({ href: '/orders', locale })
+    return redirect({ href: { pathname: '/login', query: { reason: 'login', redirect: back } }, locale })
+  }
+
+  let orders: Order[] = []
+  try {
+    const res = await payload.find({
+      collection: 'orders',
+      limit: 0,
+      overrideAccess: false,
+      pagination: false,
+      sort: '-createdAt',
+      user,
+      where: { customer: { equals: user.id } },
+    })
+    orders = res.docs
+  } catch {
+    // Render the empty state when the API is not reachable
+  }
+
+  const t = await getTranslations({ locale, namespace: 'checkout.account.orders' })
+
+  return (
+    <section>
+      <h1 className="font-display text-3xl font-light text-ink">{t('title')}</h1>
+      <div className="mt-8">
+        <OrderList locale={locale} orders={orders} />
+      </div>
+    </section>
+  )
 }

@@ -40,6 +40,18 @@ const jsxConverters: JSXConvertersFunction<NodeTypes> = ({ defaultConverters }) 
   },
 })
 
+// Brand-styled typography: editorial serif headings, olive-grey body, bronze links, hairline rules.
+const brandProse = [
+  'mx-auto prose max-w-2xl text-[1.0625rem] leading-[1.85] text-ink/85',
+  'prose-headings:font-display prose-headings:font-light prose-headings:tracking-[-0.02em] prose-headings:text-ink',
+  'prose-h2:mt-14 prose-h2:text-3xl prose-h3:mt-10 prose-h3:text-2xl',
+  'prose-p:text-ink/80 prose-strong:font-semibold prose-strong:text-ink',
+  'prose-a:text-bronze-deep prose-a:underline-offset-4 hover:prose-a:text-bronze',
+  'prose-blockquote:border-l-bronze prose-blockquote:font-display prose-blockquote:text-2xl prose-blockquote:font-light prose-blockquote:not-italic prose-blockquote:text-ink',
+  'prose-li:marker:text-bronze prose-hr:border-ink/15',
+  'prose-img:rounded-none',
+].join(' ')
+
 type Props = {
   data: SerializedEditorState
   enableGutter?: boolean
@@ -55,7 +67,7 @@ export const RichText: React.FC<Props> = (props) => {
         {
           'container ': enableGutter,
           'max-w-none': !enableGutter,
-          'mx-auto prose md:prose-md dark:prose-invert ': enableProse,
+          [brandProse]: enableProse,
         },
         className,
       )}

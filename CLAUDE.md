@@ -16,7 +16,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 # Dadelsteen project conventions
 
 Brand e-commerce site for **imbody** AI smart-mirror home gyms (NL/BE market), brand name **Dadelsteen**.
-Visual direction: *luxury wellness* — warm sand/stone backgrounds, ink text, bronze accents, serif display headings, slow easing, generous whitespace. Original copy only (never copy text/images from imbody.com or imbodybe.com).
+Visual direction: *luxury wellness* — warm sand/stone backgrounds, ink text, bronze accents, serif display headings, slow easing, generous whitespace. Dadelsteen is an imbody distributor: imbody brand assets (imbody.com, and the shared Cloudinary account `depjdtrdf` also used by imbodybe.com) may be reused. Code-level brand photos live in `src/lib/brandMedia.ts`; never use competitor sites' own material.
 
 ## Stack
 - Next.js 16 App Router + Payload CMS 3.92 (ecommerce plugin) + SQLite locally (`DATABASE_URL=file:./dadelsteen.db`; Postgres later).

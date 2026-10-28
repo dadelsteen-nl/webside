@@ -1,23 +1,30 @@
 import type { Metadata } from 'next'
 
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-import React from 'react'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Suspense } from 'react'
 
+import { AuthShell } from '@/components/account/AuthShell'
 import { ForgotPasswordForm } from '@/components/forms/ForgotPasswordForm'
+import { type Locale } from '@/i18n/routing'
 
-export default async function ForgotPasswordPage() {
-  return (
-    <div className="container py-16">
-      <ForgotPasswordForm />
-    </div>
-  )
+type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale }
+  const t = await getTranslations({ locale, namespace: 'checkout.meta' })
+  return { robots: { index: false }, title: t('forgotPassword') }
 }
 
-export const metadata: Metadata = {
-  description: 'Enter your email address to recover your password.',
-  openGraph: mergeOpenGraph({
-    title: 'Forgot Password',
-    url: '/forgot-password',
-  }),
-  title: 'Forgot Password',
+export default async function ForgotPasswordPage({ params }: Props) {
+  const { locale } = (await params) as { locale: Locale }
+  setRequestLocale(locale)
+
+  const t = await getTranslations({ locale, namespace: 'checkout.auth.forgot' })
+  return (
+    <AuthShell eyebrow={t('eyebrow')} intro={t('intro')} title={t('title')}>
+      <Suspense>
+        <ForgotPasswordForm />
+      </Suspense>
+    </AuthShell>
+  )
 }

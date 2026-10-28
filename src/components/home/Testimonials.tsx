@@ -1,11 +1,10 @@
 'use client'
 
-import useEmblaCarousel from 'embla-carousel-react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import NextImage from 'next/image'
-import { useCallback, useEffect, useState } from 'react'
 
 import { Reveal } from '@/components/ui/motion'
+import { customerShots } from '@/lib/brandMedia'
 import { cn } from '@/utilities/cn'
 
 import type { HomeTestimonial } from './types'
@@ -13,151 +12,101 @@ import type { HomeTestimonial } from './types'
 import { SectionLabel } from './primitives'
 
 type Props = {
+  /** Featured quote(s); the first one is shown large */
   items: HomeTestimonial[]
-  /** True when showing static illustrative copy instead of CMS testimonials */
-  isPlaceholder?: boolean
 }
 
-function Stars({ label, rating }: { rating: number; label: string }) {
+function Stars({ className, label, rating }: { rating: number; label?: string; className?: string }) {
   return (
-    <p aria-label={label} className="flex gap-1.5 text-bronze" role="img">
+    <p aria-hidden={!label} aria-label={label} className={cn('flex gap-1 text-bronze', className)} role={label ? 'img' : undefined}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg aria-hidden="true" className={cn('size-3.5', i >= rating && 'opacity-25')} key={i} viewBox="0 0 20 20">
-          <path
-            d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z"
-            fill="currentColor"
-          />
+        <svg aria-hidden="true" className={cn('size-3.5', i >= Math.round(rating) && 'opacity-25')} key={i} viewBox="0 0 20 20">
+          <path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z" fill="currentColor" />
         </svg>
       ))}
     </p>
   )
 }
 
-export function Testimonials({ isPlaceholder, items }: Props) {
+/**
+ * Social proof: one featured quote plus a slow marquee of photos customers
+ * sent in of their own setup. The marquee pauses on hover and stops under
+ * reduced motion (then it scrolls horizontally by hand).
+ */
+export function Testimonials({ items }: Props) {
   const t = useTranslations('home.testimonials')
-  const [emblaRef, embla] = useEmblaCarousel({ align: 'start', duration: 38, loop: items.length > 1 })
-  const [selected, setSelected] = useState(0)
-
-  const onSelect = useCallback(() => {
-    if (embla) setSelected(embla.selectedScrollSnap())
-  }, [embla])
-
-  useEffect(() => {
-    if (!embla) return
-    onSelect()
-    embla.on('select', onSelect).on('reInit', onSelect)
-    return () => {
-      embla.off('select', onSelect).off('reInit', onSelect)
-    }
-  }, [embla, onSelect])
-
-  if (!items.length) return null
+  const locale = useLocale() as 'nl' | 'en'
+  const featured = items[0]
+  const shots = [...customerShots, ...customerShots]
 
   return (
-    <section aria-labelledby="home-testimonials-title" className="overflow-hidden bg-stone/50 py-24 md:py-36">
+    <section aria-labelledby="home-testimonials-title" className="overflow-hidden bg-ink py-24 text-cream md:py-36">
       <div className="container">
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <Reveal>
-            <SectionLabel>{t('label')}</SectionLabel>
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
+          <Reveal className="lg:col-span-6">
+            <SectionLabel tone="light">{t('label')}</SectionLabel>
             <h2
-              className="mt-8 max-w-[18ch] text-[clamp(2.25rem,4.6vw,4.25rem)] font-light leading-[1.02] tracking-[-0.025em] text-ink"
+              className="mt-8 max-w-[16ch] text-[clamp(2.25rem,4.6vw,4.25rem)] font-light leading-[1.02] tracking-[-0.025em]"
               id="home-testimonials-title"
             >
               {t('title')}
             </h2>
-          </Reveal>
-          {items.length > 1 ? (
-            <div className="flex gap-3">
-              <button
-                aria-label={t('prev')}
-                className="flex size-12 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 hover:border-bronze hover:bg-bronze hover:text-cream"
-                onClick={() => embla?.scrollPrev()}
-                type="button"
-              >
-                <svg aria-hidden="true" className="h-3 w-5 rotate-180" fill="none" viewBox="0 0 20 12">
-                  <path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" />
-                </svg>
-              </button>
-              <button
-                aria-label={t('next')}
-                className="flex size-12 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 hover:border-bronze hover:bg-bronze hover:text-cream"
-                onClick={() => embla?.scrollNext()}
-                type="button"
-              >
-                <svg aria-hidden="true" className="h-3 w-5" fill="none" viewBox="0 0 20 12">
-                  <path d="M0 6h18M13 1l5 5-5 5" stroke="currentColor" strokeWidth="1.2" />
-                </svg>
-              </button>
+            <div className="mt-10 flex items-center gap-5">
+              <span className="font-display text-6xl font-light leading-none">{t('score')}</span>
+              <span>
+                <Stars label={t('rating', { rating: t('score') })} rating={5} />
+                <span className="mt-2 block text-xs uppercase tracking-[0.18em] text-cream/55">{t('basedOn')}</span>
+              </span>
             </div>
+          </Reveal>
+
+          {featured ? (
+            <Reveal as="figure" className="lg:col-span-6" delay={0.1}>
+              <blockquote>
+                <p className="font-display text-[clamp(1.5rem,2.6vw,2.4rem)] font-light leading-[1.2] tracking-[-0.015em]">
+                  <span aria-hidden="true" className="text-bronze">“</span>
+                  {featured.quote}
+                  <span aria-hidden="true" className="text-bronze">”</span>
+                </p>
+              </blockquote>
+              <figcaption className="mt-8 flex items-center gap-4">
+                <span aria-hidden="true" className="h-px w-10 bg-bronze" />
+                <span>
+                  <span className="block font-sans text-sm font-medium">{featured.name}</span>
+                  {featured.role ? <span className="block text-xs text-cream/55">{featured.role}</span> : null}
+                </span>
+              </figcaption>
+            </Reveal>
           ) : null}
         </div>
+      </div>
 
-        <Reveal className="mt-16 md:mt-20" delay={0.1}>
-          <div aria-roledescription="carousel" className="overflow-visible" ref={emblaRef} role="region" aria-label={t('title')}>
-            <div className="flex">
-              {items.map((item, i) => (
-                <figure
-                  aria-label={`${i + 1} / ${items.length}`}
-                  aria-roledescription="slide"
-                  className={cn(
-                    'min-w-0 shrink-0 grow-0 basis-full pr-6 transition-opacity duration-700 ease-[var(--ease-luxe)] md:basis-[78%] md:pr-16 lg:basis-[64%]',
-                    i === selected ? 'opacity-100' : 'opacity-35',
-                  )}
-                  key={`${item.name}-${i}`}
-                  role="group"
-                >
-                  <Stars label={t('rating', { rating: item.rating ?? 5 })} rating={item.rating ?? 5} />
-                  <blockquote className="mt-8">
-                    <p className="font-display text-[clamp(1.6rem,3.2vw,2.9rem)] font-light leading-[1.18] tracking-[-0.015em] text-ink">
-                      <span aria-hidden="true" className="text-bronze">“</span>
-                      {item.quote}
-                      <span aria-hidden="true" className="text-bronze">”</span>
-                    </p>
-                  </blockquote>
-                  <figcaption className="mt-10 flex items-center gap-4">
-                    {item.photo?.url ? (
-                      <span className="relative size-12 overflow-hidden rounded-full">
-                        <NextImage alt="" className="object-cover" fill sizes="48px" src={item.photo.url} />
-                      </span>
-                    ) : (
-                      <span aria-hidden="true" className="h-px w-10 bg-bronze" />
-                    )}
-                    <span>
-                      <span className="block font-sans text-sm font-medium text-ink">{item.name}</span>
-                      {item.role ? <span className="block text-xs text-olive-grey">{item.role}</span> : null}
-                    </span>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
-        </Reveal>
-
-        <div className="mt-12 flex flex-wrap items-center justify-between gap-6">
-          {items.length > 1 ? (
-            <div className="flex gap-2">
-              {items.map((_, i) => (
-                <button
-                  aria-current={i === selected}
-                  aria-label={t('goTo', { index: i + 1 })}
-                  className="group flex h-6 items-center"
-                  key={i}
-                  onClick={() => embla?.scrollTo(i)}
-                  type="button"
-                >
-                  <span
-                    className={cn(
-                      'block h-px transition-[width,background-color] duration-700 ease-[var(--ease-luxe)]',
-                      i === selected ? 'w-12 bg-bronze' : 'w-6 bg-ink/25 group-hover:bg-ink/50',
-                    )}
-                  />
-                </button>
-              ))}
-            </div>
-          ) : (
-            <span />
-          )}
-          {isPlaceholder ? <p className="text-xs italic text-olive-grey">{t('placeholderNote')}</p> : null}
+      <div className="mt-16 md:mt-24">
+        <p className="container mb-6 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-cream/55">
+          {t('shotsLabel')}
+        </p>
+        <div className="group overflow-x-auto motion-safe:overflow-hidden [scrollbar-width:none]">
+          <ul className="flex w-max gap-4 px-4 motion-safe:animate-[home-marquee_110s_linear_infinite] group-hover:[animation-play-state:paused] md:gap-5 md:px-5">
+            {shots.map((shot, i) => (
+              <li
+                aria-hidden={i >= customerShots.length}
+                className="relative h-[22rem] w-[15rem] shrink-0 overflow-hidden md:h-[28rem] md:w-[19rem]"
+                key={`${shot.url}-${i}`}
+              >
+                <NextImage
+                  alt={i < customerShots.length ? shot.caption[locale] : ''}
+                  className="object-cover"
+                  fill
+                  sizes="(min-width: 768px) 304px, 240px"
+                  src={shot.url}
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-5 pt-16">
+                  <p className="font-display text-lg font-light leading-snug">{shot.caption[locale]}</p>
+                  <Stars className="mt-2" rating={5} />
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -26,6 +26,7 @@
     "@payloadcms/admin-bar": "3.92.0",
     "@payloadcms/db-sqlite": "3.92.0",
     "@payloadcms/email-nodemailer": "3.92.0",
+    "@payloadcms/email-resend": "3.92.0",
     "@payloadcms/live-preview-react": "3.92.0",
     "@payloadcms/next": "3.92.0",
     "@payloadcms/plugin-ecommerce": "3.92.0",
@@ -69,7 +70,8 @@
     "sharp": "0.35.4",
     "sonner": "^1.7.2",
     "stripe": "18.5.0",
-    "tailwind-merge": "^3.4.0"
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",

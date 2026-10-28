@@ -4,6 +4,10 @@ const css = `
   0% { transform: translateY(-100%); }
   60%, 100% { transform: translateY(200%); }
 }
+@keyframes home-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 @keyframes home-pulse {
   0% { transform: scale(0.6); opacity: 0.9; }
   70%, 100% { transform: scale(1.9); opacity: 0; }

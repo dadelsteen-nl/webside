@@ -1,8 +1,8 @@
 import type { Media as MediaType } from '@/payload-types'
 
-import { Media } from '@/components/Media'
 import { Label } from '@/components/Grid/Label'
-import clsx from 'clsx'
+import { Media } from '@/components/Media'
+import { cn } from '@/utilities/cn'
 import React from 'react'
 
 type Props = {
@@ -13,35 +13,27 @@ type Props = {
     position?: 'bottom' | 'center'
     title: string
   }
-  media: MediaType
+  media?: MediaType
 }
 
-export const GridTileImage: React.FC<Props> = ({
-  active,
-  isInteractive = true,
-  label,
-  ...props
-}) => {
+export const GridTileImage: React.FC<Props> = ({ active, isInteractive = true, label, media }) => {
   return (
     <div
-      className={clsx(
-        'group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black',
-        {
-          'border-2 border-blue-600': active,
-          'border-neutral-200 dark:border-neutral-800': !active,
-          relative: label,
-        },
+      className={cn(
+        'group relative flex h-full w-full items-center justify-center overflow-hidden bg-stone transition-[outline-color] duration-500',
+        active ? 'outline outline-1 outline-offset-2 outline-bronze' : 'outline-transparent',
       )}
     >
-      {props.media ? (
+      {media ? (
         <Media
-          className={clsx('relative h-full w-full object-cover', {
-            'transition duration-300 ease-in-out group-hover:scale-105': isInteractive,
+          className="absolute inset-0"
+          fill
+          imgClassName={cn('object-cover', {
+            'transition-transform duration-[1200ms] ease-[var(--ease-luxe)] group-hover:scale-[1.04]':
+              isInteractive,
           })}
-          height={80}
-          imgClassName="h-full w-full object-cover"
-          resource={props.media}
-          width={80}
+          resource={media}
+          size="(min-width: 768px) 33vw, 66vw"
         />
       ) : null}
       {label ? <Label amount={label.amount} position={label.position} title={label.title} /> : null}

@@ -66,10 +66,13 @@ export function Technology() {
 
       {/* Stacked: mobile, tablet and reduced motion */}
       <ol className="container grid gap-16 pb-24 md:grid-cols-2 md:gap-x-10 md:gap-y-20 md:pb-36 lg:hidden lg:motion-reduce:grid">
-        {items.map((item, i) => (
-          <Reveal as="li" key={item.title}>
-            <div className="aspect-[4/5] w-full overflow-hidden">
-              <TechVisual index={i} />
+        {items.map((item, i) => {
+          // An odd last card spans both columns instead of leaving a hole
+          const wide = items.length % 2 === 1 && i === items.length - 1
+          return (
+          <Reveal as="li" className={cn(wide && 'md:col-span-2')} key={item.title}>
+            <div className={cn('aspect-[4/3] w-full overflow-hidden', wide && 'md:aspect-[21/9]')}>
+              <TechVisual index={i} sizes={wide ? '100vw' : undefined} />
             </div>
             <div className="mt-8 flex items-baseline justify-between border-b border-cream/15 pb-4">
               <span className="font-display text-5xl font-light text-bronze">{pad(i + 1)}</span>
@@ -81,7 +84,8 @@ export function Technology() {
             <h3 className="mt-6 text-2xl font-light leading-tight md:text-3xl">{item.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-cream/65 md:text-base">{item.text}</p>
           </Reveal>
-        ))}
+          )
+        })}
       </ol>
 
       {/* Pinned stage: lg+ with motion */}

@@ -6,7 +6,7 @@ import { FixedToolbarFeature, HeadingFeature, lexicalEditor } from '@payloadcms/
 import { ecommercePlugin } from '@payloadcms/plugin-ecommerce'
 import { EUR } from '@payloadcms/plugin-ecommerce'
 
-import { stripeAdapter } from '@payloadcms/plugin-ecommerce/payments/stripe'
+import { mollieAdapter } from '@/payments/mollie'
 
 import { Page, Product } from '@/payload-types'
 import { getServerSideURL } from '@/utilities/getURL'
@@ -121,13 +121,9 @@ export const plugins: Plugin[] = [
       }),
     },
     payments: {
-      paymentMethods: [
-        stripeAdapter({
-          secretKey: process.env.STRIPE_SECRET_KEY!,
-          publishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
-          webhookSecret: process.env.STRIPE_WEBHOOKS_SIGNING_SECRET!,
-        }),
-      ],
+      // Mollie hosted checkout (iDEAL, Bancontact, cards…). Without MOLLIE_API_KEY it runs in
+      // simulation mode outside production; see src/payments/mollie.
+      paymentMethods: [mollieAdapter({ label: 'Mollie' })],
     },
     products: {
       productsCollectionOverride: ProductsCollection,

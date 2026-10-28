@@ -2,6 +2,7 @@ import type { Product, CarouselBlock as CarouselBlockProps } from '@/payload-typ
 
 import configPromise from '@payload-config'
 import { DefaultDocumentIDType, getPayload } from 'payload'
+import { getLocale } from 'next-intl/server'
 import React from 'react'
 
 import { CarouselClient } from './Component.client'
@@ -17,6 +18,7 @@ export const CarouselBlock: React.FC<
 
   if (populateBy === 'collection') {
     const payload = await getPayload({ config: configPromise })
+    const locale = (await getLocale()) as 'nl' | 'en'
 
     const flattenedCategories = categories?.length
       ? categories.map((category) => {
@@ -28,16 +30,16 @@ export const CarouselBlock: React.FC<
     const fetchedProducts = await payload.find({
       collection: 'products',
       depth: 1,
+      locale,
       limit: limit || undefined,
       ...(flattenedCategories && flattenedCategories.length > 0
         ? {
             where: {
-              categories: {
-                in: flattenedCategories,
-              },
+              _status: { equals: 'published' },
+              categories: { in: flattenedCategories },
             },
           }
-        : {}),
+        : { where: { _status: { equals: 'published' } } }),
     })
 
     products = fetchedProducts.docs

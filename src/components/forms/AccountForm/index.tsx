@@ -1,17 +1,16 @@
 'use client'
 
-import { FormError } from '@/components/forms/FormError'
-import { FormItem } from '@/components/forms/FormItem'
-import { Message } from '@/components/Message'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { User } from '@/payload-types'
-import { useAuth } from '@/providers/Auth'
-import { useRouter } from 'next/navigation'
-import React, { Fragment, useCallback, useEffect, useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
+
+import type { User } from '@/payload-types'
+
+import { TextField } from '@/components/account/fields'
+import { btn } from '@/components/shop/ui'
+import { useAuth } from '@/providers/Auth'
+import { cn } from '@/utilities/cn'
 
 type FormData = {
   email: string
@@ -20,174 +19,102 @@ type FormData = {
   passwordConfirm: string
 }
 
+/** Edit name / email, or switch to a password change. */
 export const AccountForm: React.FC = () => {
+  const t = useTranslations('checkout.account.settings')
   const { setUser, user } = useAuth()
   const [changePassword, setChangePassword] = useState(false)
 
   const {
-    formState: { errors, isLoading, isSubmitting, isDirty },
+    formState: { errors, isDirty, isSubmitting },
+    getValues,
     handleSubmit,
     register,
     reset,
-    watch,
   } = useForm<FormData>()
 
-  const password = useRef({})
-  password.current = watch('password', '')
-
-  const router = useRouter()
+  useEffect(() => {
+    if (user) reset({ email: user.email, name: user.name, password: '', passwordConfirm: '' })
+  }, [user, reset, changePassword])
 
   const onSubmit = useCallback(
     async (data: FormData) => {
-      if (user) {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/${user.id}`, {
-          // Make sure to include cookies with fetch
-          body: JSON.stringify(data),
-          credentials: 'include',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          method: 'PATCH',
-        })
-
-        if (response.ok) {
-          const json = await response.json()
-          setUser(json.doc)
-          toast.success('Successfully updated account.')
-          setChangePassword(false)
-          reset({
-            name: json.doc.name,
-            email: json.doc.email,
-            password: '',
-            passwordConfirm: '',
-          })
-        } else {
-          toast.error('There was a problem updating your account.')
-        }
+      if (!user) return
+      const body = changePassword ? { password: data.password } : { email: data.email, name: data.name }
+      const response = await fetch(`/api/users/${user.id}`, {
+        body: JSON.stringify(body),
+        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        method: 'PATCH',
+      })
+      if (!response.ok) {
+        toast.error(t('saveError'))
+        return
       }
+      const json = await response.json()
+      setUser(json.doc)
+      toast.success(t('saved'))
+      setChangePassword(false)
     },
-    [user, setUser, reset],
+    [changePassword, setUser, t, user],
   )
 
-  useEffect(() => {
-    if (user === null) {
-      router.push(
-        `/login?error=${encodeURIComponent(
-          'You must be logged in to view this page.',
-        )}&redirect=${encodeURIComponent('/account')}`,
-      )
-    }
-
-    // Once user is loaded, reset form to have default values
-    if (user) {
-      reset({
-        name: user.name,
-        email: user.email,
-        password: '',
-        passwordConfirm: '',
-      })
-    }
-  }, [user, router, reset, changePassword])
-
   return (
-    <form className="max-w-xl" onSubmit={handleSubmit(onSubmit)}>
-      {!changePassword ? (
-        <Fragment>
-          <div className="prose dark:prose-invert mb-8">
-            <p className="">
-              {'Change your account details below, or '}
-              <Button
-                className="px-0 text-inherit underline hover:cursor-pointer"
-                onClick={() => setChangePassword(!changePassword)}
-                type="button"
-                variant="link"
-              >
-                click here
-              </Button>
-              {' to change your password.'}
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-8 mb-8">
-            <FormItem>
-              <Label htmlFor="email" className="mb-2">
-                Email Address
-              </Label>
-              <Input
-                id="email"
-                {...register('email', { required: 'Please provide an email.' })}
-                type="email"
-              />
-              {errors.email && <FormError message={errors.email.message} />}
-            </FormItem>
-
-            <FormItem>
-              <Label htmlFor="name" className="mb-2">
-                Name
-              </Label>
-              <Input
-                id="name"
-                {...register('name', { required: 'Please provide a name.' })}
-                type="text"
-              />
-              {errors.name && <FormError message={errors.name.message} />}
-            </FormItem>
-          </div>
-        </Fragment>
+    <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
+      {changePassword ? (
+        <div className="grid gap-6 sm:grid-cols-2">
+          <TextField
+            autoComplete="new-password"
+            error={errors.password?.message}
+            id="password"
+            label={t('password')}
+            type="password"
+            {...register('password', { required: t('required') })}
+          />
+          <TextField
+            autoComplete="new-password"
+            error={errors.passwordConfirm?.message}
+            id="passwordConfirm"
+            label={t('passwordConfirm')}
+            type="password"
+            {...register('passwordConfirm', {
+              required: t('required'),
+              validate: (value) => value === getValues('password') || t('mismatch'),
+            })}
+          />
+        </div>
       ) : (
-        <Fragment>
-          <div className="prose dark:prose-invert mb-8">
-            <p>
-              {'Change your password below, or '}
-              <Button
-                className="px-0 text-inherit underline hover:cursor-pointer"
-                onClick={() => setChangePassword(!changePassword)}
-                type="button"
-                variant="link"
-              >
-                cancel
-              </Button>
-              .
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-8 mb-8">
-            <FormItem>
-              <Label htmlFor="password" className="mb-2">
-                New password
-              </Label>
-              <Input
-                id="password"
-                {...register('password', { required: 'Please provide a new password.' })}
-                type="password"
-              />
-              {errors.password && <FormError message={errors.password.message} />}
-            </FormItem>
-
-            <FormItem>
-              <Label htmlFor="passwordConfirm" className="mb-2">
-                Confirm password
-              </Label>
-              <Input
-                id="passwordConfirm"
-                {...register('passwordConfirm', {
-                  required: 'Please confirm your new password.',
-                  validate: (value) => value === password.current || 'The passwords do not match',
-                })}
-                type="password"
-              />
-              {errors.passwordConfirm && <FormError message={errors.passwordConfirm.message} />}
-            </FormItem>
-          </div>
-        </Fragment>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <TextField
+            autoComplete="name"
+            error={errors.name?.message}
+            id="name"
+            label={t('name')}
+            {...register('name', { required: t('required') })}
+          />
+          <TextField
+            autoComplete="email"
+            error={errors.email?.message}
+            id="email"
+            label={t('email')}
+            type="email"
+            {...register('email', { required: t('required') })}
+          />
+        </div>
       )}
-      <Button disabled={isLoading || isSubmitting || !isDirty} type="submit" variant="default">
-        {isLoading || isSubmitting
-          ? 'Processing'
-          : changePassword
-            ? 'Change Password'
-            : 'Update Account'}
-      </Button>
+
+      <div className="flex flex-col gap-4 border-t border-ink/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <button
+          className={btn.link}
+          onClick={() => setChangePassword((cur) => !cur)}
+          type="button"
+        >
+          {changePassword ? t('cancel') : t('changePassword')}
+        </button>
+        <button className={cn(btn.ink)} disabled={isSubmitting || !isDirty} type="submit">
+          {isSubmitting ? t('processing') : changePassword ? t('savePassword') : t('save')}
+        </button>
+      </div>
     </form>
   )
 }

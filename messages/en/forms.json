@@ -1,1 +1,77 @@
-{}
+{
+  "fields": {
+    "name": "Name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "companyName": "Company name",
+    "contactName": "Contact person",
+    "subject": "Subject",
+    "message": "Message",
+    "messageOptional": "Message or question",
+    "preferredDate": "Preferred date",
+    "units": "Number of units (estimate)"
+  },
+  "optional": "optional",
+  "website": "Leave this field empty",
+  "consent": "I agree to my details being processed as described in the <link>privacy policy</link>.",
+  "required": "Required field",
+  "submitting": "Sending",
+  "errors": {
+    "required": "This field is required.",
+    "email": "Please enter a valid email address.",
+    "phone": "Please enter a valid phone number.",
+    "consent": "Please give your consent so we can contact you.",
+    "date": "Please choose a date from today onwards.",
+    "tooLong": "This text is too long.",
+    "invalid": "Please check this field.",
+    "rateLimit": "You have sent several requests in a short time. Please try again in a few minutes.",
+    "server": "Something went wrong while sending. Please try again or give us a call.",
+    "title": "Could not send"
+  },
+  "success": {
+    "eyebrow": "Sent",
+    "again": "Send another message"
+  },
+  "demo": {
+    "audienceLegend": "I am requesting a demo as",
+    "audiences": {
+      "private": "Private customer",
+      "business": "Business"
+    },
+    "locationLegend": "Where would you like to experience imbody?",
+    "locations": {
+      "showroom": { "label": "Showroom", "hint": "By appointment, coffee included" },
+      "at-home": { "label": "At your home", "hint": "We bring a unit to you" },
+      "online": { "label": "Online", "hint": "Live 30-minute video demo" }
+    },
+    "timeLegend": "Preferred time of day",
+    "times": {
+      "morning": "Morning",
+      "afternoon": "Afternoon",
+      "evening": "Evening"
+    },
+    "submit": "Request a demo",
+    "successTitle": "Thank you. Your request is in.",
+    "successText": "A confirmation is on its way to your inbox. Within one business day we will contact you personally to arrange a moment."
+  },
+  "contact": {
+    "submit": "Send message",
+    "successTitle": "Thank you for your message.",
+    "successText": "We have received your message and usually reply within one business day. A copy is in your inbox."
+  },
+  "b2b": {
+    "businessTypeLegend": "Type of organisation",
+    "businessTypes": {
+      "physio": "Physiotherapy",
+      "clinic": "Clinic / rehabilitation",
+      "gym": "Gym / PT studio",
+      "hotel": "Hotel / holiday park",
+      "corporate": "Corporate wellness",
+      "salon": "Wellness / beauty",
+      "other": "Other"
+    },
+    "submit": "Send enquiry",
+    "successTitle": "Thank you. We will be in touch soon.",
+    "successText": "An advisor will call or email you within one business day for an initial conversation. A confirmation is on its way to your inbox."
+  }
+}

@@ -17,21 +17,35 @@
   "trust": {
     "label": "Our promise",
     "items": [
-      { "title": "Free delivery & installation", "text": "By our own team, across the Netherlands and Belgium" },
-      { "title": "2-year warranty", "text": "On the device, motor and display" },
-      { "title": "No subscription required", "text": "You choose what you add" },
-      { "title": "14-day return window", "text": "Experience it at home, without pressure" }
+      {
+        "title": "Free delivery & installation",
+        "text": "By our own team, across the Netherlands and Belgium"
+      },
+      {
+        "title": "2-year warranty",
+        "text": "On the device, motor and display"
+      },
+      {
+        "title": "No subscription required",
+        "text": "You choose what you add"
+      },
+      {
+        "title": "14-day return window",
+        "text": "Experience it at home, without pressure"
+      }
     ]
   },
   "intro": {
-    "label": "01 — The core",
+    "label": "02 — The core",
     "before": "A date stone quietly carries everything it needs to grow. That is how we see training: no noise, no plates, no detours. Just you, a mirror that thinks along, and the",
     "emphasis": "strength",
     "after": "that comes from within.",
-    "signature": "Dadelsteen — imbody in the Netherlands and Belgium"
+    "signature": "Dadelsteen — imbody in the Netherlands and Belgium",
+    "cta": "Discover the imbody Pro S",
+    "caption": "Switched off, simply a mirror"
   },
   "spotlight": {
-    "label": "02 — imbody",
+    "label": "01 — imbody",
     "title": "One mirror. A complete gym.",
     "defaultName": "imbody Pro S",
     "defaultDescription": "A 43-inch touchscreen mirror with digital motor resistance, AI motion analysis and hundreds of guided workouts. Designed to blend into your interior — and come alive the moment you start.",
@@ -43,52 +57,170 @@
     "close": "Close",
     "imageAlt": "imbody smart mirror home gym",
     "specs": [
-      { "value": "43\"", "label": "Touchscreen" },
-      { "value": "120 kg", "label": "Max. resistance" },
-      { "value": "1.4 m²", "label": "Footprint" }
+      {
+        "value": "43\"",
+        "label": "Touchscreen"
+      },
+      {
+        "value": "120 kg",
+        "label": "Max. resistance"
+      },
+      {
+        "value": "1.4 m²",
+        "label": "Footprint"
+      }
     ],
     "hotspots": [
-      { "x": 50, "y": 24, "title": "43\" mirror display", "text": "A crisp touchscreen behind mirror glass. Off, it is a mirror. On, your personal studio." },
-      { "x": 50, "y": 9, "title": "AI camera", "text": "Tracks your posture and tempo in real time and corrects where it matters." },
-      { "x": 23, "y": 58, "title": "Smart cable arms", "text": "Adjustable in height and angle for hundreds of exercises, from rows to chest press." },
-      { "x": 50, "y": 88, "title": "Digital motor", "text": "Up to 120 kg of resistance in small increments — silent, smooth and without a single plate." }
+      {
+        "x": 50,
+        "y": 24,
+        "title": "43\" mirror display",
+        "text": "A crisp touchscreen behind mirror glass. Off, it is a mirror. On, your personal studio."
+      },
+      {
+        "x": 50,
+        "y": 9,
+        "title": "AI camera",
+        "text": "Tracks your posture and tempo in real time and corrects where it matters."
+      },
+      {
+        "x": 23,
+        "y": 58,
+        "title": "Smart cable arms",
+        "text": "Adjustable in height and angle for hundreds of exercises, from rows to chest press."
+      },
+      {
+        "x": 50,
+        "y": 88,
+        "title": "Digital motor",
+        "text": "Up to 120 kg of resistance in small increments — silent, smooth and without a single plate."
+      }
     ]
   },
+  "included": {
+    "label": "03 — Included",
+    "title": "Everything in one package.",
+    "intro": "Everything you need is in the box. No extra costs, no separate purchases afterwards.",
+    "items": {
+      "btHandles": {
+        "title": "Bluetooth handles",
+        "text": "Handles with a button to control resistance and track your sets."
+      },
+      "tBar": {
+        "title": "T-bar",
+        "text": "Versatile for rows and pulling exercises."
+      },
+      "ankleStraps": {
+        "title": "Ankle straps",
+        "text": "For leg and glute training."
+      },
+      "bench": {
+        "title": "Training bench",
+        "text": "Sturdy bench for presses, rows and core."
+      },
+      "bar": {
+        "title": "Long bar",
+        "text": "For lat pulldowns, chest presses and squats."
+      },
+      "tricepRope": {
+        "title": "Tricep rope",
+        "text": "Isolation work for triceps and biceps."
+      },
+      "btController": {
+        "title": "Bluetooth controller",
+        "text": "Control the screen without breaking your workout."
+      },
+      "rower": {
+        "title": "Rowing seat",
+        "text": "Full rowing straight from the system."
+      }
+    }
+  },
   "tech": {
-    "label": "03 — Technology",
+    "label": "04 — Technology",
     "title": "Designed around your body.",
     "intro": "Five technologies, one purpose: making every session smarter, safer and more personal.",
     "items": [
-      { "title": "AI coach with motion tracking", "text": "A camera and smart software read your movement in real time. You get instant feedback on posture, range and tempo — as if a trainer were standing beside you.", "stat": "400+", "statLabel": "Guided workouts" },
-      { "title": "Digital resistance up to 120 kg", "text": "An electric motor replaces the weight rack. Fine-tune resistance in small increments so every set is exactly heavy enough.", "stat": "120 kg", "statLabel": "Maximum resistance" },
-      { "title": "Five training modes", "text": "Standard, eccentric, elastic, constant speed and more. One device, five ways to challenge your muscles.", "stat": "5", "statLabel": "Training modes" },
-      { "title": "43\" immersive mirror", "text": "See yourself and your coach side by side, life-size. Switched off, it is simply a beautiful mirror.", "stat": "43\"", "statLabel": "Touchscreen display" },
-      { "title": "Compact and silent", "text": "No plates, no clatter. imbody fits against any wall and takes up barely more space than a cabinet.", "stat": "1.4 m²", "statLabel": "Footprint" }
+      {
+        "title": "AI coach with motion tracking",
+        "text": "A camera and smart software read your movement in real time. You get instant feedback on posture, range and tempo — as if a trainer were standing beside you.",
+        "stat": "400+",
+        "statLabel": "Guided workouts"
+      },
+      {
+        "title": "Digital resistance up to 120 kg",
+        "text": "An electric motor replaces the weight rack. Fine-tune resistance in small increments so every set is exactly heavy enough.",
+        "stat": "120 kg",
+        "statLabel": "Maximum resistance"
+      },
+      {
+        "title": "Five training modes",
+        "text": "Standard, eccentric, elastic, constant speed and more. One device, five ways to challenge your muscles.",
+        "stat": "5",
+        "statLabel": "Training modes"
+      },
+      {
+        "title": "43\" immersive mirror",
+        "text": "See yourself and your coach side by side, life-size. Switched off, it is simply a beautiful mirror.",
+        "stat": "43\"",
+        "statLabel": "Touchscreen display"
+      },
+      {
+        "title": "Compact and silent",
+        "text": "No plates, no clatter. imbody fits against any wall and takes up barely more space than a cabinet.",
+        "stat": "1.4 m²",
+        "statLabel": "Footprint"
+      }
     ]
   },
   "how": {
-    "label": "04 — How it works",
+    "label": "05 — How it works",
     "title": "From first meeting to first workout.",
     "steps": [
-      { "title": "Book a demo", "text": "Experience imbody in our showroom or in your own home. We take time for your questions and your goals." },
-      { "title": "Delivery & installation", "text": "Our team delivers, assembles and calibrates imbody in the right spot. You don't lift a thing." },
-      { "title": "Train with your AI coach", "text": "Choose a programme, follow your progress and grow stronger week after week — on your own time." }
+      {
+        "title": "Book a demo",
+        "text": "Experience imbody in our showroom or in your own home. We take time for your questions and your goals."
+      },
+      {
+        "title": "Delivery & installation",
+        "text": "Our team delivers, assembles and calibrates imbody in the right spot. You don't lift a thing."
+      },
+      {
+        "title": "Train with your AI coach",
+        "text": "Choose a programme, follow your progress and grow stronger week after week — on your own time."
+      }
     ],
     "cta": "Plan your demo"
   },
   "audiences": {
-    "label": "05 — For whom",
+    "label": "06 — For whom",
     "title": "At home, in the clinic, in the studio.",
     "intro": "imbody belongs wherever people want to train with intention.",
     "items": [
-      { "title": "Home", "text": "A complete gym that blends into your interior.", "cta": "Discover imbody" },
-      { "title": "Physiotherapy & clinics", "text": "Measurable rehabilitation with precise, low resistance.", "cta": "Business solutions" },
-      { "title": "Gyms & PT studios", "text": "Data-driven coaching your clients can see and feel.", "cta": "Business solutions" },
-      { "title": "Hotels & corporate", "text": "A premium wellness experience for guests and teams.", "cta": "Business solutions" }
+      {
+        "title": "Home",
+        "text": "A complete gym that blends into your interior.",
+        "cta": "Discover imbody"
+      },
+      {
+        "title": "Physiotherapy & clinics",
+        "text": "Measurable rehabilitation with precise, low resistance.",
+        "cta": "Business solutions"
+      },
+      {
+        "title": "Gyms & PT studios",
+        "text": "Data-driven coaching your clients can see and feel.",
+        "cta": "Business solutions"
+      },
+      {
+        "title": "Hotels & corporate",
+        "text": "A premium wellness experience for guests and teams.",
+        "cta": "Business solutions"
+      }
     ]
   },
   "calc": {
-    "label": "06 — Investment",
+    "label": "07 — Investment",
     "title": "What does getting stronger really cost?",
     "intro": "Compare the total cost of a gym membership and personal trainer with a one-time investment in imbody.",
     "years": "Period",
@@ -106,51 +238,113 @@
     "disclaimer": "Indicative calculation based on your input. Actual costs may vary; optional accessories and content packages are not included.",
     "tableTitle": "More than a sum",
     "tableCriterion": "Comparison",
-    "tableColumns": ["imbody", "Gym", "Personal trainer"],
+    "tableColumns": [
+      "imbody",
+      "Gym",
+      "Personal trainer"
+    ],
     "tableRows": [
-      { "label": "Availability", "values": ["24/7, at home", "Opening hours", "By appointment"] },
-      { "label": "Personal guidance", "values": ["yes", "no", "yes"] },
-      { "label": "Progress tracked automatically", "values": ["yes", "partial", "partial"] },
-      { "label": "Travel time", "values": ["None", "Every visit", "Every visit"] },
-      { "label": "Privacy", "values": ["yes", "no", "partial"] }
+      {
+        "label": "Availability",
+        "values": [
+          "24/7, at home",
+          "Opening hours",
+          "By appointment"
+        ]
+      },
+      {
+        "label": "Personal guidance",
+        "values": [
+          "yes",
+          "no",
+          "yes"
+        ]
+      },
+      {
+        "label": "Progress tracked automatically",
+        "values": [
+          "yes",
+          "partial",
+          "partial"
+        ]
+      },
+      {
+        "label": "Travel time",
+        "values": [
+          "None",
+          "Every visit",
+          "Every visit"
+        ]
+      },
+      {
+        "label": "Privacy",
+        "values": [
+          "yes",
+          "no",
+          "partial"
+        ]
+      }
     ],
     "yes": "Yes",
     "no": "No",
     "partial": "Partly"
   },
   "testimonials": {
-    "label": "07 — Experiences",
-    "title": "What training with imbody does.",
-    "prev": "Previous experience",
-    "next": "Next experience",
-    "goTo": "Go to experience {index}",
+    "label": "08 — Experiences",
+    "title": "Rated by 200+ users.",
     "rating": "{rating} out of 5 stars",
-    "placeholderNote": "Illustrative experiences — real customer stories coming soon.",
     "items": [
-      { "name": "Home athlete", "role": "Randstad", "quote": "I now train in moments that used to be lost to commuting. The coach corrects me kindly, but without mercy.", "rating": 5 },
-      { "name": "Physiotherapist", "role": "Practice in Flanders", "quote": "The fine resistance steps make all the difference in rehabilitation. Patients see their progress in numbers.", "rating": 5 },
-      { "name": "Studio owner", "role": "Personal training", "quote": "It feels like a premium extra for our clients — silent, beautifully designed and ready to use.", "rating": 5 }
-    ]
+      {
+        "name": "Mark V.",
+        "role": "Home user, Antwerp",
+        "quote": "After 15 years in the gym I know: this system replaces everything. The eccentric resistance feels more professional than €10,000+ machines.",
+        "rating": 5
+      }
+    ],
+    "score": "4.8",
+    "basedOn": "Based on 150+ reviews",
+    "shotsLabel": "How imbody looks at our customers’ homes"
   },
   "gallery": {
-    "label": "08 — At home in any interior",
+    "label": "09 — At home in any interior",
     "title": "Calm in the room.",
-    "captions": ["Morning light, living room", "Strength in silence", "Detail: cable arm", "Evening session", "Wellness suite"]
+    "captions": [
+      "Compact apartment",
+      "Beside the sofa",
+      "Detail: cable arms",
+      "Training together",
+      "Bench & cable arm"
+    ]
   },
   "faq": {
-    "label": "09 — Questions",
+    "label": "10 — Questions",
     "title": "Good to know.",
     "cta": "All frequently asked questions",
     "items": [
-      { "question": "How much space do I need for imbody?", "answer": "Allow about 1.4 m² of floor space and a solid wall or the matching stand. During the demo we are happy to measure your room together." },
-      { "question": "Do I need a subscription?", "answer": "No. imbody works without a mandatory subscription. If you want extra programmes or content, that is entirely your choice." },
-      { "question": "Is imbody suitable for beginners?", "answer": "Absolutely. Resistance starts low and the AI coach adapts tempo and load to your level, so you build up safely and with confidence." },
-      { "question": "How do delivery and installation work?", "answer": "Our own team delivers imbody free of charge in the Netherlands and Belgium, assembles it and walks you through everything. You can start training right away." },
-      { "question": "What about my privacy?", "answer": "The camera is only used for motion analysis while you train. You decide which data you share." }
+      {
+        "question": "How much space do I need for imbody?",
+        "answer": "Allow about 1.4 m² of floor space and a solid wall or the matching stand. During the demo we are happy to measure your room together."
+      },
+      {
+        "question": "Do I need a subscription?",
+        "answer": "No. imbody works without a mandatory subscription. If you want extra programmes or content, that is entirely your choice."
+      },
+      {
+        "question": "Is imbody suitable for beginners?",
+        "answer": "Absolutely. Resistance starts low and the AI coach adapts tempo and load to your level, so you build up safely and with confidence."
+      },
+      {
+        "question": "How do delivery and installation work?",
+        "answer": "Our own team delivers imbody free of charge in the Netherlands and Belgium, assembles it and walks you through everything. You can start training right away."
+      },
+      {
+        "question": "What about my privacy?",
+        "answer": "The camera is only used for motion analysis while you train. You decide which data you share."
+      }
     ]
   },
   "journal": {
-    "label": "10 — Journal",
+    "label": "11 — Journal",
     "title": "Stories on strength and calm.",
     "cta": "Visit the journal",
     "readMore": "Read on"

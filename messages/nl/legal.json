@@ -1,1 +1,280 @@
-{}
+{
+  "ui": {
+    "draftNote": "Concepttekst — laat juridisch controleren",
+    "lastUpdated": "Laatst bijgewerkt",
+    "toc": "Inhoud",
+    "print": "Afdrukken",
+    "home": "Home",
+    "contactTitle": "Vragen over deze tekst?",
+    "contactBody": "Neem contact met ons op via {email}.",
+    "legal": "Juridisch",
+    "cookieName": "Cookie",
+    "cookiePurpose": "Doel",
+    "cookieDuration": "Bewaartermijn"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacyverklaring",
+      "description": "Hoe Dadelsteen omgaat met jouw persoonsgegevens, conform de AVG."
+    },
+    "title": "Privacyverklaring",
+    "intro": "Dadelsteen respecteert jouw privacy. In deze verklaring lees je welke persoonsgegevens we verwerken, waarom, hoe lang en welke rechten je hebt.",
+    "sections": [
+      {
+        "id": "verwerkingsverantwoordelijke",
+        "title": "Wie is verantwoordelijk?",
+        "body": [
+          "{company} (KvK {kvk}, BTW {vat}), gevestigd aan {address}, is verwerkingsverantwoordelijke in de zin van de Algemene verordening gegevensbescherming (AVG).",
+          "Je kunt ons bereiken via {email}."
+        ]
+      },
+      {
+        "id": "gegevens",
+        "title": "Welke gegevens verwerken wij?",
+        "body": ["Afhankelijk van hoe je onze website en diensten gebruikt, verwerken wij:"],
+        "list": [
+          "Contactgegevens: naam, e-mailadres, telefoonnummer, bedrijfsnaam.",
+          "Bestel- en betaalgegevens: afleveradres, factuuradres, bestelhistorie en betalingsstatus (betaalgegevens zelf worden verwerkt door onze betaalprovider).",
+          "Demo- en contactverzoeken: de informatie die je zelf in formulieren invult.",
+          "Technische gegevens: IP-adres, apparaat- en browsergegevens en bezoekgedrag, voor zover je daar toestemming voor geeft via de cookiebanner."
+        ]
+      },
+      {
+        "id": "doelen",
+        "title": "Doelen en grondslagen",
+        "body": ["Wij verwerken persoonsgegevens op basis van de volgende grondslagen:"],
+        "list": [
+          "Uitvoering van de overeenkomst: het verwerken, leveren, installeren en factureren van bestellingen en het afhandelen van garantie.",
+          "Wettelijke verplichting: bijvoorbeeld de fiscale bewaarplicht van zeven jaar.",
+          "Toestemming: analytische en marketingcookies, en het versturen van nieuwsbrieven. Je kunt toestemming op elk moment intrekken.",
+          "Gerechtvaardigd belang: beveiliging, fraudepreventie en het verbeteren van onze dienstverlening."
+        ]
+      },
+      {
+        "id": "delen",
+        "title": "Delen met derden",
+        "body": [
+          "Wij delen gegevens uitsluitend met partijen die nodig zijn voor onze dienstverlening, zoals betaalprovider, vervoerders en installateurs, hostingpartij, e-mailverzending en boekhouding. Met deze verwerkers sluiten wij verwerkersovereenkomsten. Wij verkopen jouw gegevens nooit.",
+          "Waar gegevens buiten de Europese Economische Ruimte worden verwerkt, zorgen wij voor passende waarborgen, zoals standaardcontractbepalingen."
+        ]
+      },
+      {
+        "id": "bewaartermijnen",
+        "title": "Bewaartermijnen",
+        "body": [
+          "Wij bewaren gegevens niet langer dan nodig. Order- en factuurgegevens bewaren wij zeven jaar; contactverzoeken maximaal twee jaar na afhandeling; accountgegevens zolang je account bestaat."
+        ]
+      },
+      {
+        "id": "rechten",
+        "title": "Jouw rechten",
+        "body": ["Je hebt het recht op inzage, rectificatie, verwijdering, beperking van de verwerking, bezwaar en dataportabiliteit. Stuur een verzoek naar {email}; wij reageren binnen een maand."],
+        "list": []
+      },
+      {
+        "id": "beveiliging",
+        "title": "Beveiliging",
+        "body": ["Wij nemen passende technische en organisatorische maatregelen, zoals versleutelde verbindingen (HTTPS), toegangsbeperking en regelmatige updates."]
+      },
+      {
+        "id": "klacht",
+        "title": "Klacht indienen",
+        "body": ["Heb je een klacht over de verwerking van jouw gegevens? Neem dan eerst contact met ons op. Je hebt daarnaast altijd het recht een klacht in te dienen bij de Autoriteit Persoonsgegevens (autoriteitpersoonsgegevens.nl)."]
+      }
+    ]
+  },
+  "terms": {
+    "meta": {
+      "title": "Algemene voorwaarden",
+      "description": "De algemene voorwaarden van Dadelsteen voor consumenten en zakelijke klanten."
+    },
+    "title": "Algemene voorwaarden",
+    "intro": "Deze voorwaarden zijn van toepassing op alle aanbiedingen, bestellingen en overeenkomsten van {company}.",
+    "sections": [
+      {
+        "id": "definities",
+        "title": "Artikel 1 — Definities",
+        "body": [
+          "Ondernemer: {company}, KvK {kvk}, BTW {vat}, {address}. Consument: de natuurlijke persoon die niet handelt in de uitoefening van een beroep of bedrijf. Overeenkomst op afstand: een overeenkomst die via de website tot stand komt."
+        ]
+      },
+      {
+        "id": "aanbod",
+        "title": "Artikel 2 — Aanbod en prijzen",
+        "body": [
+          "Alle prijzen op de website zijn in euro's en inclusief btw, tenzij anders vermeld. Zakelijke klanten zien op verzoek prijzen exclusief btw. Wij behouden ons het recht voor kennelijke vergissingen in prijzen en afbeeldingen te corrigeren.",
+          "Aanbiedingen gelden zolang de voorraad strekt. Geef je een bestelling door voor een product dat niet leverbaar blijkt, dan informeren wij je direct."
+        ]
+      },
+      {
+        "id": "overeenkomst",
+        "title": "Artikel 3 — Totstandkoming van de overeenkomst",
+        "body": [
+          "De overeenkomst komt tot stand op het moment van bevestiging van je bestelling per e-mail. Na bestelling ontvang je een orderbevestiging met alle relevante gegevens."
+        ]
+      },
+      {
+        "id": "betaling",
+        "title": "Artikel 4 — Betaling",
+        "body": [
+          "Betaling vindt plaats via de op de website aangeboden betaalmethoden. Bij betaling op factuur (zakelijk) geldt een betalingstermijn van 14 dagen, tenzij anders overeengekomen. Bij te late betaling zijn wij gerechtigd wettelijke rente en incassokosten in rekening te brengen."
+        ]
+      },
+      {
+        "id": "levering",
+        "title": "Artikel 5 — Levering en installatie",
+        "body": [
+          "Wij streven naar levering binnen de op de website of orderbevestiging vermelde termijn. Een genoemde levertijd is een indicatie en geen fatale termijn. Bij overschrijding met meer dan 30 dagen kun je de overeenkomst kosteloos ontbinden.",
+          "Het risico op beschadiging of verlies gaat over op de consument op het moment van aflevering. Installatie vindt plaats op afspraak; zorg dat de locatie goed bereikbaar is en voldoet aan de aangegeven eisen."
+        ]
+      },
+      {
+        "id": "herroeping",
+        "title": "Artikel 6 — Herroepingsrecht",
+        "body": [
+          "Als consument heb je het recht de overeenkomst binnen {returnDays} dagen na ontvangst zonder opgave van redenen te ontbinden. Zie ons retourbeleid voor de volledige procedure en het modelformulier."
+        ]
+      },
+      {
+        "id": "garantie",
+        "title": "Artikel 7 — Garantie en conformiteit",
+        "body": [
+          "Wij leveren producten die voldoen aan de overeenkomst. Op onze producten geldt de wettelijke garantie, aangevuld met een fabrieksgarantie van {warrantyYears} jaar waar dit vermeld staat. Garantie vervalt bij onjuist gebruik, eigenhandige reparaties of normale slijtage."
+        ]
+      },
+      {
+        "id": "aansprakelijkheid",
+        "title": "Artikel 8 — Aansprakelijkheid",
+        "body": [
+          "Onze aansprakelijkheid is beperkt tot directe schade en tot maximaal het factuurbedrag van de betreffende bestelling, behoudens opzet of bewuste roekeloosheid. Aansprakelijkheid die wettelijk niet kan worden uitgesloten, blijft onverlet. Trainen gebeurt op eigen verantwoordelijkheid; raadpleeg bij twijfel eerst een arts.",
+          "Voor zakelijke klanten gelden aanvullende afspraken die in de offerte of het contract worden vastgelegd."
+        ]
+      },
+      {
+        "id": "klachten",
+        "title": "Artikel 9 — Klachten",
+        "body": [
+          "Klachten kun je melden via {email}. Wij reageren binnen 14 dagen. Komen we er samen niet uit, dan kun je het geschil voorleggen via het Europese ODR-platform (ec.europa.eu/consumers/odr)."
+        ]
+      },
+      {
+        "id": "recht",
+        "title": "Artikel 10 — Toepasselijk recht",
+        "body": [
+          "Op alle overeenkomsten is Nederlands recht van toepassing. Dwingend consumentenrecht van het land waar je woont (bijvoorbeeld België) blijft onverlet."
+        ]
+      }
+    ]
+  },
+  "cookies": {
+    "meta": {
+      "title": "Cookiebeleid",
+      "description": "Welke cookies Dadelsteen gebruikt en hoe je jouw voorkeuren beheert."
+    },
+    "title": "Cookiebeleid",
+    "intro": "We gebruiken cookies om de website te laten werken, het gebruik te meten en — alleen met jouw toestemming — om relevante communicatie te tonen.",
+    "manage": "Cookievoorkeuren aanpassen",
+    "sections": [
+      {
+        "id": "wat",
+        "title": "Wat zijn cookies?",
+        "body": [
+          "Cookies zijn kleine tekstbestanden die op jouw apparaat worden opgeslagen. Ze onthouden bijvoorbeeld wat in je winkelwagen zit of welke cookievoorkeuren je hebt gekozen."
+        ]
+      },
+      {
+        "id": "toestemming",
+        "title": "Jouw toestemming",
+        "body": [
+          "Bij je eerste bezoek vragen wij toestemming voor niet-noodzakelijke cookies. Je keuze wordt bewaard in de cookie dadelsteen_consent (12 maanden). Je kunt je keuze op elk moment wijzigen via de knop hieronder of via “Cookie-instellingen” in de footer."
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "id": "necessary",
+        "title": "Noodzakelijk",
+        "body": "Deze cookies zijn nodig om de website te laten werken (winkelwagen, inloggen, beveiliging, cookievoorkeuren). Ze kunnen niet worden uitgeschakeld.",
+        "cookies": [
+          { "name": "dadelsteen_consent", "purpose": "Onthoudt jouw cookievoorkeuren", "duration": "12 maanden" },
+          { "name": "NEXT_LOCALE", "purpose": "Onthoudt jouw taalkeuze", "duration": "12 maanden" },
+          { "name": "payload-token", "purpose": "Houdt je ingelogd in je account", "duration": "Sessie / 2 uur" },
+          { "name": "cartSecret", "purpose": "Koppelt je winkelwagen aan dit apparaat", "duration": "Sessie" }
+        ]
+      },
+      {
+        "id": "analytics",
+        "title": "Analytisch",
+        "body": "Helpen ons begrijpen hoe de website wordt gebruikt, zodat we hem kunnen verbeteren. Alleen actief na toestemming.",
+        "cookies": [
+          { "name": "_ga, _ga_*", "purpose": "Google Analytics: anonieme statistieken over bezoek en gedrag", "duration": "Tot 24 maanden" }
+        ]
+      },
+      {
+        "id": "marketing",
+        "title": "Marketing",
+        "body": "Worden gebruikt om advertenties te meten en relevanter te maken. Alleen actief na toestemming.",
+        "cookies": [
+          { "name": "_fbp", "purpose": "Meta Pixel: meten van advertentieresultaten", "duration": "3 maanden" },
+          { "name": "_gcl_au", "purpose": "Google Ads: meten van conversies", "duration": "3 maanden" }
+        ]
+      }
+    ]
+  },
+  "returns": {
+    "meta": {
+      "title": "Retourbeleid",
+      "description": "Retourneren en herroepen bij Dadelsteen: 14 dagen bedenktijd, garantie en de stappen."
+    },
+    "title": "Retourbeleid",
+    "intro": "Niet helemaal wat je zocht? Je hebt wettelijk recht op bedenktijd. Zo werkt retourneren bij Dadelsteen.",
+    "sections": [
+      {
+        "id": "bedenktijd",
+        "title": "Bedenktijd van {returnDays} dagen",
+        "body": [
+          "Als consument mag je een online bestelling binnen {returnDays} dagen na ontvangst zonder opgave van redenen annuleren. Bij meerdere producten in één levering gaat de termijn in op het moment dat je het laatste product ontvangt.",
+          "Wil je gebruikmaken van je herroepingsrecht? Laat het ons binnen die termijn weten via {email}, met je ordernummer en een duidelijke verklaring. Je mag hiervoor ook het Europese modelformulier gebruiken."
+        ]
+      },
+      {
+        "id": "retourneren",
+        "title": "Zo retourneer je",
+        "body": ["Na jouw melding sturen wij je een bevestiging en retourinstructies."],
+        "list": [
+          "Stuur het product binnen 14 dagen na je melding terug, bij voorkeur in de originele verpakking.",
+          "Bij grote producten, zoals de imbody, regelen wij in overleg het ophalen. Neem hiervoor contact met ons op.",
+          "De directe kosten van het terugsturen zijn voor jouw rekening, tenzij we anders hebben afgesproken."
+        ]
+      },
+      {
+        "id": "terugbetaling",
+        "title": "Terugbetaling",
+        "body": [
+          "Wij betalen het aankoopbedrag, inclusief standaard verzendkosten, uiterlijk 14 dagen na jouw melding terug, nadat wij het product hebben ontvangen of je hebt aangetoond het te hebben teruggestuurd. Terugbetaling gebeurt via dezelfde betaalmethode."
+        ]
+      },
+      {
+        "id": "waardevermindering",
+        "title": "Staat van het product",
+        "body": [
+          "Je mag het product uitproberen zoals je dat in een winkel ook zou doen. Voor waardevermindering door onzorgvuldig gebruik kunnen wij je aansprakelijk stellen. Producten die al zijn geïnstalleerd, beoordelen wij per geval."
+        ]
+      },
+      {
+        "id": "uitzonderingen",
+        "title": "Uitzonderingen",
+        "body": [
+          "Het herroepingsrecht geldt niet voor producten die volgens jouw specificaties zijn gemaakt of duidelijk gepersonaliseerd zijn, en niet voor zakelijke klanten, tenzij schriftelijk anders overeengekomen."
+        ]
+      },
+      {
+        "id": "garantie",
+        "title": "Defect of niet conform?",
+        "body": [
+          "Is een product defect of niet conform de overeenkomst? Dan val je niet onder de bedenktijd maar onder de wettelijke garantie (en de fabrieksgarantie van {warrantyYears} jaar waar vermeld). Meld het ons zo snel mogelijk via {email}; wij zorgen voor herstel, vervanging of terugbetaling."
+        ]
+      }
+    ]
+  }
+}

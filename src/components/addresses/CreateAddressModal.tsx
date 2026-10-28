@@ -1,6 +1,13 @@
 'use client'
-import { Button } from '@/components/ui/button'
+
+import type { Address } from '@/payload-types'
+import type { DefaultDocumentIDType } from 'payload'
+
+import { useTranslations } from 'next-intl'
 import React, { useState } from 'react'
+
+import { AddressForm } from '@/components/forms/AddressForm'
+import { btn } from '@/components/shop/ui'
 import {
   Dialog,
   DialogContent,
@@ -9,61 +16,51 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
-import { AddressForm } from '@/components/forms/AddressForm'
-import { Address } from '@/payload-types'
-import { DefaultDocumentIDType } from 'payload'
+import { cn } from '@/utilities/cn'
 
 type Props = {
   addressID?: DefaultDocumentIDType
   initialData?: Partial<Omit<Address, 'country'>> & { country?: string }
-  buttonText?: string
-  modalTitle?: string
+  variant?: 'primary' | 'link'
   callback?: (address: Partial<Address>) => void
   skipSubmission?: boolean
   disabled?: boolean
 }
 
+/** Opens the address form in a dialog, for adding (default) or editing (`addressID`). */
 export const CreateAddressModal: React.FC<Props> = ({
   addressID,
-  initialData,
-  buttonText = 'Add a new address',
-  modalTitle = 'Add a new address',
   callback,
-  skipSubmission,
   disabled,
+  initialData,
+  skipSubmission,
+  variant = 'primary',
 }) => {
+  const t = useTranslations('checkout.account.addresses')
   const [open, setOpen] = useState(false)
-  const handleOpenChange = (state: boolean) => {
-    setOpen(state)
-  }
-
-  const closeModal = () => {
-    setOpen(false)
-  }
-
-  const handleCallback = (data: Partial<Address>) => {
-    closeModal()
-
-    if (callback) {
-      callback(data)
-    }
-  }
+  const editing = Boolean(addressID)
 
   return (
-    <Dialog open={open} onOpenChange={handleOpenChange}>
+    <Dialog onOpenChange={setOpen} open={open}>
       <DialogTrigger asChild disabled={disabled}>
-        <Button variant={'outline'}>{buttonText}</Button>
+        <button className={variant === 'link' ? btn.link : cn(btn.outlineBronze)} type="button">
+          {editing ? t('edit') : t('add')}
+        </button>
       </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>{modalTitle}</DialogTitle>
-          <DialogDescription>This address will be connected to your account.</DialogDescription>
+      <DialogContent className="max-h-[90svh] overflow-y-auto rounded-none border-ink/10 bg-sand p-6 sm:max-w-xl md:p-8">
+        <DialogHeader className="border-b border-ink/10 pb-5">
+          <DialogTitle className="font-display text-2xl font-light text-ink">
+            {editing ? t('editTitle') : t('addTitle')}
+          </DialogTitle>
+          <DialogDescription className="text-sm text-olive-grey">{t('modalText')}</DialogDescription>
         </DialogHeader>
-
         <AddressForm
           addressID={addressID}
+          callback={(data) => {
+            setOpen(false)
+            callback?.(data)
+          }}
           initialData={initialData}
-          callback={handleCallback}
           skipSubmission={skipSubmission}
         />
       </DialogContent>

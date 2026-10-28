@@ -3,16 +3,15 @@ import NextImage from 'next/image'
 
 import { Reveal } from '@/components/ui/motion'
 import { Link } from '@/i18n/navigation'
-import { cn } from '@/utilities/cn'
+import { brand } from '@/lib/brandMedia'
 
 import type { HomeMedia } from './types'
 
-import { PlaceholderPanel, type PlaceholderTone, SceneArt } from './Placeholder'
 import { ArrowIcon, SectionLabel } from './primitives'
 
 type Item = { title: string; text: string; cta: string }
 
-const tones: PlaceholderTone[] = ['sand', 'stone', 'dusk', 'bronze']
+const defaultImages: HomeMedia[] = [brand.home, brand.rehab, brand.personalTraining, brand.office]
 
 type Props = {
   productSlug: string
@@ -44,14 +43,13 @@ export async function Audiences({ images = [], productSlug }: Props) {
 
         <ul className="mt-16 grid gap-5 sm:grid-cols-2 md:mt-24 lg:grid-cols-4 lg:gap-6">
           {items.map((item, i) => {
-            const image = images[i]
-            const dark = tones[i] === 'dusk' || tones[i] === 'bronze' || Boolean(image?.url)
+            const image = images[i]?.url ? images[i] : defaultImages[i % defaultImages.length]
             const href =
               i === 0
                 ? ({ params: { slug: productSlug }, pathname: '/products/[slug]' } as const)
                 : ('/business' as const)
             return (
-              <Reveal as="li" className={cn(i % 2 === 1 && 'lg:mt-20')} delay={i * 0.1} key={item.title}>
+              <Reveal as="li" delay={i * 0.1} key={item.title}>
                 <Link className="group block focus-visible:ring-offset-cream" href={href}>
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <div className="absolute inset-0 transition-transform duration-[1400ms] ease-[var(--ease-luxe)] group-hover:scale-[1.06]">
@@ -63,17 +61,10 @@ export async function Audiences({ images = [], productSlug }: Props) {
                           sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                           src={image.url}
                         />
-                      ) : (
-                        <PlaceholderPanel className="h-full w-full" tone={tones[i % tones.length]}>
-                          <SceneArt variant={i} />
-                        </PlaceholderPanel>
-                      )}
+                      ) : null}
                     </div>
                     <div
-                      className={cn(
-                        'absolute inset-0 flex flex-col justify-end p-6',
-                        dark ? 'bg-gradient-to-t from-ink/70 via-ink/10 to-transparent text-cream' : 'text-ink',
-                      )}
+                      className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-ink/75 via-ink/10 to-transparent p-6 text-cream"
                     >
                       <span className="font-display text-sm italic opacity-70">{String(i + 1).padStart(2, '0')}</span>
                       <h3 className="mt-2 text-2xl font-light leading-tight">{item.title}</h3>

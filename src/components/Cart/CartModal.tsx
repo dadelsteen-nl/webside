@@ -1,6 +1,11 @@
 'use client'
 
+import { useCart } from '@payloadcms/plugin-ecommerce/client/react'
+import { useTranslations } from 'next-intl'
+import { useEffect, useMemo, useState } from 'react'
+
 import { Price } from '@/components/Price'
+import { ArrowIcon, btn } from '@/components/shop/ui'
 import {
   Sheet,
   SheetContent,
@@ -9,180 +14,96 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
-import { useCart } from '@payloadcms/plugin-ecommerce/client/react'
-import { ShoppingCart } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import React, { useEffect, useMemo, useState } from 'react'
+import { Link, usePathname } from '@/i18n/navigation'
+import { cn } from '@/utilities/cn'
 
-import { DeleteItemButton } from './DeleteItemButton'
-import { EditItemQuantityButton } from './EditItemQuantityButton'
+import { CartLine } from './CartLine'
+import { OPEN_CART_EVENT } from './events'
 import { OpenCartButton } from './OpenCart'
-import { Button } from '@/components/ui/button'
-import { Product } from '@/payload-types'
 
+/** Slide-in cart drawer. Opens from the header button or via `openCart()` after add-to-cart. */
 export function CartModal() {
+  const t = useTranslations('shop.cart')
   const { cart } = useCart()
   const [isOpen, setIsOpen] = useState(false)
-
   const pathname = usePathname()
 
   useEffect(() => {
-    // Close the cart modal when the pathname changes.
     setIsOpen(false)
   }, [pathname])
 
-  const totalQuantity = useMemo(() => {
-    if (!cart || !cart.items || !cart.items.length) return undefined
-    return cart.items.reduce((quantity, item) => (item.quantity || 0) + quantity, 0)
-  }, [cart])
+  useEffect(() => {
+    const open = () => setIsOpen(true)
+    window.addEventListener(OPEN_CART_EVENT, open)
+    return () => window.removeEventListener(OPEN_CART_EVENT, open)
+  }, [])
+
+  const items = cart?.items ?? []
+  const totalQuantity = useMemo(
+    () => items.reduce((sum, item) => sum + (item.quantity || 0), 0) || undefined,
+    [items],
+  )
 
   return (
     <Sheet onOpenChange={setIsOpen} open={isOpen}>
       <SheetTrigger asChild>
-        <OpenCartButton quantity={totalQuantity} />
+        <OpenCartButton label={t('label')} quantity={totalQuantity} />
       </SheetTrigger>
 
-      <SheetContent className="flex flex-col">
-        <SheetHeader>
-          <SheetTitle>My Cart</SheetTitle>
-
-          <SheetDescription>Manage your cart here, add items to view the total.</SheetDescription>
+      <SheetContent className="w-full gap-0 border-ink/10 bg-sand p-0 sm:max-w-[28rem] [&>button:last-child]:top-7 [&>button:last-child]:right-6">
+        <SheetHeader className="border-b border-ink/10 px-6 py-6 md:px-8">
+          <SheetTitle className="font-display text-2xl font-light text-ink">
+            {t('title')}
+            {totalQuantity ? <span className="ml-2 font-sans text-sm text-olive-grey">({totalQuantity})</span> : null}
+          </SheetTitle>
+          <SheetDescription className="sr-only">{t('description')}</SheetDescription>
         </SheetHeader>
 
-        {!cart || cart?.items?.length === 0 ? (
-          <div className="text-center flex flex-col items-center gap-2">
-            <ShoppingCart className="h-16" />
-            <p className="text-center text-2xl font-bold">Your cart is empty.</p>
+        {!items.length ? (
+          <div className="flex grow flex-col items-center justify-center px-8 text-center">
+            <p className="font-display text-2xl font-light text-ink">{t('emptyTitle')}</p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-olive-grey">{t('emptyText')}</p>
+            <Link className={cn(btn.ink, 'mt-8')} href="/shop">
+              {t('toShop')}
+              <ArrowIcon />
+            </Link>
           </div>
         ) : (
-          <div className="grow flex px-4">
-            <div className="flex flex-col justify-between w-full">
-              <ul className="grow overflow-auto py-4">
-                {cart?.items?.map((item, i) => {
-                  const product = item.product
-                  const variant = item.variant
+          <>
+            <ul className="grow divide-y divide-ink/10 overflow-y-auto px-6 md:px-8">
+              {items.map((item, i) => (
+                <li key={item.id ?? i}>
+                  <CartLine item={item} />
+                </li>
+              ))}
+            </ul>
 
-                  if (typeof product !== 'object' || !item || !product || !product.slug)
-                    return <React.Fragment key={i} />
-
-                  const metaImage =
-                    product.meta?.image && typeof product.meta?.image === 'object'
-                      ? product.meta.image
-                      : undefined
-
-                  const firstGalleryImage =
-                    typeof product.gallery?.[0]?.image === 'object'
-                      ? product.gallery?.[0]?.image
-                      : undefined
-
-                  let image = firstGalleryImage || metaImage
-                  let price = product.priceInEUR
-
-                  const isVariant = Boolean(variant) && typeof variant === 'object'
-
-                  if (isVariant) {
-                    price = variant?.priceInEUR
-
-                    const imageVariant = product.gallery?.find((item) => {
-                      if (!item.variantOption) return false
-                      const variantOptionID =
-                        typeof item.variantOption === 'object'
-                          ? item.variantOption.id
-                          : item.variantOption
-
-                      const hasMatch = variant?.options?.some((option) => {
-                        if (typeof option === 'object') return option.id === variantOptionID
-                        else return option === variantOptionID
-                      })
-
-                      return hasMatch
-                    })
-
-                    if (imageVariant && typeof imageVariant.image === 'object') {
-                      image = imageVariant.image
-                    }
-                  }
-
-                  return (
-                    <li className="flex w-full flex-col" key={i}>
-                      <div className="relative flex w-full flex-row justify-between px-1 py-4">
-                        <div className="absolute z-40 -mt-2 ml-[55px]">
-                          <DeleteItemButton item={item} />
-                        </div>
-                        <Link
-                          className="z-30 flex flex-row space-x-4"
-                          href={`/products/${(item.product as Product)?.slug}`}
-                        >
-                          <div className="relative h-16 w-16 cursor-pointer overflow-hidden rounded-md border border-neutral-300 bg-neutral-300 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:bg-neutral-800">
-                            {image?.url && (
-                              <Image
-                                alt={image?.alt || product?.title || ''}
-                                className="h-full w-full object-cover"
-                                height={94}
-                                src={image.url}
-                                width={94}
-                              />
-                            )}
-                          </div>
-
-                          <div className="flex flex-1 flex-col text-base">
-                            <span className="leading-tight">{product?.title}</span>
-                            {isVariant && variant ? (
-                              <p className="text-sm text-neutral-500 dark:text-neutral-400 capitalize">
-                                {variant.options
-                                  ?.map((option) => {
-                                    if (typeof option === 'object') return option.label
-                                    return null
-                                  })
-                                  .join(', ')}
-                              </p>
-                            ) : null}
-                          </div>
-                        </Link>
-                        <div className="flex h-16 flex-col justify-between">
-                          {typeof price === 'number' && (
-                            <Price
-                              amount={price}
-                              className="flex justify-end space-y-2 text-right text-sm"
-                            />
-                          )}
-                          <div className="ml-auto flex h-9 flex-row items-center rounded-lg border">
-                            <EditItemQuantityButton item={item} type="minus" />
-                            <p className="w-6 text-center">
-                              <span className="w-full text-sm">{item.quantity}</span>
-                            </p>
-                            <EditItemQuantityButton item={item} type="plus" />
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  )
-                })}
-              </ul>
-
-              <div className="px-4">
-                <div className="py-4 text-sm text-neutral-500 dark:text-neutral-400">
-                  {typeof cart?.subtotal === 'number' && (
-                    <div className="mb-3 flex items-center justify-between border-b border-neutral-200 pb-1 pt-1 dark:border-neutral-700">
-                      <p>Total</p>
-                      <Price
-                        amount={cart?.subtotal}
-                        className="text-right text-base text-black dark:text-white"
-                      />
-                    </div>
-                  )}
-
-                  <Button asChild>
-                    <Link className="w-full" href="/checkout">
-                      Proceed to Checkout
-                    </Link>
-                  </Button>
+            <div className="border-t border-ink/10 bg-cream px-6 py-6 md:px-8">
+              <dl className="space-y-2 text-sm">
+                <div className="flex items-center justify-between text-olive-grey">
+                  <dt>{t('delivery')}</dt>
+                  <dd>{t('free')}</dd>
                 </div>
-              </div>
+                <div className="flex items-baseline justify-between">
+                  <dt className="text-ink">
+                    {t('subtotal')} <span className="text-xs text-olive-grey">{t('inclVat')}</span>
+                  </dt>
+                  <dd>
+                    {typeof cart?.subtotal === 'number' ? (
+                      <Price amount={cart.subtotal} className="font-display text-2xl font-light text-ink" />
+                    ) : null}
+                  </dd>
+                </div>
+              </dl>
+              <Link className={cn(btn.ink, 'mt-6 w-full')} href="/checkout">
+                {t('checkout')}
+                <ArrowIcon />
+              </Link>
+              <Link className={cn(btn.link, 'mt-4 flex w-full justify-center')} href="/cart">
+                {t('viewCart')}
+              </Link>
             </div>
-          </div>
+          </>
         )}
       </SheetContent>
     </Sheet>

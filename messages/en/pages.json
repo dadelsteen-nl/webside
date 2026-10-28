@@ -1,1 +1,339 @@
-{}
+{
+  "shared": {
+    "placeholderPhoto": "Image to follow",
+    "placeholderVideo": "Film to follow"
+  },
+  "demo": {
+    "meta": {
+      "title": "Book a demo",
+      "description": "Experience the imbody smart mirror for yourself: in our showroom, at your home or in a live video demo. Personal, 30 to 45 minutes and entirely without obligation."
+    },
+    "hero": {
+      "eyebrow": "Personal demo",
+      "title": "Experience <em>imbody</em> yourself",
+      "intro": "A mirror that coaches you is not something you read about on a screen. It is something you feel. Set aside a quiet moment and discover, at your own pace, what digital resistance and an AI coach mean for your training.",
+      "cta": "Choose a moment",
+      "meta": ["30–45 minutes", "Showroom, home or online", "No obligation"]
+    },
+    "options": {
+      "label": "Three ways",
+      "title": "Choose the demo <em>that suits you</em>",
+      "items": [
+        {
+          "key": "showroom",
+          "title": "In the showroom",
+          "text": "Visit by appointment and train a full session on an imbody set up for you. Take your time, ask anything, and enjoy a coffee afterwards.",
+          "meta": "By appointment"
+        },
+        {
+          "key": "at-home",
+          "title": "At your home",
+          "text": "We bring a unit to you. You see straight away how imbody fits your space, and together we find the best spot for it.",
+          "meta": "Across the Netherlands and Belgium"
+        },
+        {
+          "key": "online",
+          "title": "Online video demo",
+          "text": "A live walkthrough from your sofa. An advisor trains for you, answers your questions and shows you the app and programmes.",
+          "meta": "About 30 minutes"
+        }
+      ]
+    },
+    "expect": {
+      "label": "What to expect",
+      "title": "An introduction, <em>not a sales pitch</em>",
+      "items": [
+        {
+          "title": "30 to 45 minutes",
+          "text": "Enough time to really train and ask all your questions, without any rush."
+        },
+        {
+          "title": "Personal assessment",
+          "text": "We talk through your goals, experience and any injuries, so the demo is tailored to you."
+        },
+        {
+          "title": "Train with the AI coach",
+          "text": "Feel the resistance adapt to you and watch the coach follow your posture and tempo in real time."
+        },
+        {
+          "title": "Honest advice",
+          "text": "Placement, space, accessories and financing: clear advice, even if imbody turns out not to be right for you."
+        }
+      ]
+    },
+    "form": {
+      "label": "Request",
+      "title": "Plan <em>your demo</em>",
+      "intro": "Tell us your preferences. We confirm the moment personally, usually within one business day.",
+      "reassurance": ["Entirely without obligation", "Reply within one business day", "Your details stay with us"]
+    },
+    "faq": {
+      "label": "Frequently asked",
+      "title": "Good to know",
+      "items": [
+        {
+          "q": "What does a demo cost?",
+          "a": "Nothing. A demo in the showroom, at home or online is free of charge and you are not committing to anything."
+        },
+        {
+          "q": "What should I wear?",
+          "a": "Comfortable sportswear and clean trainers or socks. For a demo at home we need roughly 2 by 2 metres of free space."
+        },
+        {
+          "q": "Can I do the demo with my partner or team?",
+          "a": "We would love that. imbody supports multiple user profiles, so it helps if everyone who will be training experiences it straight away."
+        }
+      ]
+    }
+  },
+  "business": {
+    "meta": {
+      "title": "Business",
+      "description": "imbody for physiotherapy, gyms and PT studios, hotels, corporate wellness and wellness salons. Data-driven strength training in 1.4 m², with advice, installation and training."
+    },
+    "hero": {
+      "eyebrow": "For professionals",
+      "title": "Intelligent strength training <em>for your practice</em>",
+      "intro": "Whether you guide patients, want to retain members or offer guests something exceptional, imbody brings coached strength training to any space. Measurable, compact and without needing a trainer by its side at all times.",
+      "primary": "Request a proposal",
+      "secondary": "Book a business demo",
+      "stats": [
+        { "value": "1.4 m²", "label": "footprint" },
+        { "value": "120 kg", "label": "digital resistance" },
+        { "value": "400+", "label": "guided workouts" }
+      ]
+    },
+    "segments": {
+      "label": "Sectors",
+      "title": "Made for <em>your field</em>",
+      "items": [
+        {
+          "key": "physio",
+          "title": "Physiotherapy & rehabilitation",
+          "text": "Dose load to the kilo and track recovery objectively.",
+          "bullets": [
+            "Resistance from very light loads, built up in small increments",
+            "Motion analysis supports your observation during exercises",
+            "Progress per patient at a glance, for clear reporting"
+          ]
+        },
+        {
+          "key": "gym",
+          "title": "Gyms & PT studios",
+          "text": "A premium training station that stands out and pays its way.",
+          "bullets": [
+            "Five training modes, from eccentric to isokinetic",
+            "A new proposition for small-group and personal training",
+            "Members train independently with live technique feedback"
+          ]
+        },
+        {
+          "key": "hotel",
+          "title": "Hotels & holiday parks",
+          "text": "A fitness room that matches the standard of your rooms.",
+          "bullets": [
+            "Complete strength training without racks or loose weights",
+            "Silent in use, suited to suites and compact spaces",
+            "Guests train with guidance, even without staff on the floor"
+          ]
+        },
+        {
+          "key": "corporate",
+          "title": "Corporate wellness",
+          "text": "Wellbeing that employees actually use.",
+          "bullets": [
+            "Short sessions that fit between two meetings",
+            "A personal profile for every employee",
+            "A compact set-up in an office or quiet room"
+          ]
+        },
+        {
+          "key": "salon",
+          "title": "Wellness & beauty salons",
+          "text": "Extend your treatments with guided strength and posture work.",
+          "bullets": [
+            "Combine training with your existing treatment programmes",
+            "An elegant device that suits a refined interior",
+            "More revenue per square metre with a new package"
+          ]
+        }
+      ]
+    },
+    "why": {
+      "label": "Why imbody",
+      "title": "What it means <em>for your organisation</em>",
+      "items": [
+        {
+          "title": "Data-driven progress",
+          "text": "Every repetition is measured. Strength, volume and balance become visible, to you and to your client."
+        },
+        {
+          "title": "Small footprint",
+          "text": "A complete strength station in around 1.4 m². No weight racks, no reinforced flooring."
+        },
+        {
+          "title": "Engagement and retention",
+          "text": "Visible progress and varied programmes keep members and patients motivated."
+        },
+        {
+          "title": "Unattended training",
+          "text": "The AI coach watches posture and tempo, so people can train safely outside supervised hours."
+        },
+        {
+          "title": "Multiple profiles",
+          "text": "Every user has their own programme, history and settings on a single unit."
+        }
+      ]
+    },
+    "process": {
+      "label": "How it works",
+      "title": "From first conversation <em>to first session</em>",
+      "steps": [
+        {
+          "title": "Consultation",
+          "text": "We discuss your audience, space and ambitions, by phone or on site."
+        },
+        {
+          "title": "On-site demo",
+          "text": "Your team experiences imbody in its own setting, with your own clients or members."
+        },
+        {
+          "title": "Tailored proposal",
+          "text": "A clear offer, with volume pricing or leasing options on request."
+        },
+        {
+          "title": "Installation & training",
+          "text": "We deliver, install and teach your team everything needed to get started right away."
+        }
+      ]
+    },
+    "form": {
+      "label": "Business enquiry",
+      "title": "Tell us about <em>your organisation</em>",
+      "intro": "An advisor will contact you within one business day. You will receive a proposal that fits your space, audience and budget.",
+      "points": ["Volume pricing and leasing on request", "Demo at your own location", "Installation and team training included"]
+    },
+    "cta": {
+      "title": "Rather <em>try it first</em>?",
+      "text": "Book a business demo in our showroom or at your own location.",
+      "button": "Book a business demo"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About us",
+      "description": "Dadelsteen brings intelligent strength training with imbody to homes and businesses in the Netherlands and Belgium. Read our story and how we work."
+    },
+    "hero": {
+      "eyebrow": "About Dadelsteen",
+      "title": "Strength from <em>the core</em>",
+      "intro": "We believe getting stronger does not have to be a gym ritual. With intelligent technology, we bring coached strength training to the places where you live and work."
+    },
+    "story": {
+      "label": "Our story",
+      "title": "What a <em>date stone</em> taught us",
+      "paragraphs": [
+        "A date stone is small, unassuming and remarkably hard. It carries everything it needs to grow into a palm that withstands desert wind and drought. Strength that comes from within, patient and lasting.",
+        "That is how we see training. Not as quick results or heavy iron racks, but as a strong core that carries you for a lifetime: in your back, your posture and your energy.",
+        "Dadelsteen is a Dutch company with a single aim: making intelligent strength training accessible to homes and businesses in the Netherlands and Belgium. With personal advice, careful installation and support close by."
+      ],
+      "quote": "Getting stronger starts small. At the core."
+    },
+    "values": {
+      "label": "What we stand for",
+      "title": "Four <em>principles</em>",
+      "items": [
+        {
+          "title": "Strength as a foundation",
+          "text": "Muscle strength is the foundation of ageing well. That is why strength training is at the heart of what we do, at any age."
+        },
+        {
+          "title": "Technology that disappears",
+          "text": "The best technology does not draw attention. It guides, measures and motivates, and simply lets you train."
+        },
+        {
+          "title": "Calm at home",
+          "text": "A silent, elegant device that suits your interior, instead of a corner full of equipment."
+        },
+        {
+          "title": "Honest advice",
+          "text": "We recommend what suits you. Even if that means waiting a little longer or choosing something else."
+        }
+      ]
+    },
+    "work": {
+      "label": "How we work",
+      "title": "Personal, <em>from start to finish</em>",
+      "items": [
+        {
+          "title": "Personal advice",
+          "text": "In the showroom, at your home or online. We take time for your goals, your space and your questions."
+        },
+        {
+          "title": "Delivery & installation",
+          "text": "We deliver, assemble and calibrate imbody in the right spot, so you can start straight away."
+        },
+        {
+          "title": "Local support",
+          "text": "Questions, updates or service: you have a dedicated point of contact in the Netherlands and Belgium."
+        }
+      ]
+    },
+    "role": {
+      "label": "Our role",
+      "title": "We bring <em>imbody</em> to the Netherlands and Belgium",
+      "text": "imbody combines a smart mirror with digital resistance and an AI coach. We make sure you can experience it, buy it and use it with peace of mind for years: from the very first demo to service at home."
+    },
+    "media": {
+      "studio": "The showroom",
+      "team": "The team",
+      "film": "A day with imbody"
+    },
+    "facts": {
+      "label": "Company details",
+      "companyName": "Company name",
+      "kvk": "Chamber of Commerce (KvK)",
+      "vat": "VAT number",
+      "address": "Office",
+      "email": "Email"
+    },
+    "cta": {
+      "title": "Come and <em>meet us</em>",
+      "text": "Experience imbody during a personal demo, or simply ask us your question.",
+      "primary": "Book a demo",
+      "secondary": "Get in touch"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Get in touch with Dadelsteen about imbody: by email, phone or WhatsApp. We usually reply within one business day."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Let's <em>talk</em>",
+      "intro": "A question about imbody, your order or a business application? Send us a message or contact us directly. We are happy to help you think it through."
+    },
+    "details": {
+      "title": "Direct contact",
+      "email": "Email",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "whatsappButton": "Send a WhatsApp",
+      "whatsappMessage": "Hello Dadelsteen, I have a question about imbody.",
+      "address": "Address",
+      "hours": "Opening hours",
+      "response": "We usually reply within one business day."
+    },
+    "form": {
+      "title": "Send a <em>message</em>",
+      "intro": "Fill in the form and we will get back to you personally."
+    },
+    "map": {
+      "label": "Location",
+      "open": "Open in Google Maps",
+      "note": "Visits by appointment only, so we can give you our full attention.",
+      "demoLink": "Book a showroom visit"
+    }
+  }
+}

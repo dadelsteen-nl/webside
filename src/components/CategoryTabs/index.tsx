@@ -1,67 +1,44 @@
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
-import clsx from 'clsx'
-import React, { Suspense } from 'react'
+import { useTranslations } from 'next-intl'
 
-import { Item } from './Item'
+import { Link } from '@/i18n/navigation'
+import { cn } from '@/utilities/cn'
 
-async function List() {
-  const payload = await getPayload({ config: configPromise })
-  const categoriesData = await payload.find({
-    collection: 'categories',
-    sort: 'title',
-    select: {
-      title: true,
-      slug: true,
-    },
-  })
+export type ShopFilter = 'all' | 'device' | 'accessory'
 
-  const categories = categoriesData.docs?.map((category) => {
-    return {
-      href: `/shop/${category.slug}`,
-      title: category.title,
-    }
-  })
+/** Hairline category tabs for the shop (Toestellen / Accessoires) driven by `?type=`. */
+export function CategoryTabs({ active }: { active: ShopFilter }) {
+  const t = useTranslations('shop.shop')
+
+  const tabs: { key: ShopFilter; label: string }[] = [
+    { key: 'all', label: t('tabs.all') },
+    { key: 'device', label: t('tabs.devices') },
+    { key: 'accessory', label: t('tabs.accessories') },
+  ]
 
   return (
-    <React.Fragment>
-      <nav>
-        <ul className="flex gap-3">
-          <Item title="All" href="/shop" />
-          <Suspense fallback={null}>
-            {categories.map((category) => {
-              return <Item {...category} key={category.href} />
-            })}
-          </Suspense>
-        </ul>
-      </nav>
-    </React.Fragment>
-  )
-}
-
-const skeleton = 'mb-3 h-4 w-5/6 animate-pulse rounded'
-const activeAndTitles = 'bg-neutral-800 dark:bg-neutral-300'
-const items = 'bg-neutral-400 dark:bg-neutral-700'
-
-export function CategoryTabs() {
-  return (
-    <Suspense
-      fallback={
-        <div className="col-span-2 hidden h-[400px] w-full flex-none py-4 lg:block">
-          <div className={clsx(skeleton, activeAndTitles)} />
-          <div className={clsx(skeleton, activeAndTitles)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-          <div className={clsx(skeleton, items)} />
-        </div>
-      }
-    >
-      <List />
-    </Suspense>
+    <nav aria-label={t('tabsLabel')} className="border-b border-ink/10">
+      <ul className="-mb-px flex gap-8 overflow-x-auto">
+        {tabs.map((tab) => {
+          const isActive = tab.key === active
+          return (
+            <li key={tab.key}>
+              <Link
+                aria-current={isActive ? 'page' : undefined}
+                className={cn(
+                  'inline-block border-b py-4 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.22em] transition-colors duration-500 ease-[var(--ease-luxe)]',
+                  isActive
+                    ? 'border-bronze text-ink'
+                    : 'border-transparent text-olive-grey hover:text-ink',
+                )}
+                href={tab.key === 'all' ? '/shop' : { pathname: '/shop', query: { type: tab.key } }}
+                scroll={false}
+              >
+                {tab.label}
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </nav>
   )
 }

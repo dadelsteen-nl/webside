@@ -1,25 +1,26 @@
 'use client'
 
-import React from 'react'
 import { useAddresses } from '@payloadcms/plugin-ecommerce/client/react'
+import { useTranslations } from 'next-intl'
+import React from 'react'
+
 import { AddressItem } from '@/components/addresses/AddressItem'
 
 export const AddressListing: React.FC = () => {
+  const t = useTranslations('checkout.account.addresses')
   const { addresses } = useAddresses()
 
-  if (!addresses || addresses.length === 0) {
-    return <p>No addresses found.</p>
+  if (!addresses?.length) {
+    return <p className="border-y border-ink/10 py-8 text-sm text-olive-grey">{t('none')}</p>
   }
 
   return (
-    <div>
-      <ul className="flex flex-col gap-8">
-        {addresses.map((address) => (
-          <li key={address.id} className="border-b pb-8 last:border-none">
-            <AddressItem address={address} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="grid gap-5 sm:grid-cols-2">
+      {addresses.map((address) => (
+        <li key={address.id}>
+          <AddressItem address={address} />
+        </li>
+      ))}
+    </ul>
   )
 }

@@ -1,1 +1,60 @@
-{}
+{
+  "journal": {
+    "meta": {
+      "title": "Journal",
+      "description": "Verhalen, kennis en inspiratie over krachttraining thuis, herstel en het leven met een slimme home gym."
+    },
+    "eyebrow": "Journal",
+    "title": "Kennis en verhalen over kracht, rust en herstel",
+    "intro": "Praktische gidsen en rustige inspiratie voor wie thuis wil trainen — zonder ruis.",
+    "featured": "Nieuwste artikel",
+    "all": "Alle artikelen",
+    "readMore": "Lees artikel",
+    "minRead": "{minutes} min leestijd",
+    "empty": {
+      "title": "Binnenkort meer verhalen",
+      "body": "We werken aan de eerste artikelen. Kom snel terug, of boek alvast een demo.",
+      "cta": "Demo boeken"
+    },
+    "post": {
+      "back": "Terug naar het journal",
+      "by": "Door Dadelsteen",
+      "related": "Meer lezen",
+      "ctaLabel": "Ervaar het zelf",
+      "ctaTitle": "Voel hoe krachttraining thuis echt werkt",
+      "ctaBody": "Boek een persoonlijke demo en ontdek imbody in je eigen tempo.",
+      "ctaButton": "Demo boeken",
+      "breadcrumbHome": "Home"
+    }
+  },
+  "faq": {
+    "meta": {
+      "title": "Veelgestelde vragen",
+      "description": "Antwoorden op vragen over imbody, levering, installatie, betalen, retourneren en zakelijk gebruik."
+    },
+    "eyebrow": "Veelgestelde vragen",
+    "title": "Antwoorden, helder en eerlijk",
+    "intro": "Staat je vraag er niet bij? Ons team helpt je graag persoonlijk verder.",
+    "searchLabel": "Zoek in de veelgestelde vragen",
+    "searchPlaceholder": "Zoek een vraag…",
+    "all": "Alles",
+    "categoriesLabel": "Categorieën",
+    "results": "{count, plural, =0 {Geen resultaten} one {# resultaat} other {# resultaten}}",
+    "noResults": "Geen vragen gevonden voor “{query}”. Probeer een ander zoekwoord of neem contact op.",
+    "empty": "De veelgestelde vragen worden binnenkort toegevoegd.",
+    "categories": {
+      "product": "Product",
+      "shop": "Bestellen",
+      "delivery": "Levering",
+      "business": "Zakelijk",
+      "general": "Algemeen"
+    },
+    "contact": {
+      "label": "Persoonlijk advies",
+      "title": "Nog een vraag?",
+      "body": "Stuur ons een bericht of chat direct via WhatsApp. We reageren meestal binnen één werkdag.",
+      "whatsapp": "Chat via WhatsApp",
+      "contact": "Contact opnemen"
+    }
+  }
+}

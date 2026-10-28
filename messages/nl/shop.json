@@ -1,1 +1,109 @@
-{}
+{
+  "meta": {
+    "title": "Shop",
+    "description": "Ontdek de imbody Pro S smart mirror en de bijpassende accessoires. Gratis levering en installatie in Nederland en België."
+  },
+  "shop": {
+    "eyebrow": "De collectie",
+    "title": "Alles voor je <em>thuisstudio</em>",
+    "intro": "Eén toestel, een handvol zorgvuldig gekozen accessoires. Ontworpen om samen te werken, gemaakt om jarenlang mee te gaan.",
+    "tabsLabel": "Filter op categorie",
+    "tabs": {
+      "all": "Alles",
+      "devices": "Toestellen",
+      "accessories": "Accessoires"
+    },
+    "flagship": {
+      "eyebrow": "Het toestel",
+      "cta": "Bekijk het toestel",
+      "demo": "Demo boeken"
+    },
+    "devicesTitle": "Toestellen",
+    "accessoriesTitle": "Accessoires",
+    "accessoriesIntro": "Kleine toevoegingen die je training verdiepen — van meten tot mobiliseren.",
+    "empty": "Er zijn op dit moment geen producten in deze categorie.",
+    "inclVat": "incl. btw",
+    "view": "Bekijken",
+    "count": "{count, plural, one {# product} other {# producten}}"
+  },
+  "product": {
+    "breadcrumbShop": "Shop",
+    "inclVat": "incl. btw",
+    "quantity": "Aantal",
+    "decrease": "Aantal verlagen",
+    "increase": "Aantal verhogen",
+    "addToCart": "In winkelwagen",
+    "adding": "Toevoegen…",
+    "added": "Toegevoegd aan je winkelwagen",
+    "addError": "Toevoegen is niet gelukt. Probeer het opnieuw.",
+    "outOfStock": "Tijdelijk uitverkocht",
+    "lowStock": "Nog {count} op voorraad",
+    "inStock": "Op voorraad — levering binnen 2 weken",
+    "selectOption": "Kies een optie",
+    "bookDemo": "Demo boeken",
+    "businessQuote": "Zakelijke offerte",
+    "usps": {
+      "delivery": "Gratis levering & installatie in NL en BE",
+      "warranty": "2 jaar garantie",
+      "returns": "14 dagen bedenktijd",
+      "payment": "Veilig betalen met iDEAL, Bancontact of creditcard"
+    },
+    "features": {
+      "eyebrow": "Waarom het werkt",
+      "title": "Ontworpen rond jouw lichaam"
+    },
+    "specs": {
+      "eyebrow": "Specificaties",
+      "title": "De details"
+    },
+    "hotspots": {
+      "eyebrow": "Van dichtbij",
+      "title": "Elk detail met een reden",
+      "hint": "Tik op een punt voor meer informatie",
+      "close": "Sluiten"
+    },
+    "description": {
+      "eyebrow": "Over dit product"
+    },
+    "video": {
+      "eyebrow": "In beweging"
+    },
+    "related": {
+      "eyebrow": "Maak het compleet",
+      "title": "Past er goed bij"
+    },
+    "gallery": {
+      "label": "Productafbeeldingen",
+      "show": "Toon afbeelding {index}",
+      "previous": "Vorige afbeelding",
+      "next": "Volgende afbeelding"
+    }
+  },
+  "cart": {
+    "label": "Winkelwagen",
+    "title": "Je winkelwagen",
+    "description": "Controleer je artikelen en ga verder naar afrekenen.",
+    "close": "Sluiten",
+    "emptyTitle": "Je winkelwagen is nog leeg",
+    "emptyText": "Begin bij het toestel, of kies een accessoire dat je training verdiept.",
+    "toShop": "Naar de shop",
+    "subtotal": "Subtotaal",
+    "inclVat": "incl. btw",
+    "delivery": "Levering & installatie",
+    "free": "Gratis",
+    "checkout": "Afrekenen",
+    "viewCart": "Bekijk winkelwagen",
+    "remove": "Verwijderen",
+    "removeItem": "{title} verwijderen",
+    "decrease": "Aantal verlagen",
+    "increase": "Aantal verhogen",
+    "quantity": "Aantal",
+    "page": {
+      "eyebrow": "Winkelwagen",
+      "title": "Je selectie",
+      "summary": "Overzicht",
+      "continue": "Verder winkelen",
+      "secure": "Je rekent veilig af via Mollie."
+    }
+  }
+}

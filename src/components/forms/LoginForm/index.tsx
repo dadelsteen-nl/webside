@@ -1,96 +1,89 @@
 'use client'
 
-import { FormError } from '@/components/forms/FormError'
-import { FormItem } from '@/components/forms/FormItem'
-import { Message } from '@/components/Message'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { useAuth } from '@/providers/Auth'
-import Link from 'next/link'
+import { useLocale, useTranslations } from 'next-intl'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { getSafeRedirect } from 'payload/shared'
-import React, { useCallback, useRef } from 'react'
+import React, { useCallback, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-type FormData = {
-  email: string
-  password: string
-}
+import { Notice, TextField } from '@/components/account/fields'
+import { ArrowIcon, btn } from '@/components/shop/ui'
+import { Link } from '@/i18n/navigation'
+import { useAuth } from '@/providers/Auth'
+import { cn } from '@/utilities/cn'
+
+type FormData = { email: string; password: string }
 
 export const LoginForm: React.FC = () => {
+  const t = useTranslations('checkout.auth')
+  const ta = useTranslations('checkout.account')
+  const locale = useLocale()
   const searchParams = useSearchParams()
-  const allParams = searchParams.toString() ? `?${searchParams.toString()}` : ''
-  const redirect = useRef(
-    getSafeRedirect({
-      fallbackTo: '/account',
-      redirectTo: searchParams.get('redirect') ?? '',
-    }),
-  )
   const { login } = useAuth()
   const router = useRouter()
-  const [error, setError] = React.useState<null | string>(null)
+  const [error, setError] = useState<string | null>(null)
+  const redirectParam = searchParams.get('redirect') ?? ''
 
   const {
-    formState: { errors, isLoading },
+    formState: { errors, isSubmitting },
     handleSubmit,
     register,
   } = useForm<FormData>()
 
   const onSubmit = useCallback(
     async (data: FormData) => {
+      setError(null)
       try {
         await login(data)
-        router.push(redirect.current)
-      } catch (_) {
-        setError('There was an error with the credentials provided. Please try again.')
+        router.push(getSafeRedirect({ fallbackTo: `/${locale}/account`, redirectTo: redirectParam }))
+        router.refresh()
+      } catch {
+        setError(t('login.error'))
       }
     },
-    [login, router],
+    [locale, login, redirectParam, router, t],
   )
 
+  const query = redirectParam ? { redirect: redirectParam } : undefined
+
   return (
-    <form className="" onSubmit={handleSubmit(onSubmit)}>
-      <Message className="classes.message" error={error} />
-      <div className="flex flex-col gap-8">
-        <FormItem>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            {...register('email', { required: 'Email is required.' })}
-          />
-          {errors.email && <FormError message={errors.email.message} />}
-        </FormItem>
+    <form className="space-y-6" noValidate onSubmit={handleSubmit(onSubmit)}>
+      {searchParams.get('reason') === 'login' ? <Notice>{ta('loginRequired')}</Notice> : null}
+      {error ? <Notice tone="error">{error}</Notice> : null}
 
-        <FormItem>
-          <Label htmlFor="password">Password</Label>
-          <Input
-            id="password"
-            type="password"
-            {...register('password', { required: 'Please provide a password.' })}
-          />
-          {errors.password && <FormError message={errors.password.message} />}
-        </FormItem>
-
-        <div className="text-primary/70 mb-6 prose prose-a:hover:text-primary dark:prose-invert">
-          <p>
-            Forgot your password?{' '}
-            <Link href={`/forgot-password${allParams}`}>Click here to reset it</Link>
-          </p>
-        </div>
+      <TextField
+        autoComplete="email"
+        error={errors.email?.message}
+        id="email"
+        label={t('email')}
+        type="email"
+        {...register('email', { required: t('required') })}
+      />
+      <TextField
+        autoComplete="current-password"
+        error={errors.password?.message}
+        id="password"
+        label={t('password')}
+        type="password"
+        {...register('password', { required: t('required') })}
+      />
+      <div className="flex justify-end">
+        <Link className={btn.link} href={{ pathname: '/forgot-password', query }}>
+          {t('login.forgot')}
+        </Link>
       </div>
 
-      <div className="flex gap-4 justify-between">
-        <Button asChild variant="outline" size="lg">
-          <Link href={`/create-account${allParams}`} className="grow max-w-[50%]">
-            Create an account
-          </Link>
-        </Button>
-        <Button className="grow" disabled={isLoading} size="lg" type="submit" variant="default">
-          {isLoading ? 'Processing' : 'Continue'}
-        </Button>
-      </div>
+      <button className={cn(btn.ink, 'w-full')} disabled={isSubmitting} type="submit">
+        {isSubmitting ? t('processing') : t('login.submit')}
+        {isSubmitting ? null : <ArrowIcon />}
+      </button>
+
+      <p className="border-t border-ink/10 pt-6 text-sm text-olive-grey">
+        {t('login.noAccount')}{' '}
+        <Link className="text-ink underline decoration-bronze underline-offset-4" href={{ pathname: '/create-account', query }}>
+          {t('login.create')}
+        </Link>
+      </p>
     </form>
   )
 }

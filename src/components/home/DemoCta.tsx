@@ -1,11 +1,11 @@
 import { getTranslations } from 'next-intl/server'
+import NextImage from 'next/image'
 
-import { LogoIcon } from '@/components/icons/logo'
 import { Reveal, SplitLines } from '@/components/ui/motion'
 import { Link } from '@/i18n/navigation'
+import { brand } from '@/lib/brandMedia'
 import { cn } from '@/utilities/cn'
 
-import { Grain } from './Placeholder'
 import { ArrowIcon, buttonStyles, emphasis } from './primitives'
 
 export async function DemoCta({ whatsappNumber }: { whatsappNumber?: string | null }) {
@@ -18,15 +18,11 @@ export async function DemoCta({ whatsappNumber }: { whatsappNumber?: string | nu
       aria-labelledby="home-cta-title"
       className="relative isolate overflow-hidden bg-ink py-28 text-cream md:py-44"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-[radial-gradient(80%_120%_at_85%_110%,rgba(176,141,87,0.38),transparent_60%),radial-gradient(60%_80%_at_0%_0%,rgba(110,106,94,0.35),transparent_70%)]"
-      />
-      <Grain className="-z-10 opacity-[0.12] mix-blend-screen" />
-      <LogoIcon
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-[6vw] top-1/2 -z-10 h-[120%] w-auto -translate-y-1/2 text-cream/[0.05]"
-      />
+      <div aria-hidden="true" className="absolute inset-0 -z-10">
+        <NextImage alt="" className="object-cover" fill sizes="100vw" src={brand.livingRoom.url} />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/70 to-ink/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" />
+      </div>
 
       <div className="container">
         <Reveal>

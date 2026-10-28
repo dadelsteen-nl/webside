@@ -3,15 +3,17 @@ import NextImage from 'next/image'
 
 import { Reveal } from '@/components/ui/motion'
 import { Link } from '@/i18n/navigation'
+import { brand } from '@/lib/brandMedia'
 import { cn } from '@/utilities/cn'
 
 import type { HomePost } from './types'
 
 import { intlLocale } from './format'
-import { PlaceholderPanel, SceneArt } from './Placeholder'
 import { ArrowIcon, SectionLabel } from './primitives'
 
 /** Latest posts. Renders nothing when there are no posts. */
+const fallbackImages = [brand.stretch, brand.mirrorCoach, brand.apartment]
+
 export async function JournalPreview({ posts }: { posts?: HomePost[] | null }) {
   if (!posts?.length) return null
 
@@ -41,28 +43,22 @@ export async function JournalPreview({ posts }: { posts?: HomePost[] | null }) {
           </Link>
         </div>
 
-        <ul className="mt-14 grid gap-10 md:mt-20 md:grid-cols-3 md:gap-6">
+        <ul className={cn('mt-14 grid gap-10 md:mt-20 md:gap-6', posts.length >= 3 ? 'md:grid-cols-3' : 'md:grid-cols-2')}>
           {posts.slice(0, 3).map((post, i) => (
-            <Reveal as="li" className={cn(i === 1 && 'md:mt-16')} delay={i * 0.1} key={post.slug}>
+            <Reveal as="li" delay={i * 0.1} key={post.slug}>
               <Link
                 className="group block"
                 href={{ params: { slug: post.slug }, pathname: '/journal/[slug]' }}
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden bg-stone">
                   <div className="absolute inset-0 transition-transform duration-[1400ms] ease-[var(--ease-luxe)] group-hover:scale-[1.05]">
-                    {post.image?.url ? (
-                      <NextImage
-                        alt={post.image.alt || post.title}
-                        className="object-cover"
-                        fill
-                        sizes="(min-width: 768px) 33vw, 100vw"
-                        src={post.image.url}
-                      />
-                    ) : (
-                      <PlaceholderPanel className="h-full w-full" tone={i === 1 ? 'sand' : 'stone'}>
-                        <SceneArt variant={i + 2} />
-                      </PlaceholderPanel>
-                    )}
+                    <NextImage
+                      alt={post.image?.alt || post.title}
+                      className="object-cover"
+                      fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      src={post.image?.url || fallbackImages[i % fallbackImages.length]!.url}
+                    />
                   </div>
                 </div>
                 {post.publishedAt ? (

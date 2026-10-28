@@ -33,7 +33,7 @@ export function SectionLabel({
 
 /** Shared button-like link styles (uppercase, wide tracking). */
 export const buttonStyles = {
-  base: 'group inline-flex min-h-12 items-center justify-center gap-3 rounded-[var(--radius)] px-7 font-sans text-xs font-medium uppercase tracking-[0.18em] transition-[background-color,color,border-color] duration-500 ease-[var(--ease-luxe)]',
+  base: 'group inline-flex min-h-12 whitespace-nowrap items-center justify-center gap-3 rounded-[var(--radius)] px-7 font-sans text-xs font-medium uppercase tracking-[0.18em] transition-[background-color,color,border-color] duration-500 ease-[var(--ease-luxe)]',
   ink: 'bg-ink text-cream hover:bg-bronze-deep',
   cream: 'bg-cream text-ink hover:bg-stone',
   outlineLight: 'border border-cream/60 text-cream hover:border-cream hover:bg-cream/10',

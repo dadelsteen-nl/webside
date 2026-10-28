@@ -963,10 +963,24 @@ export interface Transaction {
         id?: string | null;
       }[]
     | null;
-  paymentMethod?: 'stripe' | null;
-  stripe?: {
-    customerID?: string | null;
-    paymentIntentID?: string | null;
+  paymentMethod?: 'mollie' | null;
+  mollie?: {
+    paymentID?: string | null;
+    reference?: string | null;
+    status?: string | null;
+    method?: string | null;
+    locale?: string | null;
+    vatNumber?: string | null;
+    shippingAddress?:
+      | {
+          [k: string]: unknown;
+        }
+      | unknown[]
+      | string
+      | number
+      | boolean
+      | null;
+    simulated?: boolean | null;
   };
   billingAddress?: {
     title?: string | null;
@@ -2065,11 +2079,17 @@ export interface TransactionsSelect<T extends boolean = true> {
         id?: T;
       };
   paymentMethod?: T;
-  stripe?:
+  mollie?:
     | T
     | {
-        customerID?: T;
-        paymentIntentID?: T;
+        paymentID?: T;
+        reference?: T;
+        status?: T;
+        method?: T;
+        locale?: T;
+        vatNumber?: T;
+        shippingAddress?: T;
+        simulated?: T;
       };
   billingAddress?:
     | T

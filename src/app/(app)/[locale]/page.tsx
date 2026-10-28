@@ -12,6 +12,7 @@ import { Gallery } from '@/components/home/Gallery'
 import { Hero } from '@/components/home/Hero'
 import { HomeStyles } from '@/components/home/HomeStyles'
 import { HowItWorks } from '@/components/home/HowItWorks'
+import { Included } from '@/components/home/Included'
 import { Intro } from '@/components/home/Intro'
 import { HomeJsonLd } from '@/components/home/JsonLd'
 import { JournalPreview } from '@/components/home/JournalPreview'
@@ -57,8 +58,10 @@ export default async function HomePage({ params }: Args) {
   ])
 
   const productSlug = data.product?.slug ?? HOME_PRODUCT_SLUG
-  const testimonials = data.testimonials.length
-    ? data.testimonials
+  // Seeded sample quotes are marked "(voorbeeld)" / "(sample)"; only real ones are shown
+  const realTestimonials = data.testimonials.filter((tm) => !/voorbeeld|sample/i.test(tm.role ?? ''))
+  const testimonials = realTestimonials.length
+    ? realTestimonials
     : (tTestimonials.raw('items') as HomeTestimonial[])
 
   return (
@@ -73,7 +76,6 @@ export default async function HomePage({ params }: Args) {
         video={data.hero.video}
       />
       <TrustStrip />
-      <Intro />
       <Spotlight
         canOrderDirect={data.canOrderDirect}
         hotspots={data.hotspots}
@@ -81,6 +83,8 @@ export default async function HomePage({ params }: Args) {
         product={data.product}
         productSlug={productSlug}
       />
+      <Intro productSlug={productSlug} />
+      <Included />
       <Technology />
       <HowItWorks />
       <Audiences productSlug={productSlug} />
@@ -88,7 +92,7 @@ export default async function HomePage({ params }: Args) {
         defaults={data.calc}
         imbodyPrice={data.product?.priceEUR ?? FALLBACK_IMBODY_PRICE}
       />
-      <Testimonials isPlaceholder={!data.testimonials.length} items={testimonials} />
+      <Testimonials items={testimonials} />
       <Gallery items={data.gallery} />
       <FaqPreview items={data.faqs} />
       <JournalPreview posts={data.posts} />

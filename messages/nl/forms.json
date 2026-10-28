@@ -1,1 +1,77 @@
-{}
+{
+  "fields": {
+    "name": "Naam",
+    "email": "E-mailadres",
+    "phone": "Telefoonnummer",
+    "companyName": "Bedrijfsnaam",
+    "contactName": "Contactpersoon",
+    "subject": "Onderwerp",
+    "message": "Bericht",
+    "messageOptional": "Bericht of vraag",
+    "preferredDate": "Voorkeursdatum",
+    "units": "Aantal toestellen (indicatie)"
+  },
+  "optional": "optioneel",
+  "website": "Laat dit veld leeg",
+  "consent": "Ik ga akkoord met de verwerking van mijn gegevens zoals beschreven in de <link>privacyverklaring</link>.",
+  "required": "Verplicht veld",
+  "submitting": "Bezig met versturen",
+  "errors": {
+    "required": "Dit veld is verplicht.",
+    "email": "Vul een geldig e-mailadres in.",
+    "phone": "Vul een geldig telefoonnummer in.",
+    "consent": "Geef toestemming zodat we contact met u kunnen opnemen.",
+    "date": "Kies een datum vanaf vandaag.",
+    "tooLong": "Deze tekst is te lang.",
+    "invalid": "Controleer dit veld.",
+    "rateLimit": "U heeft kort na elkaar meerdere aanvragen verstuurd. Probeer het over enkele minuten opnieuw.",
+    "server": "Er ging iets mis bij het versturen. Probeer het opnieuw of neem telefonisch contact op.",
+    "title": "Versturen mislukt"
+  },
+  "success": {
+    "eyebrow": "Verzonden",
+    "again": "Nog een bericht sturen"
+  },
+  "demo": {
+    "audienceLegend": "Ik vraag een demo aan als",
+    "audiences": {
+      "private": "Particulier",
+      "business": "Zakelijk"
+    },
+    "locationLegend": "Waar wilt u imbody ervaren?",
+    "locations": {
+      "showroom": { "label": "Showroom", "hint": "Op afspraak, met koffie" },
+      "at-home": { "label": "Bij u thuis", "hint": "Wij komen langs met een toestel" },
+      "online": { "label": "Online", "hint": "Live videodemo van 30 minuten" }
+    },
+    "timeLegend": "Voorkeur dagdeel",
+    "times": {
+      "morning": "Ochtend",
+      "afternoon": "Middag",
+      "evening": "Avond"
+    },
+    "submit": "Demo aanvragen",
+    "successTitle": "Dank u. Uw aanvraag is binnen.",
+    "successText": "U ontvangt direct een bevestiging per e-mail. Binnen één werkdag nemen we persoonlijk contact op om een moment af te stemmen."
+  },
+  "contact": {
+    "submit": "Bericht versturen",
+    "successTitle": "Dank voor uw bericht.",
+    "successText": "We hebben uw bericht ontvangen en reageren doorgaans binnen één werkdag. Een kopie staat in uw mailbox."
+  },
+  "b2b": {
+    "businessTypeLegend": "Type organisatie",
+    "businessTypes": {
+      "physio": "Fysiotherapie",
+      "clinic": "Kliniek / revalidatie",
+      "gym": "Gym / PT-studio",
+      "hotel": "Hotel / vakantiepark",
+      "corporate": "Bedrijfsfitness",
+      "salon": "Wellness / beauty",
+      "other": "Anders"
+    },
+    "submit": "Aanvraag versturen",
+    "successTitle": "Dank u. We nemen snel contact op.",
+    "successText": "Een adviseur belt of mailt u binnen één werkdag voor een eerste kennismaking. U ontvangt een bevestiging per e-mail."
+  }
+}

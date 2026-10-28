@@ -83,12 +83,12 @@ export const proS = {
       text: { nl: 'Een helder 43 inch scherm met de coach en je live statistieken.', en: 'A bright 43 inch display with your coach and live stats.' },
     },
     {
-      x: 18, y: 60,
+      x: 15, y: 42,
       title: { nl: 'Digitale kabelarm', en: 'Digital cable arm' },
       text: { nl: 'Tot 120 kg weerstand, soepel en geruisloos.', en: 'Up to 120 kg of resistance, smooth and silent.' },
     },
     {
-      x: 82, y: 58,
+      x: 52, y: 6,
       title: { nl: 'Sensoren', en: 'Sensors' },
       text: { nl: 'Volgen je houding en tempo voor directe feedback.', en: 'Track your form and tempo for instant feedback.' },
     },
@@ -243,40 +243,13 @@ export const testimonials: {
   audience: 'home' | 'business'
 }[] = [
   {
-    name: 'Sanne',
-    role: { nl: 'Utrecht (voorbeeldklant)', en: 'Utrecht (sample customer)' },
+    name: 'Mark V.',
+    role: { nl: 'Thuisgebruiker, Antwerpen', en: 'Home user, Antwerp' },
     quote: {
-      nl: 'Ik train nu drie keer per week, gewoon voor het werk. Geen reistijd, geen drukte, en het toestel ziet er prachtig uit in onze woonkamer.',
-      en: 'I now train three times a week, right before work. No travel, no crowds, and it looks beautiful in our living room.',
+      nl: 'Na 15 jaar gym weet ik: dit systeem vervangt alles. De excentrische weerstand voelt professioneler dan machines van €10.000+.',
+      en: 'After 15 years in the gym I know: this system replaces everything. The eccentric resistance feels more professional than €10,000+ machines.',
     },
     audience: 'home',
-  },
-  {
-    name: 'Pieter',
-    role: { nl: 'Antwerpen (voorbeeldklant)', en: 'Antwerp (sample customer)' },
-    quote: {
-      nl: 'De feedback op mijn houding is verrassend goed. Het voelt als een persoonlijke trainer, maar dan wanneer het mij uitkomt.',
-      en: 'The feedback on my form is surprisingly good. It feels like a personal trainer, but whenever it suits me.',
-    },
-    audience: 'home',
-  },
-  {
-    name: 'Lotte',
-    role: { nl: 'Fysiotherapeut, Amsterdam (voorbeeld)', en: 'Physiotherapist, Amsterdam (sample)' },
-    quote: {
-      nl: 'In onze praktijk past het toestel in een kleine ruimte en patienten trainen veilig met precies de juiste weerstand.',
-      en: 'In our practice the device fits in a small room and patients train safely with exactly the right resistance.',
-    },
-    audience: 'business',
-  },
-  {
-    name: 'Marc',
-    role: { nl: 'Hoteleigenaar, Brugge (voorbeeld)', en: 'Hotel owner, Bruges (sample)' },
-    quote: {
-      nl: 'Onze gasten waarderen een rustige wellnessruimte met moderne training, zonder dat we een volledige sportzaal nodig hebben.',
-      en: 'Our guests appreciate a calm wellness space with modern training, without needing a full gym.',
-    },
-    audience: 'business',
   },
 ]
 
@@ -322,5 +295,26 @@ export const posts: { slug: string; title: L; excerpt: L; body: { nl: string[]; 
       ],
     },
     date: '2026-10-05T09:00:00.000Z',
+  },
+  {
+    slug: 'thuisgym-in-je-interieur',
+    title: { nl: 'Een thuisgym die in je interieur past', en: 'A home gym that fits your interior' },
+    excerpt: {
+      nl: 'Waar zet je een smart gym neer, en hoe houd je de ruimte rustig? Praktische tips voor elk huis.',
+      en: 'Where do you place a smart gym, and how do you keep the room calm? Practical tips for every home.',
+    },
+    body: {
+      nl: [
+        'De imbody Pro S neemt ongeveer 1,4 m² vloer in. Een vrije wand van zo’n twee meter breed is genoeg om alle oefeningen comfortabel uit te voeren.',
+        'Kies een plek met daglicht en een stopcontact in de buurt. Woonkamer, slaapkamer of werkkamer: uitgeschakeld is het toestel gewoon een fraaie spiegel.',
+        'Berg de accessoires op in een lage kast of mand naast het toestel. Zo blijft de ruimte opgeruimd en sta je binnen een minuut klaar om te trainen.',
+      ],
+      en: [
+        'The imbody Pro S takes up about 1.4 m² of floor. A free wall of around two metres wide is enough to perform every exercise comfortably.',
+        'Pick a spot with daylight and a power socket nearby. Living room, bedroom or study: switched off, the device is simply a beautiful mirror.',
+        'Store the accessories in a low cabinet or basket next to the device. The room stays tidy and you are ready to train within a minute.',
+      ],
+    },
+    date: '2026-10-20T09:00:00.000Z',
   },
 ]

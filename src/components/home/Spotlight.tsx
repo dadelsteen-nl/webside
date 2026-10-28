@@ -88,7 +88,7 @@ export async function Spotlight({ canOrderDirect, hotspots, image, product, prod
               </p>
             ) : null}
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 className={cn(buttonStyles.base, buttonStyles.outlineBronze)}
                 href={{ params: { slug: productSlug }, pathname: '/products/[slug]' }}

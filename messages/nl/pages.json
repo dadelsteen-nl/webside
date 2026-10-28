@@ -1,1 +1,339 @@
-{}
+{
+  "shared": {
+    "placeholderPhoto": "Beeld volgt",
+    "placeholderVideo": "Film volgt"
+  },
+  "demo": {
+    "meta": {
+      "title": "Demo aanvragen",
+      "description": "Ervaar de imbody smart mirror zelf: in onze showroom, bij u thuis of via een live videodemo. Persoonlijk, 30 tot 45 minuten en geheel vrijblijvend."
+    },
+    "hero": {
+      "eyebrow": "Persoonlijke demo",
+      "title": "Ervaar <em>imbody</em> zelf",
+      "intro": "Een spiegel die u coacht, leest u niet op een scherm. Die voelt u. Plan een rustig moment en ontdek in uw eigen tempo wat digitale weerstand en een AI-coach voor uw training betekenen.",
+      "cta": "Direct een moment kiezen",
+      "meta": ["30–45 minuten", "Showroom, thuis of online", "Vrijblijvend"]
+    },
+    "options": {
+      "label": "Drie manieren",
+      "title": "Kies de demo <em>die bij u past</em>",
+      "items": [
+        {
+          "key": "showroom",
+          "title": "In de showroom",
+          "text": "Kom langs op afspraak en train een sessie op een opgestelde imbody. U krijgt de ruimte, de rust en na afloop een kop koffie.",
+          "meta": "Op afspraak"
+        },
+        {
+          "key": "at-home",
+          "title": "Bij u thuis",
+          "text": "We komen met een toestel naar u toe. Zo ziet u meteen hoe imbody in uw ruimte valt en bepalen we samen de beste plek.",
+          "meta": "In Nederland en België"
+        },
+        {
+          "key": "online",
+          "title": "Online videodemo",
+          "text": "Een live rondleiding vanaf uw bank. Een adviseur traint voor u, beantwoordt uw vragen en laat de app en de programma's zien.",
+          "meta": "Ongeveer 30 minuten"
+        }
+      ]
+    },
+    "expect": {
+      "label": "Wat u kunt verwachten",
+      "title": "Een kennismaking, <em>geen verkooppraatje</em>",
+      "items": [
+        {
+          "title": "30 tot 45 minuten",
+          "text": "Genoeg tijd om echt te trainen en al uw vragen te stellen, zonder haast."
+        },
+        {
+          "title": "Persoonlijke intake",
+          "text": "We bespreken uw doelen, ervaring en eventuele blessures, zodat de demo bij u aansluit."
+        },
+        {
+          "title": "Train met de AI-coach",
+          "text": "Voel hoe de weerstand meebeweegt en zie hoe de coach uw houding en tempo live volgt."
+        },
+        {
+          "title": "Eerlijk advies",
+          "text": "Plaatsing, ruimte, accessoires en financiering: u krijgt helder advies, ook als imbody niet bij u past."
+        }
+      ]
+    },
+    "form": {
+      "label": "Aanvraag",
+      "title": "Plan <em>uw demo</em>",
+      "intro": "Laat weten wat uw voorkeur heeft. We bevestigen het moment persoonlijk, meestal binnen één werkdag.",
+      "reassurance": ["Geheel vrijblijvend", "Reactie binnen één werkdag", "Uw gegevens blijven bij ons"]
+    },
+    "faq": {
+      "label": "Veelgestelde vragen",
+      "title": "Goed om te weten",
+      "items": [
+        {
+          "q": "Wat kost een demo?",
+          "a": "Niets. Een demo in de showroom, bij u thuis of online is kosteloos en u zit nergens aan vast."
+        },
+        {
+          "q": "Wat trek ik aan?",
+          "a": "Comfortabele sportkleding en schone sportschoenen of sokken. Voor een demo aan huis hebben we ongeveer 2 bij 2 meter vrije ruimte nodig."
+        },
+        {
+          "q": "Kan ik de demo samen met mijn partner of team doen?",
+          "a": "Graag zelfs. imbody werkt met meerdere gebruikersprofielen, dus het is waardevol als iedereen die gaat trainen het meteen ervaart."
+        }
+      ]
+    }
+  },
+  "business": {
+    "meta": {
+      "title": "Zakelijk",
+      "description": "imbody voor fysiotherapie, gyms en PT-studio's, hotels, bedrijfsfitness en wellnesssalons. Datagedreven krachttraining op 1,4 m², met advies, installatie en training."
+    },
+    "hero": {
+      "eyebrow": "Voor professionals",
+      "title": "Intelligente krachttraining <em>voor uw praktijk</em>",
+      "intro": "Of u nu patiënten begeleidt, leden wilt binden of gasten iets bijzonders wilt bieden: imbody brengt begeleide krachttraining naar elke ruimte. Meetbaar, compact en zonder dat er altijd een trainer naast hoeft te staan.",
+      "primary": "Offerte aanvragen",
+      "secondary": "Zakelijke demo plannen",
+      "stats": [
+        { "value": "1,4 m²", "label": "vloeroppervlak" },
+        { "value": "120 kg", "label": "digitale weerstand" },
+        { "value": "400+", "label": "begeleide workouts" }
+      ]
+    },
+    "segments": {
+      "label": "Sectoren",
+      "title": "Gemaakt voor <em>uw vakgebied</em>",
+      "items": [
+        {
+          "key": "physio",
+          "title": "Fysiotherapie & revalidatie",
+          "text": "Doseer belasting tot op de kilo en volg herstel objectief.",
+          "bullets": [
+            "Weerstand vanaf een zeer lage belasting, in kleine stappen op te bouwen",
+            "Bewegingsanalyse ondersteunt uw observatie tijdens oefeningen",
+            "Voortgang per patiënt inzichtelijk, voor heldere verslaglegging"
+          ]
+        },
+        {
+          "key": "gym",
+          "title": "Gyms & PT-studio's",
+          "text": "Een premium trainingsplek die opvalt en zichzelf terugverdient.",
+          "bullets": [
+            "Vijf trainingsmodi, van excentrisch tot isokinetisch",
+            "Een nieuwe propositie voor small-group en personal training",
+            "Leden trainen zelfstandig met live feedback op hun techniek"
+          ]
+        },
+        {
+          "key": "hotel",
+          "title": "Hotels & vakantieparken",
+          "text": "Een fitnessruimte op het niveau van uw kamers.",
+          "bullets": [
+            "Volwaardige krachttraining zonder rekken en losse gewichten",
+            "Stil in gebruik, geschikt voor suites en kleine ruimtes",
+            "Gasten trainen begeleid, ook zonder personeel op de vloer"
+          ]
+        },
+        {
+          "key": "corporate",
+          "title": "Bedrijfsfitness",
+          "text": "Vitaliteit die medewerkers daadwerkelijk gebruiken.",
+          "bullets": [
+            "Korte sessies die passen tussen twee afspraken door",
+            "Een persoonlijk profiel voor iedere medewerker",
+            "Compacte opstelling in een kantoor of stilteruimte"
+          ]
+        },
+        {
+          "key": "salon",
+          "title": "Wellness- & beautysalons",
+          "text": "Breid uw behandelingen uit met begeleide kracht en houding.",
+          "bullets": [
+            "Combineer training met uw bestaande behandelprogramma's",
+            "Een elegant toestel dat past in een verzorgd interieur",
+            "Extra omzet per vierkante meter met een nieuw arrangement"
+          ]
+        }
+      ]
+    },
+    "why": {
+      "label": "Waarom imbody",
+      "title": "Wat het betekent <em>voor uw organisatie</em>",
+      "items": [
+        {
+          "title": "Datagedreven voortgang",
+          "text": "Elke herhaling wordt gemeten. Kracht, volume en balans worden zichtbaar, voor u én voor uw klant."
+        },
+        {
+          "title": "Kleine voetafdruk",
+          "text": "Een compleet krachtstation op circa 1,4 m². Geen gewichtenrek, geen extra vloerversteviging."
+        },
+        {
+          "title": "Binding en retentie",
+          "text": "Zichtbare vooruitgang en afwisselende programma's houden leden en patiënten gemotiveerd."
+        },
+        {
+          "title": "Zelfstandig trainen",
+          "text": "De AI-coach bewaakt houding en tempo, zodat er ook buiten begeleide uren veilig getraind kan worden."
+        },
+        {
+          "title": "Meerdere profielen",
+          "text": "Iedere gebruiker heeft een eigen programma, historie en instellingen op één toestel."
+        }
+      ]
+    },
+    "process": {
+      "label": "Werkwijze",
+      "title": "Van eerste gesprek <em>tot eerste training</em>",
+      "steps": [
+        {
+          "title": "Kennismaking",
+          "text": "We bespreken uw doelgroep, ruimte en ambities, telefonisch of op locatie."
+        },
+        {
+          "title": "Demo op locatie",
+          "text": "Uw team ervaart imbody in de eigen omgeving, met uw eigen cliënten of leden."
+        },
+        {
+          "title": "Voorstel op maat",
+          "text": "Een helder aanbod, op aanvraag met staffelprijzen of leasemogelijkheden."
+        },
+        {
+          "title": "Installatie & training",
+          "text": "Wij leveren, installeren en leren uw team alles wat nodig is om direct te starten."
+        }
+      ]
+    },
+    "form": {
+      "label": "Zakelijke aanvraag",
+      "title": "Vertel ons over <em>uw organisatie</em>",
+      "intro": "Een adviseur neemt binnen één werkdag contact met u op. U ontvangt een voorstel dat past bij uw ruimte, doelgroep en budget.",
+      "points": ["Staffelprijzen en lease op aanvraag", "Demo op uw eigen locatie", "Installatie en teamtraining inbegrepen"]
+    },
+    "cta": {
+      "title": "Liever eerst <em>zelf ervaren</em>?",
+      "text": "Plan een zakelijke demo in onze showroom of op uw eigen locatie.",
+      "button": "Zakelijke demo plannen"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Over ons",
+      "description": "Dadelsteen brengt intelligente krachttraining met imbody naar huizen en bedrijven in Nederland en België. Lees ons verhaal en hoe we werken."
+    },
+    "hero": {
+      "eyebrow": "Over Dadelsteen",
+      "title": "Kracht vanuit <em>de kern</em>",
+      "intro": "Wij geloven dat sterk worden geen sportschoolritueel hoeft te zijn. Met intelligente technologie brengen we begeleide krachttraining naar de plekken waar u leeft en werkt."
+    },
+    "story": {
+      "label": "Ons verhaal",
+      "title": "Wat een <em>dadelsteen</em> ons leerde",
+      "paragraphs": [
+        "Een dadelsteen is klein, onopvallend en ijzersterk. Hij draagt alles in zich om uit te groeien tot een palm die woestijnwind en droogte doorstaat. Kracht die van binnenuit komt, geduldig en blijvend.",
+        "Zo kijken wij naar training. Niet naar snelle resultaten of zware ijzeren rekken, maar naar een sterke kern die u een leven lang draagt: in uw rug, uw houding en uw energie.",
+        "Dadelsteen is een Nederlands bedrijf met één doel: intelligente krachttraining bereikbaar maken voor huizen en bedrijven in Nederland en België. Met persoonlijk advies, zorgvuldige installatie en ondersteuning dichtbij."
+      ],
+      "quote": "Sterk worden begint klein. Bij de kern."
+    },
+    "values": {
+      "label": "Waar we voor staan",
+      "title": "Vier <em>uitgangspunten</em>",
+      "items": [
+        {
+          "title": "Kracht als basis",
+          "text": "Spierkracht is de fundering van gezond ouder worden. Daarom staat krachttraining bij ons centraal, voor iedere leeftijd."
+        },
+        {
+          "title": "Technologie die verdwijnt",
+          "text": "De beste techniek valt niet op. Ze begeleidt, meet en motiveert, en laat u vooral trainen."
+        },
+        {
+          "title": "Rust in huis",
+          "text": "Een stil, elegant toestel dat past in uw interieur, in plaats van een hoek vol apparatuur."
+        },
+        {
+          "title": "Eerlijk advies",
+          "text": "We adviseren wat bij u past. Ook als dat betekent dat u nog even wacht of iets anders kiest."
+        }
+      ]
+    },
+    "work": {
+      "label": "Hoe we werken",
+      "title": "Persoonlijk, <em>van begin tot eind</em>",
+      "items": [
+        {
+          "title": "Persoonlijk advies",
+          "text": "In de showroom, bij u thuis of online. We nemen de tijd voor uw doelen, uw ruimte en uw vragen."
+        },
+        {
+          "title": "Levering & installatie",
+          "text": "Wij bezorgen, monteren en kalibreren imbody op de juiste plek, zodat u direct kunt beginnen."
+        },
+        {
+          "title": "Lokale ondersteuning",
+          "text": "Vragen, updates of service: u heeft een vast aanspreekpunt in Nederland en België."
+        }
+      ]
+    },
+    "role": {
+      "label": "Onze rol",
+      "title": "Wij brengen <em>imbody</em> naar Nederland en België",
+      "text": "imbody combineert een slimme spiegel met digitale weerstand en een AI-coach. Wij zorgen ervoor dat u het toestel kunt ervaren, aanschaffen en jarenlang zorgeloos gebruiken: van de eerste demo tot service aan huis."
+    },
+    "media": {
+      "studio": "De showroom",
+      "team": "Het team",
+      "film": "Een dag met imbody"
+    },
+    "facts": {
+      "label": "Bedrijfsgegevens",
+      "companyName": "Bedrijfsnaam",
+      "kvk": "KvK-nummer",
+      "vat": "Btw-nummer",
+      "address": "Vestiging",
+      "email": "E-mail"
+    },
+    "cta": {
+      "title": "Kom <em>kennismaken</em>",
+      "text": "Ervaar imbody tijdens een persoonlijke demo, of stel ons gewoon uw vraag.",
+      "primary": "Demo aanvragen",
+      "secondary": "Contact opnemen"
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact",
+      "description": "Neem contact op met Dadelsteen over imbody: per e-mail, telefoon of WhatsApp. We reageren doorgaans binnen één werkdag."
+    },
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Laten we <em>kennismaken</em>",
+      "intro": "Een vraag over imbody, uw bestelling of een zakelijke toepassing? Stuur ons een bericht of neem direct contact op. We denken graag met u mee."
+    },
+    "details": {
+      "title": "Direct contact",
+      "email": "E-mail",
+      "phone": "Telefoon",
+      "whatsapp": "WhatsApp",
+      "whatsappButton": "Stuur een WhatsApp",
+      "whatsappMessage": "Hallo Dadelsteen, ik heb een vraag over imbody.",
+      "address": "Adres",
+      "hours": "Openingstijden",
+      "response": "We reageren doorgaans binnen één werkdag."
+    },
+    "form": {
+      "title": "Stuur een <em>bericht</em>",
+      "intro": "Vul het formulier in en we nemen persoonlijk contact met u op."
+    },
+    "map": {
+      "label": "Locatie",
+      "open": "Openen in Google Maps",
+      "note": "Bezoek uitsluitend op afspraak, zodat we alle tijd voor u hebben.",
+      "demoLink": "Plan een showroombezoek"
+    }
+  }
+}

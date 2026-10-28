@@ -1,4 +1,5 @@
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { resendAdapter } from '@payloadcms/email-resend'
 import {
   BoldFeature,
   EXPERIMENTAL_TableFeature,
@@ -99,7 +100,14 @@ export default buildConfig({
       ]
     },
   }),
-  //email: nodemailerAdapter(),
+  // Resend when RESEND_API_KEY is set; otherwise Payload's default console email logging.
+  email: process.env.RESEND_API_KEY
+    ? resendAdapter({
+        apiKey: process.env.RESEND_API_KEY,
+        defaultFromAddress: process.env.EMAIL_FROM || 'hallo@dadelsteen.nl',
+        defaultFromName: 'Dadelsteen',
+      })
+    : undefined,
   endpoints: [],
   globals: [SiteSettings, Homepage, Header, Footer],
   i18n: {

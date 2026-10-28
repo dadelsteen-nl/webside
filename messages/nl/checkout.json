@@ -1,1 +1,252 @@
-{}
+{
+  "meta": {
+    "cart": "Winkelwagen",
+    "checkout": "Afrekenen",
+    "confirm": "Bestelling bevestigen",
+    "order": "Bestelling {id}",
+    "orders": "Bestellingen",
+    "account": "Account",
+    "addresses": "Adressen",
+    "login": "Inloggen",
+    "createAccount": "Account aanmaken",
+    "forgotPassword": "Wachtwoord vergeten",
+    "findOrder": "Bestelling zoeken",
+    "logout": "Uitloggen"
+  },
+  "checkout": {
+    "eyebrow": "Afrekenen",
+    "title": "Bijna van jou",
+    "contact": {
+      "title": "Contactgegevens",
+      "intro": "Bestel als gast — we sturen je bevestiging naar dit adres.",
+      "email": "E-mailadres",
+      "haveAccount": "Heb je al een account?",
+      "login": "Inloggen",
+      "loggedInAs": "Ingelogd als {email}",
+      "notYou": "Niet jij?",
+      "logout": "Uitloggen"
+    },
+    "address": {
+      "title": "Bezorg- en factuuradres",
+      "intro": "We leveren en installeren gratis in Nederland en België.",
+      "saved": "Opgeslagen adressen",
+      "useSaved": "Gebruik dit adres",
+      "newAddress": "Nieuw adres invullen",
+      "firstName": "Voornaam",
+      "lastName": "Achternaam",
+      "addressLine1": "Straat en huisnummer",
+      "addressLine2": "Toevoeging (optioneel)",
+      "postalCode": "Postcode",
+      "city": "Plaats",
+      "country": "Land",
+      "phone": "Telefoonnummer",
+      "phoneHint": "Voor het inplannen van levering en installatie.",
+      "business": "Ik bestel zakelijk",
+      "company": "Bedrijfsnaam",
+      "vatNumber": "Btw-nummer (optioneel)",
+      "required": "Dit veld is verplicht.",
+      "invalidEmail": "Vul een geldig e-mailadres in.",
+      "invalidPostalCode": "Vul een geldige postcode in."
+    },
+    "countries": {
+      "NL": "Nederland",
+      "BE": "België",
+      "DE": "Duitsland",
+      "LU": "Luxemburg"
+    },
+    "payment": {
+      "title": "Betaalmethode",
+      "intro": "Je wordt doorgestuurd naar de beveiligde betaalpagina van Mollie.",
+      "simulation": "Testmodus: er is nog geen Mollie-sleutel ingesteld. Betalingen worden gesimuleerd.",
+      "disabled": "Betalingen zijn nog niet geactiveerd. Neem contact met ons op om je bestelling te plaatsen."
+    },
+    "terms": "Ik ga akkoord met de <terms>algemene voorwaarden</terms> en het <privacy>privacybeleid</privacy>.",
+    "termsRequired": "Ga akkoord met de voorwaarden om verder te gaan.",
+    "submit": "Betalen {amount}",
+    "submitting": "Een moment…",
+    "redirecting": "Je wordt doorgestuurd naar Mollie…",
+    "secure": "Beveiligde betaling via Mollie",
+    "summary": {
+      "title": "Je bestelling",
+      "quantity": "Aantal: {count}",
+      "subtotal": "Subtotaal",
+      "delivery": "Levering & installatie",
+      "free": "Gratis",
+      "total": "Totaal",
+      "vatNote": "Alle prijzen zijn inclusief 21% btw."
+    },
+    "empty": {
+      "title": "Je winkelwagen is leeg",
+      "text": "Voeg eerst iets toe om af te rekenen.",
+      "cta": "Naar de shop"
+    },
+    "errors": {
+      "generic": "Er ging iets mis bij het starten van de betaling. Probeer het opnieuw.",
+      "outOfStock": "Een of meer artikelen zijn niet meer op voorraad.",
+      "incomplete": "Vul alle verplichte velden in."
+    }
+  },
+  "confirm": {
+    "eyebrow": "Betaling",
+    "checking": "We controleren je betaling…",
+    "pendingTitle": "Je betaling wordt verwerkt",
+    "pendingText": "Dit duurt meestal maar enkele seconden. Je kunt deze pagina open laten.",
+    "failedTitle": "De betaling is niet gelukt",
+    "failedText": "Er is niets afgeschreven. Je winkelwagen staat nog voor je klaar.",
+    "cancelledTitle": "Betaling geannuleerd",
+    "expiredTitle": "De betaling is verlopen",
+    "retry": "Opnieuw proberen",
+    "successTitle": "Bedankt — je betaling is ontvangen",
+    "successText": "Je ontvangt binnen enkele minuten een bevestiging per e-mail.",
+    "missingTitle": "We konden deze betaling niet vinden",
+    "missingText": "Controleer je e-mail of neem contact met ons op.",
+    "toShop": "Terug naar de shop",
+    "contact": "Contact opnemen"
+  },
+  "order": {
+    "eyebrow": "Bestelling #{id}",
+    "thanksTitle": "Bedankt voor je bestelling",
+    "thanksText": "We hebben je bestelling goed ontvangen. Een bevestiging is onderweg naar {email}.",
+    "detailTitle": "Bestelgegevens",
+    "date": "Besteldatum",
+    "total": "Totaal",
+    "status": "Status",
+    "statuses": {
+      "processing": "In behandeling",
+      "completed": "Afgerond",
+      "cancelled": "Geannuleerd",
+      "refunded": "Terugbetaald"
+    },
+    "items": "Artikelen",
+    "quantity": "Aantal: {count}",
+    "unavailable": "Dit artikel is niet meer beschikbaar.",
+    "shippingAddress": "Bezorgadres",
+    "nextSteps": {
+      "title": "Wat er nu gebeurt",
+      "step1": "Binnen 2 werkdagen nemen we contact met je op om een moment voor levering en installatie te plannen.",
+      "step2": "Onze specialist levert en installeert alles bij je thuis, en neemt het verpakkingsmateriaal mee.",
+      "step3": "Samen doorlopen we je eerste sessie, zodat je direct vol vertrouwen kunt beginnen."
+    },
+    "allOrders": "Alle bestellingen",
+    "toShop": "Verder winkelen"
+  },
+  "account": {
+    "eyebrow": "Mijn account",
+    "nav": {
+      "label": "Accountnavigatie",
+      "settings": "Accountgegevens",
+      "addresses": "Adressen",
+      "orders": "Bestellingen",
+      "logout": "Uitloggen"
+    },
+    "settings": {
+      "title": "Accountgegevens",
+      "intro": "Werk je gegevens bij of wijzig je wachtwoord.",
+      "changePassword": "Wachtwoord wijzigen",
+      "cancel": "Annuleren",
+      "email": "E-mailadres",
+      "name": "Naam",
+      "password": "Nieuw wachtwoord",
+      "passwordConfirm": "Bevestig wachtwoord",
+      "save": "Opslaan",
+      "savePassword": "Wachtwoord opslaan",
+      "processing": "Bezig…",
+      "saved": "Je gegevens zijn bijgewerkt.",
+      "saveError": "Bijwerken is niet gelukt.",
+      "mismatch": "De wachtwoorden komen niet overeen.",
+      "required": "Dit veld is verplicht."
+    },
+    "orders": {
+      "title": "Bestellingen",
+      "recent": "Recente bestellingen",
+      "none": "Je hebt nog geen bestellingen.",
+      "viewAll": "Alle bestellingen",
+      "view": "Bekijken",
+      "items": "{count, plural, one {# artikel} other {# artikelen}}"
+    },
+    "addresses": {
+      "title": "Adressen",
+      "intro": "Bewaar je adressen voor een snellere checkout.",
+      "none": "Je hebt nog geen adressen opgeslagen.",
+      "add": "Adres toevoegen",
+      "edit": "Bewerken",
+      "addTitle": "Nieuw adres",
+      "editTitle": "Adres bewerken",
+      "modalText": "Dit adres wordt aan je account gekoppeld.",
+      "save": "Adres opslaan",
+      "saved": "Adres opgeslagen.",
+      "saveError": "Opslaan is niet gelukt.",
+      "country": "Land"
+    },
+    "loginRequired": "Log in om je account te bekijken.",
+    "alreadyLoggedIn": "Je bent al ingelogd.",
+    "greeting": "Welkom, {name}",
+    "memberSince": "Klant sinds {date}"
+  },
+  "auth": {
+    "email": "E-mailadres",
+    "password": "Wachtwoord",
+    "passwordConfirm": "Bevestig wachtwoord",
+    "required": "Dit veld is verplicht.",
+    "mismatch": "De wachtwoorden komen niet overeen.",
+    "processing": "Bezig…",
+    "login": {
+      "eyebrow": "Welkom terug",
+      "title": "Inloggen",
+      "intro": "Log in om je bestellingen en adressen te beheren.",
+      "submit": "Inloggen",
+      "forgot": "Wachtwoord vergeten?",
+      "noAccount": "Nog geen account?",
+      "create": "Account aanmaken",
+      "error": "Deze combinatie van e-mailadres en wachtwoord klopt niet."
+    },
+    "register": {
+      "eyebrow": "Welkom",
+      "title": "Account aanmaken",
+      "intro": "Volg je bestellingen en reken sneller af.",
+      "submit": "Account aanmaken",
+      "hasAccount": "Heb je al een account?",
+      "login": "Inloggen",
+      "error": "Het account kon niet worden aangemaakt.",
+      "success": "Je account is aangemaakt."
+    },
+    "forgot": {
+      "eyebrow": "Account",
+      "title": "Wachtwoord vergeten",
+      "intro": "Vul je e-mailadres in. Je ontvangt een link om een nieuw wachtwoord in te stellen.",
+      "submit": "Verstuur link",
+      "sentTitle": "Controleer je inbox",
+      "sentText": "Als er een account bij dit adres hoort, ontvang je binnen enkele minuten een e-mail.",
+      "error": "Er ging iets mis. Probeer het opnieuw."
+    },
+    "findOrder": {
+      "eyebrow": "Service",
+      "title": "Bestelling zoeken",
+      "intro": "Vul je e-mailadres en bestelnummer in. We sturen je een link naar je bestelling.",
+      "orderID": "Bestelnummer",
+      "submit": "Verstuur link",
+      "sending": "Versturen…",
+      "sentTitle": "Controleer je inbox",
+      "sentText": "Als er een bestelling bij deze gegevens hoort, ontvang je een e-mail met een link.",
+      "error": "Er ging iets mis. Probeer het opnieuw.",
+      "hint": "Je bestelnummer staat in je bevestigingsmail."
+    },
+    "logout": {
+      "eyebrow": "Account",
+      "success": "Je bent uitgelogd.",
+      "already": "Je bent al uitgelogd.",
+      "next": "Wat wil je nu doen?",
+      "shop": "Naar de shop",
+      "login": "Opnieuw inloggen"
+    },
+    "aside": {
+      "title": "Alles rond je imbody op één plek",
+      "text": "Volg je bestelling, bewaar je adressen en reken de volgende keer sneller af.",
+      "points": [
+        "Bestellingen en levering volgen",
+        "Adressen bewaren voor een snelle checkout",
+        "Persoonlijke service van ons team"
+      ]
+    }
+  }
+}

@@ -5,8 +5,6 @@ import { useEffect, useRef } from 'react'
 
 import type { HomeMedia } from './types'
 
-import { MirrorSilhouette, PlaceholderPanel } from './Placeholder'
-
 type Props = {
   video?: HomeMedia | null
   poster?: HomeMedia | null
@@ -14,7 +12,7 @@ type Props = {
 }
 
 /**
- * Full-bleed hero background: muted loop video → poster image → placeholder.
+ * Full-bleed hero background: muted loop video → poster image (the section itself is ink).
  * Under prefers-reduced-motion the video is paused on its poster frame.
  */
 export function HeroMedia({ label, poster, video }: Props) {
@@ -70,12 +68,5 @@ export function HeroMedia({ label, poster, video }: Props) {
     )
   }
 
-  return (
-    <PlaceholderPanel className="absolute inset-0" tone="dusk">
-      <div className="absolute inset-y-0 right-[-10%] w-[80%] opacity-[0.22] sm:right-0 sm:w-[60%] lg:right-[6%] lg:w-[42%]">
-        <MirrorSilhouette className="translate-y-[8%] scale-110" dark />
-      </div>
-      <div className="absolute left-[55%] top-[30%] h-[60vmin] w-[60vmin] -translate-x-1/2 rounded-full bg-bronze/20 blur-[120px]" />
-    </PlaceholderPanel>
-  )
+  return null
 }

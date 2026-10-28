@@ -32,6 +32,8 @@ const nextConfig: NextConfig = {
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
       }),
+      // Brand photo/video assets hosted on the Dadelsteen Cloudinary account
+      { hostname: 'res.cloudinary.com', pathname: '/depjdtrdf/**', protocol: 'https' },
     ],
   },
   reactStrictMode: true,

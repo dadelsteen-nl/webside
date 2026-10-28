@@ -1,7 +1,7 @@
-import clsx from 'clsx'
 import React from 'react'
 
 import { Price } from '@/components/Price'
+import { cn } from '@/utilities/cn'
 
 type Props = {
   amount: number
@@ -12,19 +12,19 @@ type Props = {
 export const Label: React.FC<Props> = ({ amount, position = 'bottom', title }) => {
   return (
     <div
-      className={clsx('absolute bottom-0 left-0 flex w-full px-4 pb-4 @container/label', {
-        '': position === 'center',
+      className={cn('absolute left-0 flex w-full px-4 pb-4', {
+        'bottom-0': position === 'bottom',
+        'bottom-1/3 justify-center': position === 'center',
       })}
     >
-      <div className="flex items-end justify-between text-sm grow font-semibold ">
-        <h3 className="mr-4 font-mono line-clamp-2 border p-2 px-3 leading-none tracking-tight rounded-full bg-white/70 text-black backdrop-blur-md dark:border-neutral-800 dark:bg-black/70 dark:text-white">
+      <div className="flex grow items-end justify-between gap-4 bg-cream/90 px-4 py-3 backdrop-blur-sm">
+        <h3 className="line-clamp-2 font-display text-lg font-light leading-tight text-ink">
           {title}
         </h3>
-
         <Price
           amount={amount}
-          className="flex-none rounded-full bg-blue-600 p-2 text-white"
-          currencyCodeClassName="hidden @[275px]/label:inline"
+          as="span"
+          className="flex-none font-sans text-xs uppercase tracking-[0.12em] text-bronze-deep"
         />
       </div>
     </div>

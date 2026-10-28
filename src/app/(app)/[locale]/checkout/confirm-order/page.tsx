@@ -1,32 +1,25 @@
 import type { Metadata } from 'next'
 
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-import React, { Fragment } from 'react'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Suspense } from 'react'
+
 import { ConfirmOrder } from '@/components/checkout/ConfirmOrder'
+import { type Locale } from '@/i18n/routing'
 
-type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+type Props = { params: Promise<{ locale: string }> }
 
-export default async function ConfirmOrderPage({
-  searchParams: searchParamsPromise,
-}: {
-  searchParams: SearchParams
-}) {
-  const searchParams = await searchParamsPromise
-
-  const paymentIntent = searchParams.paymentId
-
-  return (
-    <div className="container min-h-[90vh] flex py-12">
-      <ConfirmOrder />
-    </div>
-  )
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale }
+  const t = await getTranslations({ locale, namespace: 'checkout.meta' })
+  return { robots: { index: false }, title: t('confirm') }
 }
 
-export const metadata: Metadata = {
-  description: 'Confirm order.',
-  openGraph: mergeOpenGraph({
-    title: 'Confirming order',
-    url: '/checkout/confirm-order',
-  }),
-  title: 'Confirming order',
+export default async function ConfirmOrderPage({ params }: Props) {
+  const { locale } = (await params) as { locale: Locale }
+  setRequestLocale(locale)
+  return (
+    <Suspense>
+      <ConfirmOrder />
+    </Suspense>
+  )
 }

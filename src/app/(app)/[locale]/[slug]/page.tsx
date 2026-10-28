@@ -8,45 +8,44 @@ import { getPayload } from 'payload'
 import { draftMode } from 'next/headers'
 import { homeStaticData } from '@/endpoints/seed/home-static'
 import React from 'react'
+import { setRequestLocale } from 'next-intl/server'
+import { type Locale, routing } from '@/i18n/routing'
 
 import type { Page } from '@/payload-types'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
-  const pages = await payload.find({
-    collection: 'pages',
-    draft: false,
-    limit: 1000,
-    overrideAccess: false,
-    pagination: false,
-    select: {
-      slug: true,
-    },
-  })
-
-  const params = pages.docs
-    ?.filter((doc) => {
-      return doc.slug !== 'home'
+  try {
+    const payload = await getPayload({ config: configPromise })
+    const pages = await payload.find({
+      collection: 'pages',
+      draft: false,
+      limit: 1000,
+      overrideAccess: false,
+      pagination: false,
+      select: { slug: true },
     })
-    .map(({ slug }) => {
-      return { slug }
-    })
-
-  return params
+    const slugs = (pages.docs ?? []).map((d) => d.slug).filter((s) => s && s !== 'home')
+    return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })))
+  } catch {
+    // DB unavailable at build time: render on demand.
+    return []
+  }
 }
 
 type Args = {
   params: Promise<{
+    locale: string
     slug?: string
   }>
 }
 
 export default async function Page({ params }: Args) {
-  const { slug = 'home' } = await params
-  const url = '/' + slug
+  const { slug = 'home', locale } = await params
+  setRequestLocale(locale)
 
   let page = await queryPageBySlug({
+    locale: locale as Locale,
     slug,
   })
 
@@ -70,16 +69,17 @@ export default async function Page({ params }: Args) {
 }
 
 export async function generateMetadata({ params }: Args): Promise<Metadata> {
-  const { slug = 'home' } = await params
+  const { slug = 'home', locale } = await params
 
   const page = await queryPageBySlug({
+    locale: locale as Locale,
     slug,
   })
 
   return generateMeta({ doc: page })
 }
 
-const queryPageBySlug = async ({ slug }: { slug: string }) => {
+const queryPageBySlug = async ({ slug, locale }: { slug: string; locale: Locale }) => {
   const { isEnabled: draft } = await draftMode()
 
   const payload = await getPayload({ config: configPromise })
@@ -87,6 +87,7 @@ const queryPageBySlug = async ({ slug }: { slug: string }) => {
   const result = await payload.find({
     collection: 'pages',
     draft,
+    locale,
     limit: 1,
     overrideAccess: draft,
     pagination: false,

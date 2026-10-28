@@ -226,7 +226,7 @@ export function CostCalculator({ defaults, imbodyPrice }: Props) {
 
         <Reveal className="mt-16 md:mt-24">
           <h3 className="text-2xl font-light text-ink md:text-3xl">{t('tableTitle')}</h3>
-          <div className="mt-8 overflow-x-auto">
+          <div className="relative mt-8 overflow-x-auto">
             <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-ink/15">

@@ -10,6 +10,7 @@ import {
   getSiteSettings,
   getTestimonials,
 } from '@/lib/data'
+import { brand, brandVideo } from '@/lib/brandMedia'
 
 import type {
   CalcDefaults,
@@ -40,10 +41,18 @@ export type HomeData = {
   socialLinks: string[]
 }
 
+/** Brand assets shown until real media is uploaded in the CMS. */
+export const FALLBACK_HERO_VIDEO: HomeMedia = brandVideo.hero
+export const FALLBACK_HERO_POSTER: HomeMedia = brandVideo.heroPoster
+export const FALLBACK_DEVICE_IMAGE: HomeMedia = brand.front
+export const FALLBACK_GALLERY: HomeMedia[] = [brand.apartment, brand.livingRoom, brand.armsDetail, brand.barRow, brand.studio]
+
 export const toMedia = (m: unknown): HomeMedia | null => {
   if (!m || typeof m !== 'object') return null
   const media = m as Media
   if (!media.url) return null
+  // Generated seed placeholders (see endpoints/seed) give way to the brand fallbacks
+  if (media.alt?.startsWith('Placeholder:')) return null
   return {
     alt: media.alt ?? '',
     height: media.height,
@@ -70,7 +79,7 @@ function toProduct(product: Product): HomeProduct {
   return {
     description: product.shortDescription ?? null,
     id: product.id,
-    image: toMedia(product.hotspotImage) ?? toMedia(galleryImage),
+    image: toMedia(product.hotspotImage) ?? toMedia(galleryImage) ?? FALLBACK_DEVICE_IMAGE,
     priceEUR: productPriceEUR(product),
     slug: product.slug,
     title: product.title,
@@ -121,12 +130,12 @@ export async function getHomeData(locale: AppLocale): Promise<HomeData> {
       .map((g) => ({ caption: g.caption ?? null, media: toMedia(g.media) }))
       .filter((g) => g.media),
     hero: {
-      poster: toMedia(homepage?.heroPoster),
+      poster: toMedia(homepage?.heroPoster) ?? FALLBACK_HERO_POSTER,
       subtitle: homepage?.heroSubtitle,
       title: homepage?.heroTitle,
-      video: toMedia(homepage?.heroVideo),
+      video: toMedia(homepage?.heroVideo) ?? FALLBACK_HERO_VIDEO,
     },
-    hotspotImage: toMedia(homepage?.hotspotImage),
+    hotspotImage: toMedia(homepage?.hotspotImage) ?? FALLBACK_DEVICE_IMAGE,
     hotspots: hotspots.map((h) => ({ text: h.text ?? null, title: h.title, x: h.x, y: h.y })),
     posts: (posts ?? [])
       .filter((p) => p.slug)

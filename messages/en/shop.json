@@ -1,1 +1,109 @@
-{}
+{
+  "meta": {
+    "title": "Shop",
+    "description": "Discover the imbody Pro S smart mirror and its matching accessories. Free delivery and installation in the Netherlands and Belgium."
+  },
+  "shop": {
+    "eyebrow": "The collection",
+    "title": "Everything for your <em>home studio</em>",
+    "intro": "One device, a handful of carefully chosen accessories. Designed to work together, made to last for years.",
+    "tabsLabel": "Filter by category",
+    "tabs": {
+      "all": "All",
+      "devices": "Devices",
+      "accessories": "Accessories"
+    },
+    "flagship": {
+      "eyebrow": "The device",
+      "cta": "Explore the device",
+      "demo": "Book a demo"
+    },
+    "devicesTitle": "Devices",
+    "accessoriesTitle": "Accessories",
+    "accessoriesIntro": "Small additions that deepen your training — from measuring to mobilising.",
+    "empty": "There are currently no products in this category.",
+    "inclVat": "incl. VAT",
+    "view": "View",
+    "count": "{count, plural, one {# product} other {# products}}"
+  },
+  "product": {
+    "breadcrumbShop": "Shop",
+    "inclVat": "incl. VAT",
+    "quantity": "Quantity",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "addToCart": "Add to cart",
+    "adding": "Adding…",
+    "added": "Added to your cart",
+    "addError": "Could not add this item. Please try again.",
+    "outOfStock": "Temporarily sold out",
+    "lowStock": "Only {count} left in stock",
+    "inStock": "In stock — delivered within 2 weeks",
+    "selectOption": "Choose an option",
+    "bookDemo": "Book a demo",
+    "businessQuote": "Business quote",
+    "usps": {
+      "delivery": "Free delivery & installation in NL and BE",
+      "warranty": "2-year warranty",
+      "returns": "14-day return period",
+      "payment": "Secure payment with iDEAL, Bancontact or card"
+    },
+    "features": {
+      "eyebrow": "Why it works",
+      "title": "Designed around your body"
+    },
+    "specs": {
+      "eyebrow": "Specifications",
+      "title": "The details"
+    },
+    "hotspots": {
+      "eyebrow": "Up close",
+      "title": "Every detail has a reason",
+      "hint": "Tap a point to learn more",
+      "close": "Close"
+    },
+    "description": {
+      "eyebrow": "About this product"
+    },
+    "video": {
+      "eyebrow": "In motion"
+    },
+    "related": {
+      "eyebrow": "Complete the set",
+      "title": "Pairs well with"
+    },
+    "gallery": {
+      "label": "Product images",
+      "show": "Show image {index}",
+      "previous": "Previous image",
+      "next": "Next image"
+    }
+  },
+  "cart": {
+    "label": "Cart",
+    "title": "Your cart",
+    "description": "Review your items and continue to checkout.",
+    "close": "Close",
+    "emptyTitle": "Your cart is still empty",
+    "emptyText": "Start with the device, or choose an accessory that deepens your training.",
+    "toShop": "Go to the shop",
+    "subtotal": "Subtotal",
+    "inclVat": "incl. VAT",
+    "delivery": "Delivery & installation",
+    "free": "Free",
+    "checkout": "Checkout",
+    "viewCart": "View cart",
+    "remove": "Remove",
+    "removeItem": "Remove {title}",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "quantity": "Quantity",
+    "page": {
+      "eyebrow": "Cart",
+      "title": "Your selection",
+      "summary": "Summary",
+      "continue": "Continue shopping",
+      "secure": "You pay securely via Mollie."
+    }
+  }
+}

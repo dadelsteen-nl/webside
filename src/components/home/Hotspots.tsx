@@ -9,8 +9,6 @@ import { cn } from '@/utilities/cn'
 
 import type { HomeHotspot, HomeMedia } from './types'
 
-import { MirrorSilhouette, PlaceholderPanel } from './Placeholder'
-
 type Props = {
   image?: HomeMedia | null
   imageAlt: string
@@ -45,11 +43,16 @@ export function Hotspots({ closeLabel, hint, hotspots, image, imageAlt }: Props)
     }
   }, [active, close])
 
+  // A cut-out (e.g. transparent PNG) is shown whole; hotspot x/y then refer to the image itself.
+  const cutout = Boolean(image?.url && image.width && image.height && image.mimeType === 'image/png')
+
   return (
     <div className="relative" ref={rootRef}>
       <div className="relative aspect-[4/5] w-full">
         <div className="absolute inset-0 overflow-hidden">
-        {image?.url ? (
+        {image?.url && cutout ? (
+          <div className="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_45%,rgba(176,141,87,0.18),transparent_70%)]" />
+        ) : image?.url ? (
           <NextImage
             alt={image.alt || imageAlt}
             className="object-cover"
@@ -57,15 +60,25 @@ export function Hotspots({ closeLabel, hint, hotspots, image, imageAlt }: Props)
             sizes="(min-width: 1024px) 58vw, 100vw"
             src={image.url}
           />
-        ) : (
-          <PlaceholderPanel className="absolute inset-0" tone="stone">
-            <div className="absolute inset-[6%]">
-              <MirrorSilhouette />
-            </div>
-          </PlaceholderPanel>
-        )}
+        ) : null}
         </div>
 
+        <div
+          className={cn(
+            'absolute',
+            cutout ? 'inset-y-[4%] left-1/2 -translate-x-1/2' : 'inset-0',
+          )}
+          style={cutout ? { aspectRatio: `${image!.width} / ${image!.height}` } : undefined}
+        >
+        {cutout ? (
+          <NextImage
+            alt={image!.alt || imageAlt}
+            className="object-contain drop-shadow-[0_40px_50px_rgba(26,26,26,0.25)]"
+            fill
+            sizes="(min-width: 1024px) 30vw, 60vw"
+            src={image!.url}
+          />
+        ) : null}
         {hotspots.map((spot, i) => {
           const open = active === i
           const cardId = `${uid}-hotspot-${i}`
@@ -154,6 +167,7 @@ export function Hotspots({ closeLabel, hint, hotspots, image, imageAlt }: Props)
             </div>
           )
         })}
+        </div>
       </div>
       <p className="mt-4 font-sans text-[0.6875rem] uppercase tracking-[0.22em] text-olive-grey">{hint}</p>
     </div>

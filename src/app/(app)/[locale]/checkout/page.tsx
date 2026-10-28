@@ -1,49 +1,20 @@
 import type { Metadata } from 'next'
 
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-import React, { Fragment } from 'react'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-import { CheckoutPage } from '@/components/checkout/CheckoutPage'
+import { MollieCheckout } from '@/components/checkout/MollieCheckout'
+import { type Locale } from '@/i18n/routing'
 
-export default function Checkout() {
-  return (
-    <div className="container min-h-[90vh] flex">
-      {!process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY && (
-        <div>
-          <Fragment>
-            {'To enable checkout, you must '}
-            <a
-              href="https://dashboard.stripe.com/test/apikeys"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              obtain your Stripe API Keys
-            </a>
-            {' then set them as environment variables. See the '}
-            <a
-              href="https://github.com/payloadcms/payload/blob/3.x/templates/ecommerce/README.md#stripe"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              README
-            </a>
-            {' for more details.'}
-          </Fragment>
-        </div>
-      )}
+type Props = { params: Promise<{ locale: string }> }
 
-      <h1 className="sr-only">Checkout</h1>
-
-      <CheckoutPage />
-    </div>
-  )
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = (await params) as { locale: Locale }
+  const t = await getTranslations({ locale, namespace: 'checkout.meta' })
+  return { robots: { index: false }, title: t('checkout') }
 }
 
-export const metadata: Metadata = {
-  description: 'Checkout.',
-  openGraph: mergeOpenGraph({
-    title: 'Checkout',
-    url: '/checkout',
-  }),
-  title: 'Checkout',
+export default async function CheckoutPage({ params }: Props) {
+  const { locale } = (await params) as { locale: Locale }
+  setRequestLocale(locale)
+  return <MollieCheckout />
 }

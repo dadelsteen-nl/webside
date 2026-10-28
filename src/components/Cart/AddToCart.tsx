@@ -1,111 +1,76 @@
 'use client'
 
-import { Button } from '@/components/ui/button'
 import type { Product, Variant } from '@/payload-types'
 
 import { useCart } from '@payloadcms/plugin-ecommerce/client/react'
-import clsx from 'clsx'
-import { useSearchParams } from 'next/navigation'
-import React, { useCallback, useMemo } from 'react'
+import { useTranslations } from 'next-intl'
+import React, { useCallback, useMemo, useState } from 'react'
 import { toast } from 'sonner'
+
+import { btn } from '@/components/shop/ui'
+import { cn } from '@/utilities/cn'
+
+import { openCart } from './events'
+
 type Props = {
   product: Product
+  variant?: Variant
+  quantity?: number
+  className?: string
 }
 
-export function AddToCart({ product }: Props) {
+/** Adds the product (and selected variant) to the cart, then opens the cart drawer. */
+export function AddToCart({ className, product, quantity = 1, variant }: Props) {
+  const t = useTranslations('shop.product')
   const { addItem, cart, isLoading } = useCart()
-  const searchParams = useSearchParams()
+  const [pending, setPending] = useState(false)
 
-  const variants = product.variants?.docs || []
+  const stock = product.enableVariants ? (variant?.inventory ?? 0) : (product.inventory ?? 0)
 
-  const selectedVariant = useMemo<Variant | undefined>(() => {
-    if (product.enableVariants && variants.length) {
-      const variantId = searchParams.get('variant')
-
-      const validVariant = variants.find((variant) => {
-        if (typeof variant === 'object') {
-          return String(variant.id) === variantId
-        }
-        return String(variant) === variantId
-      })
-
-      if (validVariant && typeof validVariant === 'object') {
-        return validVariant
-      }
-    }
-
-    return undefined
-  }, [product.enableVariants, searchParams, variants])
-
-  const addToCart = useCallback(
-    (e: React.FormEvent<HTMLButtonElement>) => {
-      e.preventDefault()
-
-      addItem({
-        product: product.id,
-        variant: selectedVariant?.id ?? undefined,
-      }).then(() => {
-        toast.success('Item added to cart.')
-      })
-    },
-    [addItem, product, selectedVariant],
-  )
-
-  const disabled = useMemo<boolean>(() => {
-    const existingItem = cart?.items?.find((item) => {
+  const inCart = useMemo(() => {
+    const existing = cart?.items?.find((item) => {
       const productID = typeof item.product === 'object' ? item.product?.id : item.product
-      const variantID = item.variant
-        ? typeof item.variant === 'object'
-          ? item.variant?.id
-          : item.variant
-        : undefined
-
-      if (productID === product.id) {
-        if (product.enableVariants) {
-          return variantID === selectedVariant?.id
-        }
-        return true
-      }
+      const variantID =
+        item.variant && typeof item.variant === 'object' ? item.variant.id : item.variant
+      return productID === product.id && (!product.enableVariants || variantID === variant?.id)
     })
+    return existing?.quantity || 0
+  }, [cart?.items, product.enableVariants, product.id, variant?.id])
 
-    if (existingItem) {
-      const existingQuantity = existingItem.quantity
+  const disabled =
+    (product.enableVariants && !variant) || stock <= 0 || inCart + quantity > stock
 
-      if (product.enableVariants) {
-        return existingQuantity >= (selectedVariant?.inventory || 0)
-      }
-      return existingQuantity >= (product.inventory || 0)
+  const onClick = useCallback(async () => {
+    setPending(true)
+    try {
+      await addItem({ product: product.id, ...(variant ? { variant: variant.id } : {}) }, quantity)
+      toast.success(t('added'))
+      openCart()
+    } catch (err) {
+      console.error(err)
+      toast.error(t('addError'))
+    } finally {
+      setPending(false)
     }
+  }, [addItem, product.id, quantity, t, variant])
 
-    if (product.enableVariants) {
-      if (!selectedVariant) {
-        return true
-      }
-
-      if (selectedVariant.inventory === 0) {
-        return true
-      }
-    } else {
-      if (product.inventory === 0) {
-        return true
-      }
-    }
-
-    return false
-  }, [selectedVariant, cart?.items, product])
+  const label =
+    product.enableVariants && !variant
+      ? t('selectOption')
+      : stock <= 0
+        ? t('outOfStock')
+        : pending
+          ? t('adding')
+          : t('addToCart')
 
   return (
-    <Button
-      aria-label="Add to cart"
-      variant={'outline'}
-      className={clsx({
-        'hover:opacity-90': true,
-      })}
-      disabled={disabled || isLoading}
-      onClick={addToCart}
-      type="submit"
+    <button
+      className={cn(btn.ink, 'w-full', className)}
+      disabled={disabled || isLoading || pending}
+      onClick={onClick}
+      type="button"
     >
-      Add To Cart
-    </Button>
+      {label}
+    </button>
   )
 }

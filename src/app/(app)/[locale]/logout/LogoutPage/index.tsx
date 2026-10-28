@@ -1,44 +1,52 @@
 'use client'
 
-import { useAuth } from '@/providers/Auth'
-import Link from 'next/link'
-import React, { Fragment, useEffect, useState } from 'react'
+import { useEcommerce } from '@payloadcms/plugin-ecommerce/client/react'
+import { useTranslations } from 'next-intl'
+import React, { useEffect, useRef, useState } from 'react'
 
-export const LogoutPage: React.FC = (props) => {
+import { ArrowIcon, btn, Eyebrow } from '@/components/shop/ui'
+import { Link } from '@/i18n/navigation'
+import { useAuth } from '@/providers/Auth'
+import { cn } from '@/utilities/cn'
+
+export const LogoutPage: React.FC = () => {
+  const t = useTranslations('checkout.auth.logout')
   const { logout } = useAuth()
-  const [success, setSuccess] = useState('')
-  const [error, setError] = useState('')
+  const { clearSession } = useEcommerce()
+  const [state, setState] = useState<'pending' | 'success' | 'already'>('pending')
+  const started = useRef(false)
 
   useEffect(() => {
-    const performLogout = async () => {
-      try {
-        await logout()
-        setSuccess('Logged out successfully.')
-      } catch (_) {
-        setError('You are already logged out.')
-      }
-    }
-
-    void performLogout()
-  }, [logout])
+    if (started.current) return
+    started.current = true
+    logout()
+      .then(() => {
+        clearSession()
+        setState('success')
+      })
+      .catch(() => setState('already'))
+  }, [clearSession, logout])
 
   return (
-    <Fragment>
-      {(error || success) && (
-        <div className="prose dark:prose-invert">
-          <h1>{error || success}</h1>
-          <p>
-            What would you like to do next?
-            <Fragment>
-              {' '}
-              <Link href="/search">Click here</Link>
-              {` to shop.`}
-            </Fragment>
-            {` To log back in, `}
-            <Link href="/login">click here</Link>.
-          </p>
-        </div>
-      )}
-    </Fragment>
+    <div className="container flex min-h-[60vh] flex-col items-center justify-center py-24 text-center">
+      <Eyebrow className="justify-center">{t('eyebrow')}</Eyebrow>
+      <h1 aria-live="polite" className="mt-8 font-display text-4xl font-light text-ink md:text-5xl">
+        {state === 'pending' ? '…' : state === 'success' ? t('success') : t('already')}
+      </h1>
+      {state !== 'pending' ? (
+        <>
+          <p className="mt-5 text-olive-grey">{t('next')}</p>
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Link className={cn(btn.ink)} href="/shop">
+              {t('shop')}
+              <ArrowIcon />
+            </Link>
+            <Link className={cn(btn.outline)} href="/login">
+              {t('login')}
+            </Link>
+          </div>
+        </>
+      ) : null}
+    </div>
   )
 }
