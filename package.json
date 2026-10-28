@@ -24,6 +24,7 @@
   "dependencies": {
     "@mollie/api-client": "^4.6.0",
     "@payloadcms/admin-bar": "3.92.0",
+    "@payloadcms/db-postgres": "3.92.0",
     "@payloadcms/db-sqlite": "3.92.0",
     "@payloadcms/email-nodemailer": "3.92.0",
     "@payloadcms/email-resend": "3.92.0",
@@ -33,6 +34,7 @@
     "@payloadcms/plugin-form-builder": "3.92.0",
     "@payloadcms/plugin-seo": "3.92.0",
     "@payloadcms/richtext-lexical": "3.92.0",
+    "@payloadcms/storage-vercel-blob": "3.92.0",
     "@payloadcms/translations": "3.92.0",
     "@payloadcms/ui": "3.92.0",
     "@radix-ui/react-accordion": "1.2.11",

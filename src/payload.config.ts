@@ -1,3 +1,4 @@
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { resendAdapter } from '@payloadcms/email-resend'
 import {
@@ -31,10 +32,14 @@ import { Footer } from '@/globals/Footer'
 import { Header } from '@/globals/Header'
 import { Homepage } from '@/globals/Homepage'
 import { SiteSettings } from '@/globals/SiteSettings'
+import { migrations } from './migrations'
 import { plugins } from './plugins'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+const databaseURL = process.env.DATABASE_URL || process.env.POSTGRES_URL || ''
+const isPostgres = /^postgres(ql)?:\/\//.test(databaseURL)
 
 export default buildConfig({
   admin: {
@@ -60,11 +65,18 @@ export default buildConfig({
     ContactRequests,
     B2BRequests,
   ],
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URL || '',
-    },
-  }),
+  // Postgres (Neon on Vercel) when DATABASE_URL is a postgres URL; local SQLite file otherwise.
+  // Production applies the committed migrations on startup; create new ones with `pnpm payload migrate:create`.
+  db: isPostgres
+    ? postgresAdapter({
+        pool: { connectionString: databaseURL },
+        prodMigrations: migrations,
+      })
+    : sqliteAdapter({
+        client: {
+          url: databaseURL,
+        },
+      }),
   editor: lexicalEditor({
     features: () => {
       return [
