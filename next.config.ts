@@ -38,6 +38,8 @@ const nextConfig: NextConfig = {
   },
   reactStrictMode: true,
   redirects,
+  // Browsers request /favicon.ico directly; serve the PNG app icon.
+  rewrites: async () => [{ source: '/favicon.ico', destination: '/icon.png' }],
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
