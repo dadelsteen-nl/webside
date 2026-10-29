@@ -22,6 +22,8 @@ Visual direction: *luxury wellness* — warm sand/stone backgrounds, ink text, b
 - Next.js 16 App Router + Payload CMS 3.92 (ecommerce plugin) + SQLite locally (`DATABASE_URL=file:./dadelsteen.db`; Postgres later).
 - Package manager: **pnpm**. Dev server: `pnpm dev` (may run on port 3001 if 3000 is busy).
 - After changing collections/globals: `pnpm generate:types` and `pnpm generate:importmap`.
+- Production (Vercel) uses Postgres + Vercel Blob with migrations in `src/migrations`. After schema changes create one with the Blob plugin enabled, or its fields are missed:
+  `DATABASE_URL=postgres://u:p@127.0.0.1:1/x PAYLOAD_SECRET=x BLOB_READ_WRITE_TOKEN=vercel_blob_rw_a1_b2 pnpm payload migrate:create <name>`
 - Typecheck: `npx tsc --noEmit`. Baseline template errors exist in `CartModal.tsx`, `CheckoutPage.tsx`, `generatePreviewPath.ts` (owned by the shop task).
 
 ## i18n
