@@ -2,6 +2,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 
 import type { Faq, Homepage, Post, Product, SiteSetting, Testimonial } from '@/payload-types'
+import { withCompanyContact } from '@/lib/company'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 
 // Server-only helpers (use from Server Components / route handlers).
@@ -125,7 +126,7 @@ export async function getPostBySlug(slug: string, locale: AppLocale): Promise<Po
 }
 
 export async function getSiteSettings(locale: AppLocale): Promise<SiteSetting> {
-  return getCachedGlobal('site-settings', 1, locale)()
+  return withCompanyContact(await getCachedGlobal('site-settings', 1, locale)(), locale)
 }
 
 export async function getHomepage(locale: AppLocale): Promise<Homepage> {

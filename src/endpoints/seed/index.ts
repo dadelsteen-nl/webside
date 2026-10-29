@@ -1,6 +1,7 @@
 import type { CollectionSlug, File, Payload, PayloadRequest } from 'payload'
 import sharp from 'sharp'
 
+import { COMPANY_CONTACT } from '@/lib/company'
 import type { Media } from '@/payload-types'
 
 import { accessories, categoriesContent, faqs, posts, proS, testimonials } from './content'
@@ -328,10 +329,10 @@ export const seed = async ({
     kvkNumber: '',
     vatNumber: '',
     iban: '',
-    email: 'info@dadelsteen.nl',
-    phone: '',
+    email: COMPANY_CONTACT.email,
+    phone: COMPANY_CONTACT.phone,
     whatsappNumber: '',
-    address: { street: '', postalCode: '', city: '', country: 'Nederland' },
+    address: { ...COMPANY_CONTACT.address },
     socialLinks: [
       { platform: 'instagram' as const, url: 'https://instagram.com/dadelsteen' },
       { platform: 'tiktok' as const, url: 'https://tiktok.com/@dadelsteen' },
