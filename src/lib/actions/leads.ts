@@ -154,7 +154,7 @@ const b2bSchema = z.object({
   contactName: requiredText(120),
   email,
   phone,
-  businessType: optionalEnum(['gym', 'physio', 'clinic', 'salon', 'hotel', 'corporate', 'other'] as const),
+  businessType: optionalEnum(['government', 'social', 'gym', 'physio', 'clinic', 'salon', 'hotel', 'corporate', 'other'] as const),
   units: z
     .union([z.string(), z.number()])
     .optional()

@@ -6,7 +6,7 @@ import { Reveal, SplitLines } from '@/components/ui/motion'
 import { brand } from '@/lib/brandMedia'
 import { cn } from '@/utilities/cn'
 
-export { ArrowIcon, buttonStyles, emphasis, SectionLabel } from '@/components/home/primitives'
+export { ArrowIcon, buttonStyles, emphasis, emphasisLight, SectionLabel } from '@/components/home/primitives'
 
 /** Editorial page hero: tiny label, very large light serif title, offset intro. */
 export function PageHero({
@@ -46,7 +46,7 @@ export function PageHero({
           ) : null}
         </div>
         {image ? (
-          <Reveal className="relative mt-16 aspect-[4/3] overflow-hidden bg-ink sm:aspect-[16/9] md:mt-24 lg:aspect-[21/9]" delay={0.5} trigger="mount">
+          <Reveal className="relative mt-16 aspect-[4/3] overflow-hidden bg-stone sm:aspect-[16/9] md:mt-24 lg:aspect-[21/9]" delay={0.5} trigger="mount">
             <NextImage alt={image.alt} className="object-cover" fill priority sizes="100vw" src={image.url} />
           </Reveal>
         ) : null}
@@ -104,7 +104,7 @@ export function MediaFigure({
   video?: { url: string; mimeType?: string }
 }) {
   return (
-    <figure className={cn('relative overflow-hidden bg-ink', className)}>
+    <figure className={cn('relative overflow-hidden bg-stone', className)}>
       {video ? (
         <video
           aria-label={caption}
@@ -165,15 +165,15 @@ export function CtaBand({
   image?: { url: string; alt: string }
 }) {
   return (
-    <section aria-labelledby={id} className="relative isolate overflow-hidden bg-ink py-24 text-cream md:py-36">
+    <section aria-labelledby={id} className="relative isolate overflow-hidden bg-forest py-24 text-cream md:py-36">
       <div aria-hidden="true" className="absolute inset-0 -z-10">
         <NextImage alt="" className="object-cover" fill sizes="100vw" src={image.url} />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/75 to-ink/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-deep/95 via-forest/80 to-forest/40" />
       </div>
       <div className="container grid gap-12 md:grid-cols-12 md:items-end">
         <div className="md:col-span-7">
           <h2
-            className="font-display text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.98] tracking-[-0.03em]"
+            className="font-display text-[clamp(2.5rem,6vw,5.5rem)] font-light leading-[0.98] tracking-[-0.03em] [&_em]:text-clay"
             id={id}
           >
             <SplitLines lines={[title]} />

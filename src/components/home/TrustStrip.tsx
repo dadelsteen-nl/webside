@@ -1,9 +1,9 @@
-import { CircleSlash2, RotateCcw, ShieldCheck, Truck } from 'lucide-react'
+import { ClipboardCheck, Handshake, ShieldCheck, Wrench } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 
 import { Reveal } from '@/components/ui/motion'
 
-const icons = [Truck, ShieldCheck, CircleSlash2, RotateCcw]
+const icons = [Handshake, Wrench, ClipboardCheck, ShieldCheck]
 
 type Item = { title: string; text: string }
 
@@ -30,7 +30,7 @@ export async function TrustStrip() {
               key={item.title}
               y={12}
             >
-              <Icon aria-hidden="true" className="size-6 shrink-0 text-bronze" strokeWidth={1} />
+              <Icon aria-hidden="true" className="size-6 shrink-0 text-palm" strokeWidth={1} />
               <div>
                 <p className="font-sans text-sm font-medium text-ink">{item.title}</p>
                 <p className="mt-1 text-xs leading-relaxed text-olive-grey sm:text-[0.8125rem]">

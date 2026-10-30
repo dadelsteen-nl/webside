@@ -51,7 +51,7 @@ export type B2BRequestInput = AntiSpam & {
   contactName: string
   email: string
   phone?: string
-  businessType?: 'gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other' | ''
+  businessType?: 'government' | 'social' | 'gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other' | ''
   units?: string | number
   message?: string
   consent: boolean

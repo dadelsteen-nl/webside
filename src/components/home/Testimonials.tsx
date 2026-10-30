@@ -18,7 +18,7 @@ type Props = {
 
 function Stars({ className, label, rating }: { rating: number; label?: string; className?: string }) {
   return (
-    <p aria-hidden={!label} aria-label={label} className={cn('flex gap-1 text-bronze', className)} role={label ? 'img' : undefined}>
+    <p aria-hidden={!label} aria-label={label} className={cn('flex gap-1 text-clay', className)} role={label ? 'img' : undefined}>
       {Array.from({ length: 5 }).map((_, i) => (
         <svg aria-hidden="true" className={cn('size-3.5', i >= Math.round(rating) && 'opacity-25')} key={i} viewBox="0 0 20 20">
           <path d="M10 1.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L10 15l-5.3 2.8 1.1-5.9L1.4 7.8l6-.8z" fill="currentColor" />
@@ -40,7 +40,7 @@ export function Testimonials({ items }: Props) {
   const shots = [...customerShots, ...customerShots]
 
   return (
-    <section aria-labelledby="home-testimonials-title" className="overflow-hidden bg-ink py-24 text-cream md:py-36">
+    <section aria-labelledby="home-testimonials-title" className="overflow-hidden bg-forest py-24 text-cream md:py-36">
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <Reveal className="lg:col-span-6">
@@ -64,13 +64,13 @@ export function Testimonials({ items }: Props) {
             <Reveal as="figure" className="lg:col-span-6" delay={0.1}>
               <blockquote>
                 <p className="font-display text-[clamp(1.5rem,2.6vw,2.4rem)] font-light leading-[1.2] tracking-[-0.015em]">
-                  <span aria-hidden="true" className="text-bronze">“</span>
+                  <span aria-hidden="true" className="text-clay">“</span>
                   {featured.quote}
-                  <span aria-hidden="true" className="text-bronze">”</span>
+                  <span aria-hidden="true" className="text-clay">”</span>
                 </p>
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
-                <span aria-hidden="true" className="h-px w-10 bg-bronze" />
+                <span aria-hidden="true" className="h-px w-10 bg-clay" />
                 <span>
                   <span className="block font-sans text-sm font-medium">{featured.name}</span>
                   {featured.role ? <span className="block text-xs text-cream/55">{featured.role}</span> : null}
@@ -100,7 +100,7 @@ export function Testimonials({ items }: Props) {
                   sizes="(min-width: 768px) 304px, 240px"
                   src={shot.url}
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/90 via-ink/40 to-transparent p-5 pt-16">
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-deep/90 via-forest-deep/40 to-transparent p-5 pt-16">
                   <p className="font-display text-lg font-light leading-snug">{shot.caption[locale]}</p>
                   <Stars className="mt-2" rating={5} />
                 </div>

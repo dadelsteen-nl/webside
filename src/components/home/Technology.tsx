@@ -46,7 +46,7 @@ export function Technology() {
   }, [items.length])
 
   return (
-    <section aria-labelledby="home-tech-title" className="bg-ink text-cream">
+    <section aria-labelledby="home-tech-title" className="bg-forest text-cream">
       <div className="container pb-16 pt-24 md:pt-36 lg:pb-8">
         <div className="grid gap-8 lg:grid-cols-12">
           <Reveal className="lg:col-span-6">
@@ -75,7 +75,7 @@ export function Technology() {
               <TechVisual index={i} sizes={wide ? '100vw' : undefined} />
             </div>
             <div className="mt-8 flex items-baseline justify-between border-b border-cream/15 pb-4">
-              <span className="font-display text-5xl font-light text-bronze">{pad(i + 1)}</span>
+              <span className="font-display text-5xl font-light text-clay">{pad(i + 1)}</span>
               <span className="text-right">
                 <CountUp className="block font-display text-3xl font-light tabular-nums" value={item.stat} />
                 <span className="text-[0.6875rem] uppercase tracking-[0.18em] text-cream/55">{item.statLabel}</span>
@@ -93,7 +93,7 @@ export function Technology() {
         <div className="container grid h-[100svh] grid-cols-12 items-center gap-10 py-[8vh]">
           <div className="col-span-5 flex h-full flex-col justify-center">
             <div className="flex items-baseline gap-4">
-              <span className="relative block h-[clamp(8rem,15vw,13rem)] w-[2ch] overflow-hidden font-display text-[clamp(8rem,15vw,13rem)] font-light leading-none text-bronze">
+              <span className="relative block h-[clamp(8rem,15vw,13rem)] w-[2ch] overflow-hidden font-display text-[clamp(8rem,15vw,13rem)] font-light leading-none text-clay">
                 {items.map((_, i) => (
                   <span
                     aria-hidden="true"
@@ -143,7 +143,7 @@ export function Technology() {
                 <span className="relative h-px w-12 overflow-hidden bg-cream/20" key={i}>
                   <span
                     className={cn(
-                      'absolute inset-0 origin-left bg-bronze transition-transform duration-700 ease-[var(--ease-luxe)]',
+                      'absolute inset-0 origin-left bg-clay transition-transform duration-700 ease-[var(--ease-luxe)]',
                       i <= active ? 'scale-x-100' : 'scale-x-0',
                     )}
                   />

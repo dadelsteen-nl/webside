@@ -35,9 +35,11 @@ export function SectionLabel({
 export const buttonStyles = {
   base: 'group inline-flex min-h-12 whitespace-nowrap items-center justify-center gap-3 rounded-[var(--radius)] px-7 font-sans text-xs font-medium uppercase tracking-[0.18em] transition-[background-color,color,border-color] duration-500 ease-[var(--ease-luxe)]',
   ink: 'bg-ink text-cream hover:bg-bronze-deep',
+  forest: 'bg-forest text-cream hover:bg-bronze-deep',
   cream: 'bg-cream text-ink hover:bg-stone',
   outlineLight: 'border border-cream/60 text-cream hover:border-cream hover:bg-cream/10',
   outlineBronze: 'border border-bronze text-ink hover:bg-bronze hover:text-cream',
+  outlineInk: 'border border-ink/30 text-ink hover:border-ink hover:bg-ink/5',
 }
 
 /** Arrow glyph that nudges on hover of a parent `.group`. */
@@ -60,4 +62,9 @@ export function ArrowIcon({ className }: { className?: string }) {
 /** Renders `<em>` tags from translation strings as bronze italic emphasis. */
 export const emphasis = {
   em: (chunks: ReactNode) => <em className="font-light italic text-bronze">{chunks}</em>,
+}
+
+/** Same as `emphasis`, for forest-green sections (clay italic keeps contrast). */
+export const emphasisLight = {
+  em: (chunks: ReactNode) => <em className="font-light italic text-clay">{chunks}</em>,
 }

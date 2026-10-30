@@ -126,12 +126,12 @@ export default async function OrderPage({ params, searchParams }: PageProps) {
             })}
           </ul>
 
-          <div className="mt-14 bg-ink p-8 text-cream md:p-10">
+          <div className="mt-14 bg-forest p-8 text-cream md:p-10">
             <h2 className="font-display text-2xl font-light">{t('nextSteps.title')}</h2>
             <ol className="mt-6 space-y-5">
               {(['step1', 'step2', 'step3'] as const).map((key, i) => (
                 <li className="flex gap-4 text-sm leading-relaxed text-cream/75" key={key}>
-                  <span className="font-display text-bronze">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="font-display text-clay">{String(i + 1).padStart(2, '0')}</span>
                   {t(`nextSteps.${key}`)}
                 </li>
               ))}

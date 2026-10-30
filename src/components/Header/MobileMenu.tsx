@@ -119,7 +119,7 @@ export function MobileMenu({ socialLinks }: Props) {
           </h2>
           <div className="flex h-16 shrink-0 items-center justify-between border-b border-ink/10 px-5 md:h-[4.5rem] md:px-8">
             <Link aria-label={t('homeLink')} href="/" onClick={close}>
-              <Logo className="[&>span:last-child]:text-[0.95rem] sm:[&>span:last-child]:text-[1.1rem]" />
+              <Logo />
             </Link>
             <button
               aria-label={t('closeMenu')}

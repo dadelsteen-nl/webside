@@ -19,6 +19,8 @@ export const B2BRequests: CollectionConfig = {
       name: 'businessType',
       type: 'select',
       options: [
+        { label: 'Government / municipality', value: 'government' },
+        { label: 'Social domain', value: 'social' },
         { label: 'Gym', value: 'gym' },
         { label: 'Physiotherapy', value: 'physio' },
         { label: 'Clinic', value: 'clinic' },

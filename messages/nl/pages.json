@@ -65,7 +65,11 @@
       "label": "Aanvraag",
       "title": "Plan <em>uw demo</em>",
       "intro": "Laat weten wat uw voorkeur heeft. We bevestigen het moment persoonlijk, meestal binnen één werkdag.",
-      "reassurance": ["Geheel vrijblijvend", "Reactie binnen één werkdag", "Uw gegevens blijven bij ons"]
+      "reassurance": [
+        "Geheel vrijblijvend",
+        "Reactie binnen één werkdag",
+        "Uw gegevens blijven bij ons"
+      ]
     },
     "faq": {
       "label": "Veelgestelde vragen",
@@ -88,19 +92,28 @@
   },
   "business": {
     "meta": {
-      "title": "Zakelijk",
-      "description": "imbody voor fysiotherapie, gyms en PT-studio's, hotels, bedrijfsfitness en wellnesssalons. Datagedreven krachttraining op 1,4 m², met advies, installatie en training."
+      "title": "Voor organisaties",
+      "description": "Dadelsteen levert en implementeert imbody voor gemeenten en overheid, sociaal domein, revalidatiecentra, fysiotherapie, boutique fitness en bedrijfsvitaliteit. Advies, pilot, installatie, training en service."
     },
     "hero": {
-      "eyebrow": "Voor professionals",
-      "title": "Intelligente krachttraining <em>voor uw praktijk</em>",
-      "intro": "Of u nu patiënten begeleidt, leden wilt binden of gasten iets bijzonders wilt bieden: imbody brengt begeleide krachttraining naar elke ruimte. Meetbaar, compact en zonder dat er altijd een trainer naast hoeft te staan.",
+      "eyebrow": "Voor organisaties",
+      "title": "Bewegen en herstel, <em>professioneel georganiseerd</em>",
+      "intro": "Dadelsteen is uw partner voor slimme krachttraining in overheid, zorg, sociaal domein en fitness. Wij leveren imbody en zorgen voor advies, implementatie, training van uw team en service — meetbaar, compact en zonder dat er altijd een trainer naast hoeft te staan.",
       "primary": "Offerte aanvragen",
-      "secondary": "Zakelijke demo plannen",
+      "secondary": "Kennismaking of demo plannen",
       "stats": [
-        { "value": "1,4 m²", "label": "vloeroppervlak" },
-        { "value": "120 kg", "label": "digitale weerstand" },
-        { "value": "400+", "label": "begeleide workouts" }
+        {
+          "value": "1,4 m²",
+          "label": "vloeroppervlak"
+        },
+        {
+          "value": "120 kg",
+          "label": "digitale weerstand"
+        },
+        {
+          "value": "400+",
+          "label": "begeleide workouts"
+        }
       ]
     },
     "segments": {
@@ -108,19 +121,49 @@
       "title": "Gemaakt voor <em>uw vakgebied</em>",
       "items": [
         {
-          "key": "physio",
-          "title": "Fysiotherapie & revalidatie",
-          "text": "Doseer belasting tot op de kilo en volg herstel objectief.",
+          "key": "government",
+          "title": "Gemeenten & overheid",
+          "text": "Vitaliteit voor ambtenaren en iedereen die met en voor de overheid werkt.",
           "bullets": [
-            "Weerstand vanaf een zeer lage belasting, in kleine stappen op te bouwen",
-            "Bewegingsanalyse ondersteunt uw observatie tijdens oefeningen",
-            "Voortgang per patiënt inzichtelijk, voor heldere verslaglegging"
+            "Compacte opstelling in een kantoor, vitaliteitsruimte of stilteruimte",
+            "Korte, begeleide sessies die passen tussen twee afspraken door",
+            "Een persoonlijk profiel en programma voor iedere medewerker"
           ]
         },
         {
-          "key": "gym",
-          "title": "Gyms & PT-studio's",
-          "text": "Een premium trainingsplek die opvalt en zichzelf terugverdient.",
+          "key": "social",
+          "title": "Sociaal domein",
+          "text": "Laagdrempelig bewegen voor cliënten van casemanagers, wijkteams en zorgaanbieders.",
+          "bullets": [
+            "Begeleiding door de AI-coach, ook voor mensen zonder sportervaring",
+            "Weerstand vanaf een zeer lage belasting, stap voor stap op te bouwen",
+            "Voortgang zichtbaar voor cliënt en begeleider"
+          ]
+        },
+        {
+          "key": "rehab",
+          "title": "Revalidatiecentra",
+          "text": "Doseer belasting tot op de kilo en volg herstel objectief.",
+          "bullets": [
+            "Weerstand in kleine stappen instelbaar, ook excentrisch en isokinetisch",
+            "Bewegingsanalyse ondersteunt uw observatie tijdens oefeningen",
+            "Meerdere cliëntprofielen op één toestel"
+          ]
+        },
+        {
+          "key": "physio",
+          "title": "Fysiotherapie",
+          "text": "Meetbare oefentherapie die uw behandeling ondersteunt en verlengt.",
+          "bullets": [
+            "Voortgang per patiënt inzichtelijk, voor heldere verslaglegging",
+            "Patiënten trainen zelfstandig met live feedback op techniek",
+            "Neemt ongeveer 1,4 m² in beslag in uw praktijk"
+          ]
+        },
+        {
+          "key": "fitness",
+          "title": "Boutique fitness & PT",
+          "text": "Een onderscheidende, datagedreven trainingsplek voor uw leden.",
           "bullets": [
             "Vijf trainingsmodi, van excentrisch tot isokinetisch",
             "Een nieuwe propositie voor small-group en personal training",
@@ -128,39 +171,19 @@
           ]
         },
         {
-          "key": "hotel",
-          "title": "Hotels & vakantieparken",
-          "text": "Een fitnessruimte op het niveau van uw kamers.",
-          "bullets": [
-            "Volwaardige krachttraining zonder rekken en losse gewichten",
-            "Stil in gebruik, geschikt voor suites en kleine ruimtes",
-            "Gasten trainen begeleid, ook zonder personeel op de vloer"
-          ]
-        },
-        {
           "key": "corporate",
-          "title": "Bedrijfsfitness",
+          "title": "Bedrijfsvitaliteit",
           "text": "Vitaliteit die medewerkers daadwerkelijk gebruiken.",
           "bullets": [
-            "Korte sessies die passen tussen twee afspraken door",
-            "Een persoonlijk profiel voor iedere medewerker",
-            "Compacte opstelling in een kantoor of stilteruimte"
-          ]
-        },
-        {
-          "key": "salon",
-          "title": "Wellness- & beautysalons",
-          "text": "Breid uw behandelingen uit met begeleide kracht en houding.",
-          "bullets": [
-            "Combineer training met uw bestaande behandelprogramma's",
-            "Een elegant toestel dat past in een verzorgd interieur",
-            "Extra omzet per vierkante meter met een nieuw arrangement"
+            "Geen kleedkamer of gewichtenrek nodig",
+            "Stil in gebruik, geschikt voor kantooromgevingen",
+            "Een persoonlijk profiel voor iedere medewerker"
           ]
         }
       ]
     },
     "why": {
-      "label": "Waarom imbody",
+      "label": "Waarom Dadelsteen & imbody",
       "title": "Wat het betekent <em>voor uw organisatie</em>",
       "items": [
         {
@@ -208,15 +231,43 @@
       ]
     },
     "form": {
-      "label": "Zakelijke aanvraag",
+      "label": "Aanvraag voor organisaties",
       "title": "Vertel ons over <em>uw organisatie</em>",
       "intro": "Een adviseur neemt binnen één werkdag contact met u op. U ontvangt een voorstel dat past bij uw ruimte, doelgroep en budget.",
-      "points": ["Staffelprijzen en lease op aanvraag", "Demo op uw eigen locatie", "Installatie en teamtraining inbegrepen"]
+      "points": [
+        "Staffelprijzen, lease en raamafspraken bespreekbaar",
+        "Demo of pilot op uw eigen locatie",
+        "Installatie en training van uw team inbegrepen"
+      ]
     },
     "cta": {
       "title": "Liever eerst <em>zelf ervaren</em>?",
-      "text": "Plan een zakelijke demo in onze showroom of op uw eigen locatie.",
-      "button": "Zakelijke demo plannen"
+      "text": "Plan een kennismaking of demo in onze showroom, op uw eigen locatie of online.",
+      "button": "Kennismaking plannen"
+    },
+    "procurement": {
+      "label": "Inkoop & aanbesteding",
+      "title": "Eenvoudig in te kopen, <em>zorgvuldig ingevoerd</em>",
+      "intro": "We weten dat inkoop bij overheid en zorg zorgvuldig moet verlopen. Daarom maken we het u zo eenvoudig mogelijk.",
+      "items": [
+        {
+          "title": "Offerte op maat",
+          "text": "Een helder voorstel per locatie of organisatie, met staffelprijzen bij meerdere toestellen."
+        },
+        {
+          "title": "Pilot of proefplaatsing",
+          "text": "Eerst ervaren met uw eigen medewerkers of cliënten, met een gezamenlijke evaluatie."
+        },
+        {
+          "title": "Meerjarige afspraken",
+          "text": "Raamovereenkomsten, lease en service-afspraken zijn bespreekbaar."
+        },
+        {
+          "title": "Documentatie op aanvraag",
+          "text": "Productspecificaties, CE- en veiligheidsinformatie en een implementatieplan voor uw inkoopdossier."
+        }
+      ],
+      "cta": "Neem contact op over inkoop"
     }
   },
   "about": {

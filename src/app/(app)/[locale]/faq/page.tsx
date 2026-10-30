@@ -83,7 +83,7 @@ export default async function FaqPage({ params }: Args) {
         </div>
       </section>
 
-      <section className="bg-ink py-20 text-cream md:py-28">
+      <section className="bg-forest py-20 text-cream md:py-28">
         <div className="container flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionLabel tone="light">{t('contact.label')}</SectionLabel>

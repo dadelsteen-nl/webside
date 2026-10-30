@@ -17,9 +17,9 @@ export function TechVisual({
 }) {
   const photo = photos[index % photos.length]!
   return (
-    <div className={cn('relative h-full w-full bg-ink', className)}>
+    <div className={cn('relative h-full w-full bg-forest', className)}>
       <NextImage alt={photo.alt} className="object-cover" fill sizes={sizes} src={photo.url} />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink/35 via-transparent to-transparent" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-forest-deep/35 via-transparent to-transparent" />
     </div>
   )
 }

@@ -46,7 +46,7 @@ export function ProductHotspots({ image, spots }: { image: MediaType; spots: Spo
         {cutout ? (
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[radial-gradient(50%_60%_at_50%_45%,rgba(176,141,87,0.18),transparent_70%)]"
+            className="absolute inset-0 bg-[radial-gradient(50%_60%_at_50%_45%,rgba(163,86,42,0.18),transparent_70%)]"
           />
         ) : null}
         <div
@@ -57,7 +57,7 @@ export function ProductHotspots({ image, spots }: { image: MediaType; spots: Spo
           <Media
             className="absolute inset-0"
             fill
-            imgClassName={cutout ? 'object-contain drop-shadow-[0_40px_50px_rgba(26,26,26,0.25)]' : 'object-cover'}
+            imgClassName={cutout ? 'object-contain drop-shadow-[0_40px_50px_rgba(46,31,22,0.25)]' : 'object-cover'}
             resource={image}
             size={cutout ? '(min-width: 1024px) 30vw, 70vw' : '(min-width: 1024px) 80vw, 100vw'}
           />
@@ -104,7 +104,7 @@ export function ProductHotspots({ image, spots }: { image: MediaType; spots: Spo
                     animate={{ opacity: 1, y: 0 }}
                     aria-label={spot.title}
                     className={cn(
-                      'absolute w-[min(17rem,70vw)] border border-ink/10 bg-cream/95 p-5 text-left shadow-[0_24px_60px_-24px_rgba(26,26,26,0.35)] backdrop-blur-sm',
+                      'absolute w-[min(17rem,70vw)] border border-ink/10 bg-cream/95 p-5 text-left shadow-[0_24px_60px_-24px_rgba(46,31,22,0.35)] backdrop-blur-sm',
                       spot.x > 55 ? 'right-6' : 'left-6',
                       spot.y > 65 ? 'bottom-2' : 'top-2',
                     )}

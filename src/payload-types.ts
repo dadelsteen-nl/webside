@@ -1213,7 +1213,8 @@ export interface B2BRequest {
   contactName: string;
   email: string;
   phone?: string | null;
-  businessType?: ('gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other') | null;
+  businessType?:
+    ('government' | 'social' | 'gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other') | null;
   units?: number | null;
   message?: string | null;
   locale?: ('nl' | 'en') | null;

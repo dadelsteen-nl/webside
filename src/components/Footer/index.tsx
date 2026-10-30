@@ -1,5 +1,5 @@
 import { FLAGSHIP_PRODUCT_SLUG, type NavHref } from '@/components/Header/navItems'
-import { LogoIcon } from '@/components/icons/logo'
+import { Logo } from '@/components/icons/logo'
 import { CookieSettingsButton } from '@/components/layout/CookieConsent'
 import { getLayoutSiteSettings } from '@/components/layout/getSiteSettings'
 import { socialIcons } from '@/components/layout/icons'
@@ -12,7 +12,7 @@ import React from 'react'
 
 const linkClass =
   'text-sm text-cream/70 transition-colors duration-700 ease-(--ease-luxe) hover:text-cream'
-const headingClass = 'mb-6 text-[0.625rem] font-medium uppercase tracking-[0.32em] text-bronze'
+const headingClass = 'mb-6 text-[0.625rem] font-medium uppercase tracking-[0.32em] text-clay'
 
 const paymentMethods = ['iDEAL', 'Bancontact', 'Visa', 'Mastercard'] as const
 
@@ -67,18 +67,18 @@ export async function Footer() {
   ]
 
   return (
-    <footer className="relative mt-auto bg-ink text-cream">
+    <footer className="relative mt-auto bg-forest text-cream">
       <div className="mx-auto max-w-[96rem] px-5 md:px-8 xl:px-12">
         {/* Statement */}
         <div className="flex flex-col gap-10 border-b border-cream/10 py-20 md:flex-row md:items-end md:justify-between md:py-28">
           <div className="max-w-3xl">
-            <LogoIcon className="mb-8 h-16" />
+            <Logo className="mb-10" tagline={tc('tagline')} tone="light" />
             <p className="font-display text-[2.25rem] leading-[1.08] font-light tracking-[-0.015em] text-balance sm:text-5xl lg:text-6xl">
               {t('statement')}
             </p>
           </div>
           <Link
-            className="inline-flex h-12 shrink-0 items-center justify-center self-start border border-bronze px-8 text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-cream transition-colors duration-700 ease-(--ease-luxe) hover:bg-bronze hover:text-ink md:self-auto"
+            className="inline-flex h-12 shrink-0 items-center justify-center self-start border border-clay px-8 text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-cream transition-colors duration-700 ease-(--ease-luxe) hover:bg-clay hover:text-forest-deep md:self-auto"
             href="/demo"
           >
             {tc('bookDemo')}
@@ -163,7 +163,7 @@ export async function Footer() {
                           aria-label={tc('social.followOn', {
                             platform: platformLabels[link.platform],
                           })}
-                          className="flex size-10 items-center justify-center text-cream/60 transition-colors duration-700 ease-(--ease-luxe) hover:text-bronze"
+                          className="flex size-10 items-center justify-center text-cream/60 transition-colors duration-700 ease-(--ease-luxe) hover:text-clay"
                           href={link.url}
                           {...(link.placeholder
                             ? {}

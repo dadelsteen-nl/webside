@@ -51,7 +51,7 @@ export function Hotspots({ closeLabel, hint, hotspots, image, imageAlt }: Props)
       <div className="relative aspect-[4/5] w-full">
         <div className="absolute inset-0 overflow-hidden">
         {image?.url && cutout ? (
-          <div className="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_45%,rgba(176,141,87,0.18),transparent_70%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_45%,rgba(163,86,42,0.18),transparent_70%)]" />
         ) : image?.url ? (
           <NextImage
             alt={image.alt || imageAlt}
@@ -73,7 +73,7 @@ export function Hotspots({ closeLabel, hint, hotspots, image, imageAlt }: Props)
         {cutout ? (
           <NextImage
             alt={image!.alt || imageAlt}
-            className="object-contain drop-shadow-[0_40px_50px_rgba(26,26,26,0.25)]"
+            className="object-contain drop-shadow-[0_40px_50px_rgba(46,31,22,0.25)]"
             fill
             sizes="(min-width: 1024px) 30vw, 60vw"
             src={image!.url}
@@ -139,7 +139,7 @@ export function Hotspots({ closeLabel, hint, hotspots, image, imageAlt }: Props)
                   <motion.div
                     animate={{ opacity: 1, y: 0 }}
                     className={cn(
-                      'absolute w-[min(17rem,70vw)] border border-ink/10 bg-cream/95 p-5 text-left shadow-[0_24px_60px_-24px_rgba(26,26,26,0.35)] backdrop-blur-sm',
+                      'absolute w-[min(17rem,70vw)] border border-ink/10 bg-cream/95 p-5 text-left shadow-[0_24px_60px_-24px_rgba(46,31,22,0.35)] backdrop-blur-sm',
                       alignRight ? 'right-6' : 'left-6',
                       alignBottom ? 'bottom-2' : 'top-2',
                     )}

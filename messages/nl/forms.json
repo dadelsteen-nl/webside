@@ -40,9 +40,18 @@
     },
     "locationLegend": "Waar wilt u imbody ervaren?",
     "locations": {
-      "showroom": { "label": "Showroom", "hint": "Op afspraak, met koffie" },
-      "at-home": { "label": "Bij u thuis", "hint": "Wij komen langs met een toestel" },
-      "online": { "label": "Online", "hint": "Live videodemo van 30 minuten" }
+      "showroom": {
+        "label": "Showroom",
+        "hint": "Op afspraak, met koffie"
+      },
+      "at-home": {
+        "label": "Bij u thuis",
+        "hint": "Wij komen langs met een toestel"
+      },
+      "online": {
+        "label": "Online",
+        "hint": "Live videodemo van 30 minuten"
+      }
     },
     "timeLegend": "Voorkeur dagdeel",
     "times": {
@@ -62,9 +71,11 @@
   "b2b": {
     "businessTypeLegend": "Type organisatie",
     "businessTypes": {
+      "government": "Gemeente / overheid",
+      "social": "Sociaal domein / wijkteam",
       "physio": "Fysiotherapie",
-      "clinic": "Kliniek / revalidatie",
-      "gym": "Gym / PT-studio",
+      "clinic": "Revalidatiecentrum / kliniek",
+      "gym": "Boutique fitness / PT-studio",
       "hotel": "Hotel / vakantiepark",
       "corporate": "Bedrijfsfitness",
       "salon": "Wellness / beauty",

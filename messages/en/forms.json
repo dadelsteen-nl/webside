@@ -40,9 +40,18 @@
     },
     "locationLegend": "Where would you like to experience imbody?",
     "locations": {
-      "showroom": { "label": "Showroom", "hint": "By appointment, coffee included" },
-      "at-home": { "label": "At your home", "hint": "We bring a unit to you" },
-      "online": { "label": "Online", "hint": "Live 30-minute video demo" }
+      "showroom": {
+        "label": "Showroom",
+        "hint": "By appointment, coffee included"
+      },
+      "at-home": {
+        "label": "At your home",
+        "hint": "We bring a unit to you"
+      },
+      "online": {
+        "label": "Online",
+        "hint": "Live 30-minute video demo"
+      }
     },
     "timeLegend": "Preferred time of day",
     "times": {
@@ -62,9 +71,11 @@
   "b2b": {
     "businessTypeLegend": "Type of organisation",
     "businessTypes": {
+      "government": "Municipality / government",
+      "social": "Social services / community team",
       "physio": "Physiotherapy",
-      "clinic": "Clinic / rehabilitation",
-      "gym": "Gym / PT studio",
+      "clinic": "Rehabilitation centre / clinic",
+      "gym": "Boutique fitness / PT studio",
       "hotel": "Hotel / holiday park",
       "corporate": "Corporate wellness",
       "salon": "Wellness / beauty",

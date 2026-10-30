@@ -137,7 +137,7 @@ export async function ContactMap({ settings }: { settings: SiteSetting | null })
       <div className="container">
         <Reveal>
           <div className="relative overflow-hidden">
-            <div className="relative aspect-[4/5] w-full bg-ink sm:aspect-[16/9] lg:aspect-[21/8]">
+            <div className="relative aspect-[4/5] w-full bg-stone sm:aspect-[16/9] lg:aspect-[21/8]">
               <NextImage alt={brand.studio.alt} className="object-cover" fill sizes="100vw" src={brand.studio.url} />
             </div>
             <div className="absolute inset-x-0 bottom-0 flex flex-col gap-6 bg-gradient-to-t from-ink/80 via-ink/40 to-transparent p-6 pt-24 text-cream md:flex-row md:items-end md:justify-between md:p-10">

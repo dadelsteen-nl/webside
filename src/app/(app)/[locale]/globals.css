@@ -87,14 +87,19 @@
 }
 
 :root {
-  /* Dadelsteen brand palette */
+  /* Dadelsteen brand palette — earth tones from the logo (espresso, date, palm, desert sand).
+     Legacy names kept: `ink` = espresso brown, `bronze` = date accent. No pure black or grey. */
   --sand: #f4efe8;
-  --stone: #e4dacb;
-  --ink: #1a1a1a;
-  --bronze: #b08d57;
-  --bronze-deep: #8c6d3f;
-  --olive-grey: #6e6a5e;
-  --cream: #faf7f2;
+  --stone: #e8dcc8;
+  --ink: #2e1f16;
+  --bronze: #a3562a;
+  --bronze-deep: #7a3f1f;
+  --olive-grey: #6b5e4e;
+  --cream: #fbf8f2;
+  --forest: #24402f;
+  --forest-deep: #1b3123;
+  --palm: #46704f;
+  --clay: #c9a57a;
 
   --background: var(--sand);
   --foreground: var(--ink);
@@ -112,12 +117,12 @@
   --accent-foreground: var(--cream);
   --destructive: #a63d2f;
   --destructive-foreground: #a63d2f;
-  --border: #d9cdbb;
-  --input: #d9cdbb;
+  --border: #dccfb9;
+  --input: #dccfb9;
   --ring: var(--bronze);
   --chart-1: var(--bronze);
-  --chart-2: var(--olive-grey);
-  --chart-3: var(--ink);
+  --chart-2: var(--palm);
+  --chart-3: var(--forest);
   --chart-4: var(--stone);
   --chart-5: var(--bronze-deep);
   --radius: 0.25rem;
@@ -127,9 +132,9 @@
   --sidebar-primary-foreground: var(--cream);
   --sidebar-accent: var(--stone);
   --sidebar-accent-foreground: var(--ink);
-  --sidebar-border: #d9cdbb;
+  --sidebar-border: #dccfb9;
   --sidebar-ring: var(--bronze);
-  --success: #7d8f6a;
+  --success: var(--palm);
   --warning: #c9a25a;
   --error: #b5574a;
 
@@ -183,6 +188,10 @@
   --color-bronze-deep: var(--bronze-deep);
   --color-olive-grey: var(--olive-grey);
   --color-cream: var(--cream);
+  --color-forest: var(--forest);
+  --color-forest-deep: var(--forest-deep);
+  --color-palm: var(--palm);
+  --color-clay: var(--clay);
 }
 
 @layer base {

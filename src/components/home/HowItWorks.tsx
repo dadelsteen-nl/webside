@@ -10,8 +10,8 @@ import { ArrowIcon, buttonStyles, SectionLabel } from './primitives'
 
 type Step = { title: string; text: string }
 
-/** Demo in the showroom, installation at home, training with the app. */
-const stepImages = [brand.studio, brand.floorInstall, brand.mirrorCoach]
+/** Introduction, demo/pilot on site, installation & training, follow-up on progress. */
+const stepImages = [brand.studio, brand.mirrorCoach, brand.floorInstall, brand.stepProgress]
 
 export async function HowItWorks() {
   const t = await getTranslations('home.how')
@@ -31,20 +31,24 @@ export async function HowItWorks() {
             </h2>
           </Reveal>
           <Reveal className="lg:col-span-4 lg:col-start-9 lg:justify-self-end" delay={0.1}>
-            <Link className={cn(buttonStyles.base, buttonStyles.ink)} href="/demo">
+            <Link className={cn(buttonStyles.base, buttonStyles.forest)} href={{ hash: 'aanvraag', pathname: '/business' }}>
               {t('cta')}
               <ArrowIcon />
             </Link>
           </Reveal>
         </div>
 
-        <ol className="mt-16 grid border-t border-ink/15 md:mt-24 md:grid-cols-3">
+        <ol className="mt-16 grid border-t border-ink/15 md:mt-24 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, i) => (
             <Reveal
               as="li"
               className={cn(
-                'relative py-10 md:py-12 md:pr-10',
-                i > 0 && 'border-t border-ink/15 md:border-l md:border-t-0 md:pl-10',
+                'relative py-10 md:py-12 md:pr-8',
+                i > 0 && 'border-t border-ink/15',
+                i % 2 === 1 && 'md:border-l md:pl-8',
+                i === 1 && 'md:border-t-0',
+                i >= 2 && 'lg:border-t-0',
+                i === 2 && 'lg:border-l lg:pl-8',
               )}
               delay={i * 0.12}
               key={step.title}
@@ -58,14 +62,14 @@ export async function HowItWorks() {
                   alt={stepImages[i]?.alt ?? ''}
                   className="object-cover"
                   fill
-                  sizes="(min-width: 768px) 30vw, 100vw"
+                  sizes="(min-width: 1024px) 22vw, (min-width: 768px) 45vw, 100vw"
                   src={(stepImages[i] ?? brand.studio).url}
                 />
               </div>
               <span className="font-display text-sm italic text-bronze-deep">
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <h3 className="mt-6 text-[1.75rem] font-light leading-tight text-ink md:text-3xl">{step.title}</h3>
+              <h3 className="mt-6 text-[1.625rem] font-light leading-tight text-ink">{step.title}</h3>
               <p className="mt-4 max-w-sm text-[0.9375rem] leading-relaxed text-olive-grey">{step.text}</p>
             </Reveal>
           ))}

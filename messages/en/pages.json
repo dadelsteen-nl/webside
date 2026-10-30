@@ -65,7 +65,11 @@
       "label": "Request",
       "title": "Plan <em>your demo</em>",
       "intro": "Tell us your preferences. We confirm the moment personally, usually within one business day.",
-      "reassurance": ["Entirely without obligation", "Reply within one business day", "Your details stay with us"]
+      "reassurance": [
+        "Entirely without obligation",
+        "Reply within one business day",
+        "Your details stay with us"
+      ]
     },
     "faq": {
       "label": "Frequently asked",
@@ -88,19 +92,28 @@
   },
   "business": {
     "meta": {
-      "title": "Business",
-      "description": "imbody for physiotherapy, gyms and PT studios, hotels, corporate wellness and wellness salons. Data-driven strength training in 1.4 m², with advice, installation and training."
+      "title": "For organisations",
+      "description": "Dadelsteen supplies and implements imbody for municipalities and government, social services, rehabilitation centres, physiotherapy, boutique fitness and workplace vitality. Advice, pilot, installation, training and service."
     },
     "hero": {
-      "eyebrow": "For professionals",
-      "title": "Intelligent strength training <em>for your practice</em>",
-      "intro": "Whether you guide patients, want to retain members or offer guests something exceptional, imbody brings coached strength training to any space. Measurable, compact and without needing a trainer by its side at all times.",
+      "eyebrow": "For organisations",
+      "title": "Movement and recovery, <em>professionally organised</em>",
+      "intro": "Dadelsteen is your partner for smart strength training in government, care, social services and fitness. We supply imbody and take care of advice, implementation, training your team and service — measurable, compact and without needing a trainer by its side at all times.",
       "primary": "Request a proposal",
-      "secondary": "Book a business demo",
+      "secondary": "Schedule an introduction or demo",
       "stats": [
-        { "value": "1.4 m²", "label": "footprint" },
-        { "value": "120 kg", "label": "digital resistance" },
-        { "value": "400+", "label": "guided workouts" }
+        {
+          "value": "1.4 m²",
+          "label": "footprint"
+        },
+        {
+          "value": "120 kg",
+          "label": "digital resistance"
+        },
+        {
+          "value": "400+",
+          "label": "guided workouts"
+        }
       ]
     },
     "segments": {
@@ -108,59 +121,69 @@
       "title": "Made for <em>your field</em>",
       "items": [
         {
-          "key": "physio",
-          "title": "Physiotherapy & rehabilitation",
-          "text": "Dose load to the kilo and track recovery objectively.",
+          "key": "government",
+          "title": "Municipalities & government",
+          "text": "Vitality for civil servants and everyone working with and for government.",
           "bullets": [
-            "Resistance from very light loads, built up in small increments",
-            "Motion analysis supports your observation during exercises",
-            "Progress per patient at a glance, for clear reporting"
+            "Compact set-up in an office, vitality room or quiet room",
+            "Short, guided sessions that fit between two meetings",
+            "A personal profile and programme for every employee"
           ]
         },
         {
-          "key": "gym",
-          "title": "Gyms & PT studios",
-          "text": "A premium training station that stands out and pays its way.",
+          "key": "social",
+          "title": "Social services",
+          "text": "Accessible exercise for clients of case managers, community teams and care providers.",
+          "bullets": [
+            "Guidance by the AI coach, also for people without training experience",
+            "Resistance from a very low load, built up step by step",
+            "Progress visible to both client and supervisor"
+          ]
+        },
+        {
+          "key": "rehab",
+          "title": "Rehabilitation centres",
+          "text": "Dose load to the kilo and track recovery objectively.",
+          "bullets": [
+            "Resistance adjustable in small steps, including eccentric and isokinetic",
+            "Motion analysis supports your observation during exercises",
+            "Multiple client profiles on one unit"
+          ]
+        },
+        {
+          "key": "physio",
+          "title": "Physiotherapy",
+          "text": "Measurable exercise therapy that supports and extends your treatment.",
+          "bullets": [
+            "Progress per patient at a glance, for clear reporting",
+            "Patients train independently with live technique feedback",
+            "Takes up about 1.4 m² in your practice"
+          ]
+        },
+        {
+          "key": "fitness",
+          "title": "Boutique fitness & PT",
+          "text": "A distinctive, data-driven training spot for your members.",
           "bullets": [
             "Five training modes, from eccentric to isokinetic",
             "A new proposition for small-group and personal training",
-            "Members train independently with live technique feedback"
-          ]
-        },
-        {
-          "key": "hotel",
-          "title": "Hotels & holiday parks",
-          "text": "A fitness room that matches the standard of your rooms.",
-          "bullets": [
-            "Complete strength training without racks or loose weights",
-            "Silent in use, suited to suites and compact spaces",
-            "Guests train with guidance, even without staff on the floor"
+            "Members train independently with live feedback on their technique"
           ]
         },
         {
           "key": "corporate",
-          "title": "Corporate wellness",
-          "text": "Wellbeing that employees actually use.",
+          "title": "Workplace vitality",
+          "text": "Vitality that employees actually use.",
           "bullets": [
-            "Short sessions that fit between two meetings",
-            "A personal profile for every employee",
-            "A compact set-up in an office or quiet room"
-          ]
-        },
-        {
-          "key": "salon",
-          "title": "Wellness & beauty salons",
-          "text": "Extend your treatments with guided strength and posture work.",
-          "bullets": [
-            "Combine training with your existing treatment programmes",
-            "An elegant device that suits a refined interior",
-            "More revenue per square metre with a new package"
+            "No changing room or weight rack needed",
+            "Quiet in use, suitable for office environments",
+            "A personal profile for every employee"
           ]
         }
       ]
     },
     "why": {
-      "label": "Why imbody",
+      "label": "Why Dadelsteen & imbody",
       "title": "What it means <em>for your organisation</em>",
       "items": [
         {
@@ -208,15 +231,43 @@
       ]
     },
     "form": {
-      "label": "Business enquiry",
+      "label": "Request for organisations",
       "title": "Tell us about <em>your organisation</em>",
       "intro": "An advisor will contact you within one business day. You will receive a proposal that fits your space, audience and budget.",
-      "points": ["Volume pricing and leasing on request", "Demo at your own location", "Installation and team training included"]
+      "points": [
+        "Volume pricing, lease and framework agreements available",
+        "Demo or pilot at your own location",
+        "Installation and team training included"
+      ]
     },
     "cta": {
-      "title": "Rather <em>try it first</em>?",
-      "text": "Book a business demo in our showroom or at your own location.",
-      "button": "Book a business demo"
+      "title": "Prefer to <em>experience it first</em>?",
+      "text": "Schedule an introduction or demo in our showroom, at your location or online.",
+      "button": "Schedule an introduction"
+    },
+    "procurement": {
+      "label": "Procurement & tenders",
+      "title": "Easy to procure, <em>carefully introduced</em>",
+      "intro": "We know procurement in government and care has to be done carefully. So we make it as simple as possible for you.",
+      "items": [
+        {
+          "title": "Tailored proposal",
+          "text": "A clear proposal per location or organisation, with volume pricing for multiple units."
+        },
+        {
+          "title": "Pilot or trial placement",
+          "text": "Experience it first with your own staff or clients, followed by a joint evaluation."
+        },
+        {
+          "title": "Multi-year agreements",
+          "text": "Framework agreements, lease and service arrangements are open for discussion."
+        },
+        {
+          "title": "Documentation on request",
+          "text": "Product specifications, CE and safety information and an implementation plan for your procurement file."
+        }
+      ],
+      "cta": "Talk to us about procurement"
     }
   },
   "about": {

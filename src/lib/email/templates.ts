@@ -13,11 +13,11 @@ export type LeadKind = 'demo' | 'contact' | 'b2b'
 
 const C = {
   sand: '#f4efe8',
-  cream: '#faf7f2',
-  stone: '#e4dacb',
-  ink: '#1a1a1a',
-  bronze: '#b08d57',
-  olive: '#6e6a5e',
+  cream: '#fbf8f2',
+  stone: '#e8dcc8',
+  ink: '#2e1f16',
+  bronze: '#a3562a',
+  olive: '#6b5e4e',
 }
 
 const SERIF = "'Fraunces', Georgia, 'Times New Roman', serif"
@@ -141,9 +141,11 @@ const L = {
     locations: { showroom: 'Showroom', 'at-home': 'Bij u thuis', online: 'Online videodemo' },
     audiences: { private: 'Particulier', business: 'Zakelijk' },
     businessTypes: {
-      gym: "Gym / PT-studio",
+      government: 'Gemeente / overheid',
+      social: 'Sociaal domein / wijkteam',
+      gym: 'Boutique fitness / PT-studio',
       physio: 'Fysiotherapie',
-      clinic: 'Kliniek / revalidatie',
+      clinic: 'Revalidatiecentrum / kliniek',
       salon: 'Wellness- / beautysalon',
       hotel: 'Hotel / vakantiepark',
       corporate: 'Bedrijfsfitness',
@@ -169,9 +171,11 @@ const L = {
     locations: { showroom: 'Showroom', 'at-home': 'At your home', online: 'Online video demo' },
     audiences: { private: 'Private', business: 'Business' },
     businessTypes: {
-      gym: 'Gym / PT studio',
+      government: 'Municipality / government',
+      social: 'Social services / community team',
+      gym: 'Boutique fitness / PT studio',
       physio: 'Physiotherapy',
-      clinic: 'Clinic / rehabilitation',
+      clinic: 'Rehabilitation centre / clinic',
       salon: 'Wellness / beauty salon',
       hotel: 'Hotel / holiday park',
       corporate: 'Corporate wellness',
@@ -221,7 +225,7 @@ export type B2BLead = {
   contactName: string
   email: string
   phone?: string
-  businessType?: 'gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other'
+  businessType?: 'government' | 'social' | 'gym' | 'physio' | 'clinic' | 'salon' | 'hotel' | 'corporate' | 'other'
   units?: number
   message?: string
 }

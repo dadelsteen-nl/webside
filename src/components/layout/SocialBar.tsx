@@ -178,7 +178,7 @@ function MobileFab({ links, waHref }: { links: SocialLink[]; waHref: string | nu
                   {...externalProps({ url: href, placeholder })}
                   aria-label={label}
                   className={cn(
-                    'flex size-11 items-center justify-center rounded-full border border-ink/10 bg-cream text-ink shadow-[0_10px_30px_-12px_rgba(26,26,26,0.35)] transition-colors duration-500',
+                    'flex size-11 items-center justify-center rounded-full border border-ink/10 bg-cream text-ink shadow-[0_10px_30px_-12px_rgba(46,31,22,0.35)] transition-colors duration-500',
                     whatsapp ? 'active:bg-[#25d366] active:text-white' : 'active:text-bronze-deep',
                   )}
                   onClick={() => setOpen(false)}
@@ -195,7 +195,7 @@ function MobileFab({ links, waHref }: { links: SocialLink[]; waHref: string | nu
         aria-controls={listId}
         aria-expanded={open}
         aria-label={open ? t('close') : t('open')}
-        className="flex size-12 items-center justify-center rounded-full bg-ink text-cream shadow-[0_14px_40px_-14px_rgba(26,26,26,0.6)] transition-colors duration-500 hover:bg-bronze-deep"
+        className="flex size-12 items-center justify-center rounded-full bg-ink text-cream shadow-[0_14px_40px_-14px_rgba(46,31,22,0.6)] transition-colors duration-500 hover:bg-bronze-deep"
         onClick={() => setOpen((v) => !v)}
         type="button"
       >

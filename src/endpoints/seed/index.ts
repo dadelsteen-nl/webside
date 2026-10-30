@@ -365,11 +365,9 @@ export const seed = async ({
   })
 
   const homeL = (l: Locale) => ({
-    heroTitle: l === 'nl' ? 'Je persoonlijke sportstudio, in een spiegel' : 'Your personal training studio, in a mirror',
-    heroSubtitle:
-      l === 'nl'
-        ? 'Digitale weerstand, een AI-coach en een afwerking die thuis hoort in je interieur.'
-        : 'Digital resistance, an AI coach and a finish that belongs in your interior.',
+    // Empty: the homepage hero shows its translated Dadelsteen copy unless an editor overrides it
+    heroTitle: null,
+    heroSubtitle: null,
     hotspots: proS.hotspots.map((h) => ({ x: h.x, y: h.y, title: h.title[l], text: h.text[l] })),
   })
   await payload.updateGlobal({

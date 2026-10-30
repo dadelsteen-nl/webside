@@ -8,9 +8,11 @@ import {
   BusinessFormSection,
   BusinessHero,
   BusinessProcess,
+  BusinessProcurement,
   BusinessSegments,
   BusinessWhy,
 } from '@/components/pages/business/BusinessSections'
+import { Roadmap } from '@/components/home/Roadmap'
 import { buildPageMetadata } from '@/components/pages/metadata'
 import { routing } from '@/i18n/routing'
 
@@ -32,7 +34,9 @@ export default async function BusinessPage({ params }: Args) {
       <BusinessHero />
       <BusinessSegments />
       <BusinessWhy />
+      <Roadmap />
       <BusinessProcess />
+      <BusinessProcurement />
       <BusinessFormSection />
       <BusinessCta />
     </>

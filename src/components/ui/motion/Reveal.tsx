@@ -9,6 +9,8 @@ export const EASE_LUXE = [0.22, 1, 0.36, 1] as const
 type RevealProps = {
   children: ReactNode
   className?: string
+  /** DOM id, e.g. for in-page anchors */
+  id?: string
   /** Delay in seconds */
   delay?: number
   /** Duration in seconds */
@@ -34,6 +36,7 @@ export function Reveal({
   className,
   delay = 0,
   duration = 1,
+  id,
   once = true,
   trigger = 'inView',
   y = 28,
@@ -43,12 +46,17 @@ export function Reveal({
 
   if (reduce) {
     const Static = as as ElementType
-    return <Static className={className}>{children}</Static>
+    return (
+      <Static className={className} id={id}>
+        {children}
+      </Static>
+    )
   }
 
   return (
     <Component
       className={className}
+      id={id}
       initial={{ opacity: 0, y }}
       transition={{ delay, duration, ease: EASE_LUXE }}
       {...(trigger === 'mount'

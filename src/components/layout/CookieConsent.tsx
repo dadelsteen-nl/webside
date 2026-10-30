@@ -66,7 +66,7 @@ export function CookieConsent() {
           aria-describedby={descId}
           aria-labelledby={titleId}
           aria-modal="false"
-          className="fixed inset-x-3 bottom-3 z-[70] max-h-[calc(100dvh-1.5rem)] overflow-y-auto border border-ink/10 bg-cream/95 p-6 text-ink shadow-[0_30px_80px_-30px_rgba(26,26,26,0.35)] backdrop-blur-md outline-none sm:inset-x-auto sm:bottom-6 sm:left-6 sm:w-[26rem] sm:p-8"
+          className="fixed inset-x-3 bottom-3 z-[70] max-h-[calc(100dvh-1.5rem)] overflow-y-auto border border-ink/10 bg-cream/95 p-6 text-ink shadow-[0_30px_80px_-30px_rgba(46,31,22,0.35)] backdrop-blur-md outline-none sm:inset-x-auto sm:bottom-6 sm:left-6 sm:w-[26rem] sm:p-8"
           data-lenis-prevent
           exit={{ opacity: 0, y: reduceMotion ? 0 : 16, transition: { duration: 0.5, ease } }}
           initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}

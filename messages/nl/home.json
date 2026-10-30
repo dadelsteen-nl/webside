@@ -1,37 +1,60 @@
 {
   "meta": {
-    "title": "imbody AI smart-mirror home gym in Nederland & België",
-    "description": "Dadelsteen brengt imbody naar Nederland en België: een AI smart mirror met digitale weerstand tot 120 kg, persoonlijke coaching en 400+ trainingen. Kracht vanuit de kern, in je eigen huis.",
-    "organizationDescription": "Dadelsteen is de premium specialist in imbody AI smart-mirror home gyms voor thuis en zakelijk gebruik in Nederland en België."
+    "title": "Partner in herstel en beweging voor overheid, zorg en fitness",
+    "description": "Dadelsteen levert en implementeert imbody — slimme, meetbare krachttraining — voor gemeenten, overheid, revalidatiecentra, fysiotherapie, sociaal domein en boutique fitness in Nederland en België.",
+    "organizationDescription": "Dadelsteen is leverancier en implementatiepartner van slimme bewegings- en herstelsystemen (imbody) voor overheid, zorg, sociaal domein en fitness in Nederland en België."
   },
   "hero": {
-    "eyebrow": "imbody — AI smart mirror home gym",
-    "titleLine1": "Kracht vanuit",
-    "titleLine2": "de <em>kern</em>.",
-    "subtitle": "Een stille spiegel die je ziet, begrijpt en sterker maakt. Digitale weerstand tot 120 kg en een AI-coach die elke herhaling volgt — op nog geen anderhalve vierkante meter.",
-    "ctaPrimary": "Demo boeken",
-    "ctaSecondary": "Ontdek imbody",
-    "scroll": "Scroll",
-    "videoLabel": "Sfeerbeeld van trainen met imbody in een lichte woonkamer"
+    "eyebrow": "Dadelsteen — partner in herstel en beweging",
+    "titleLine1": "Sterk in herstel,",
+    "titleLine2": "<em>vitaal</em> in beweging.",
+    "subtitle": "Dadelsteen levert en implementeert slimme krachttraining voor gemeenten, overheid, revalidatie, fysiotherapie, sociaal domein en boutique fitness. Met imbody: meetbaar, compact en begeleid door AI.",
+    "ctaPrimary": "Plan een kennismaking",
+    "ctaSecondary": "Voor thuis",
+    "videoLabel": "Training met het imbody-systeem",
+    "mediaCaption": "Het systeem dat wij leveren: imbody Pro S",
+    "sectorsLabel": "Sectoren",
+    "sectors": [
+      {
+        "key": "government",
+        "label": "Gemeenten & overheid"
+      },
+      {
+        "key": "social",
+        "label": "Sociaal domein"
+      },
+      {
+        "key": "rehab",
+        "label": "Revalidatie"
+      },
+      {
+        "key": "physio",
+        "label": "Fysiotherapie"
+      },
+      {
+        "key": "fitness",
+        "label": "Boutique fitness"
+      }
+    ]
   },
   "trust": {
     "label": "Onze belofte",
     "items": [
       {
-        "title": "Gratis levering & installatie",
-        "text": "Door ons eigen team, in heel Nederland en België"
+        "title": "Eén vast aanspreekpunt",
+        "text": "Een Nederlandse partner, in Nederland en België"
       },
       {
-        "title": "2 jaar garantie",
-        "text": "Op toestel, motor en display"
+        "title": "Installatie & instructie",
+        "text": "Op locatie, door ons eigen team"
       },
       {
-        "title": "Geen verplicht abonnement",
-        "text": "Jij kiest wat je erbij neemt"
+        "title": "Pilot bespreekbaar",
+        "text": "Eerst ervaren in uw organisatie, dan beslissen"
       },
       {
-        "title": "14 dagen bedenktijd",
-        "text": "Rustig thuis ervaren, zonder druk"
+        "title": "Service & onderhoud",
+        "text": "2 jaar garantie en snelle ondersteuning"
       }
     ]
   },
@@ -45,7 +68,7 @@
     "caption": "Uitgeschakeld gewoon een spiegel"
   },
   "spotlight": {
-    "label": "01 — imbody",
+    "label": "04 — Het systeem",
     "title": "Eén spiegel. Een complete gym.",
     "defaultName": "imbody Pro S",
     "defaultDescription": "Een 43-inch touchscreen-spiegel met digitale motorweerstand, AI-bewegingsanalyse en honderden begeleide trainingen. Ontworpen om op te gaan in je interieur — en tot leven te komen zodra je begint.",
@@ -137,7 +160,7 @@
     }
   },
   "tech": {
-    "label": "04 — Technologie",
+    "label": "06 — Technologie",
     "title": "Ontworpen rond jouw lichaam.",
     "intro": "Vijf technologieën, één doel: elke training slimmer, veiliger en persoonlijker maken.",
     "items": [
@@ -174,48 +197,68 @@
     ]
   },
   "how": {
-    "label": "05 — Zo werkt het",
-    "title": "Van kennismaking tot eerste training.",
+    "label": "05 — Zo werken we",
+    "title": "Van kennismaking tot structurele inzet.",
     "steps": [
       {
-        "title": "Boek een demo",
-        "text": "Ervaar imbody in onze showroom of bij je thuis. We nemen de tijd voor je vragen en je doelen."
+        "title": "Kennismaking",
+        "text": "We bespreken uw doelgroep, ruimte en doelen — op locatie, in de showroom of online."
       },
       {
-        "title": "Levering & installatie",
-        "text": "Ons team levert, monteert en kalibreert imbody op de juiste plek. Jij hoeft niets te tillen."
+        "title": "Demo of pilot",
+        "text": "Uw team en doelgroep ervaren imbody in de praktijk, zodat u onderbouwd kunt beslissen."
       },
       {
-        "title": "Train met je AI-coach",
-        "text": "Kies een programma, volg je voortgang en word week na week sterker — op jouw tijd."
+        "title": "Implementatie & training",
+        "text": "Wij installeren, kalibreren en leren uw team het systeem veilig en zelfstandig gebruiken."
+      },
+      {
+        "title": "Begeleiding & evaluatie",
+        "text": "We blijven betrokken: we evalueren gebruik en resultaten en stemmen de inzet samen bij."
       }
     ],
-    "cta": "Plan je demo"
+    "cta": "Plan een kennismaking"
   },
   "audiences": {
-    "label": "06 — Voor wie",
-    "title": "Thuis, in de praktijk, in de studio.",
-    "intro": "imbody hoort overal waar mensen met aandacht willen trainen.",
+    "label": "01 — Sectoren",
+    "title": "Het juiste adres voor uw organisatie.",
+    "intro": "Dadelsteen richt zich op organisaties die bewegen en herstel serieus nemen — en op iedereen die dat thuis wil.",
     "items": [
       {
+        "key": "government",
+        "title": "Gemeenten & overheid",
+        "text": "Vitaliteit voor ambtenaren en medewerkers die met en voor de overheid werken.",
+        "cta": "Voor overheid"
+      },
+      {
+        "key": "social",
+        "title": "Sociaal domein",
+        "text": "Laagdrempelig, begeleid bewegen voor cliënten van casemanagers en wijkteams.",
+        "cta": "Voor het sociaal domein"
+      },
+      {
+        "key": "rehab",
+        "title": "Revalidatiecentra",
+        "text": "Belasting tot op de kilo doseren en herstel objectief volgen.",
+        "cta": "Voor revalidatie"
+      },
+      {
+        "key": "physio",
+        "title": "Fysiotherapie",
+        "text": "Meetbare oefentherapie die uw behandeling ondersteunt.",
+        "cta": "Voor fysiotherapie"
+      },
+      {
+        "key": "fitness",
+        "title": "Boutique fitness & PT",
+        "text": "Een onderscheidende, datagedreven trainingsplek voor uw leden.",
+        "cta": "Voor fitness"
+      },
+      {
+        "key": "home",
         "title": "Thuis",
-        "text": "Een complete gym die opgaat in je interieur.",
+        "text": "Een complete, begeleide gym die opgaat in uw interieur.",
         "cta": "Ontdek imbody"
-      },
-      {
-        "title": "Fysiotherapie & klinieken",
-        "text": "Meetbare revalidatie met nauwkeurige, lage weerstand.",
-        "cta": "Zakelijke oplossingen"
-      },
-      {
-        "title": "Gyms & PT-studio's",
-        "text": "Datagedreven coaching die je klanten zien en voelen.",
-        "cta": "Zakelijke oplossingen"
-      },
-      {
-        "title": "Hotels & bedrijven",
-        "text": "Een premium wellnessbeleving voor gasten en teams.",
-        "cta": "Zakelijke oplossingen"
       }
     ]
   },
@@ -238,51 +281,27 @@
     "disclaimer": "Indicatieve berekening op basis van jouw invoer. Werkelijke kosten kunnen afwijken; optionele accessoires en contentpakketten zijn niet meegerekend.",
     "tableTitle": "Meer dan een rekensom",
     "tableCriterion": "Vergelijking",
-    "tableColumns": [
-      "imbody",
-      "Sportschool",
-      "Personal trainer"
-    ],
+    "tableColumns": ["imbody", "Sportschool", "Personal trainer"],
     "tableRows": [
       {
         "label": "Beschikbaarheid",
-        "values": [
-          "24/7, thuis",
-          "Openingstijden",
-          "Op afspraak"
-        ]
+        "values": ["24/7, thuis", "Openingstijden", "Op afspraak"]
       },
       {
         "label": "Persoonlijke begeleiding",
-        "values": [
-          "yes",
-          "no",
-          "yes"
-        ]
+        "values": ["yes", "no", "yes"]
       },
       {
         "label": "Voortgang automatisch bijgehouden",
-        "values": [
-          "yes",
-          "partial",
-          "partial"
-        ]
+        "values": ["yes", "partial", "partial"]
       },
       {
         "label": "Reistijd",
-        "values": [
-          "Geen",
-          "Elke keer",
-          "Elke keer"
-        ]
+        "values": ["Geen", "Elke keer", "Elke keer"]
       },
       {
         "label": "Privacy",
-        "values": [
-          "yes",
-          "no",
-          "partial"
-        ]
+        "values": ["yes", "no", "partial"]
       }
     ],
     "yes": "Ja",
@@ -290,7 +309,7 @@
     "partial": "Deels"
   },
   "testimonials": {
-    "label": "08 — Ervaringen",
+    "label": "07 — Ervaringen",
     "title": "Beoordeeld door 200+ gebruikers.",
     "rating": "{rating} van 5 sterren",
     "items": [
@@ -306,7 +325,7 @@
     "shotsLabel": "Zo staat imbody bij onze klanten"
   },
   "gallery": {
-    "label": "09 — Thuis in elk interieur",
+    "label": "08 — Thuis in elk interieur",
     "title": "Rust in de ruimte.",
     "captions": [
       "Compact appartement",
@@ -317,7 +336,7 @@
     ]
   },
   "faq": {
-    "label": "10 — Vragen",
+    "label": "09 — Vragen",
     "title": "Goed om te weten.",
     "cta": "Alle veelgestelde vragen",
     "items": [
@@ -344,16 +363,74 @@
     ]
   },
   "journal": {
-    "label": "11 — Journal",
+    "label": "10 — Journal",
     "title": "Verhalen over kracht en rust.",
     "cta": "Naar het journal",
     "readMore": "Lees verder"
   },
   "cta": {
-    "eyebrow": "Kracht vanuit de kern",
-    "title": "Ervaar het <em>zelf</em>.",
-    "text": "Plan een persoonlijke demo in de showroom of bij je thuis. Geen verplichtingen — alleen een eerste, overtuigende training.",
-    "primary": "Demo boeken",
+    "eyebrow": "Sterk in herstel, vitaal in beweging",
+    "title": "Laten we <em>kennismaken</em>.",
+    "text": "Plan een vrijblijvende kennismaking of demo — op uw locatie, in onze showroom of online. Voor organisaties én particulieren.",
+    "primary": "Demo of kennismaking plannen",
     "whatsapp": "Stel je vraag via WhatsApp"
+  },
+  "why": {
+    "label": "02 — Waarom Dadelsteen",
+    "title": "Eén partner, van advies tot <em>evaluatie</em>.",
+    "text": "Een dadelsteen draagt in stilte alles wat nodig is om te groeien. Zo werken wij ook: rustig, grondig en dichtbij. imbody is het systeem dat wij leveren — Dadelsteen is de partner die ervoor zorgt dat het in uw organisatie werkt.",
+    "signature": "Dadelsteen — sterk in herstel, vitaal in beweging",
+    "cta": "Bekijk onze aanpak",
+    "imageAlt": "Begeleide training met imbody",
+    "points": [
+      {
+        "title": "Advies op maat",
+        "text": "We brengen uw doelgroep, ruimte en doelen in kaart en adviseren een passende opstelling."
+      },
+      {
+        "title": "Implementatie op locatie",
+        "text": "Levering, montage en kalibratie door ons eigen team — zonder gedoe voor uw organisatie."
+      },
+      {
+        "title": "Training van uw team",
+        "text": "Uw medewerkers, therapeuten of trainers leren het systeem zelfstandig en veilig inzetten."
+      },
+      {
+        "title": "Inzicht in voortgang",
+        "text": "Trainingsdata uit het systeem maken voortgang zichtbaar en bespreekbaar."
+      },
+      {
+        "title": "Service & onderhoud",
+        "text": "Eén aanspreekpunt voor vragen, updates en onderhoud, ook na de installatie."
+      }
+    ]
+  },
+  "roadmap": {
+    "label": "03 — Ons traject",
+    "title": "Van gemeente tot <em>zorgverzekeraar</em>.",
+    "intro": "Dadelsteen bouwt stap voor stap aan landelijke beschikbaarheid. Dit is ons traject — en waar we nu staan.",
+    "steps": [
+      {
+        "status": "Nu",
+        "title": "Lokale overheid",
+        "text": "Plaatsingen en pilots bij gemeenten: vitaliteit voor medewerkers en laagdrempelig bewegen voor inwoners via het sociaal domein."
+      },
+      {
+        "status": "In opbouw",
+        "title": "Nationale overheid",
+        "text": "Landelijke beschikbaarheid via overheidsdiensten, voor ambtenaren en iedereen die met en voor de overheid werkt."
+      },
+      {
+        "status": "In opbouw",
+        "title": "Revalidatie & fysiotherapie",
+        "text": "Inzet bij revalidatiecentra en fysiotherapiepraktijken, met meetbare belasting en voortgang per cliënt."
+      },
+      {
+        "status": "Ambitie",
+        "title": "Vergoeding via de zorgverzekeraar",
+        "text": "Ons doel: dat u imbody kunt aanvragen via uw zorgverzekeraar. Daar werken we aan."
+      }
+    ],
+    "note": "Vergoeding door de zorgverzekeraar is op dit moment nog niet beschikbaar. We informeren u zodra hierover definitieve afspraken zijn."
   }
 }

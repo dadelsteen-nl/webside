@@ -4,22 +4,21 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
 import { Audiences } from '@/components/home/Audiences'
-import { CostCalculator } from '@/components/home/CostCalculator'
-import { FALLBACK_IMBODY_PRICE, getHomeData, HOME_PRODUCT_SLUG } from '@/components/home/data'
+import { getHomeData, HOME_PRODUCT_SLUG } from '@/components/home/data'
 import { DemoCta } from '@/components/home/DemoCta'
 import { FaqPreview } from '@/components/home/FaqPreview'
 import { Gallery } from '@/components/home/Gallery'
 import { Hero } from '@/components/home/Hero'
 import { HomeStyles } from '@/components/home/HomeStyles'
 import { HowItWorks } from '@/components/home/HowItWorks'
-import { Included } from '@/components/home/Included'
-import { Intro } from '@/components/home/Intro'
 import { HomeJsonLd } from '@/components/home/JsonLd'
 import { JournalPreview } from '@/components/home/JournalPreview'
+import { Roadmap } from '@/components/home/Roadmap'
 import { Spotlight } from '@/components/home/Spotlight'
 import { Technology } from '@/components/home/Technology'
 import { Testimonials } from '@/components/home/Testimonials'
 import { TrustStrip } from '@/components/home/TrustStrip'
+import { WhyDadelsteen } from '@/components/home/WhyDadelsteen'
 import type { HomeTestimonial } from '@/components/home/types'
 import { routing } from '@/i18n/routing'
 
@@ -76,6 +75,9 @@ export default async function HomePage({ params }: Args) {
         video={data.hero.video}
       />
       <TrustStrip />
+      <Audiences productSlug={productSlug} />
+      <WhyDadelsteen />
+      <Roadmap />
       <Spotlight
         canOrderDirect={data.canOrderDirect}
         hotspots={data.hotspots}
@@ -83,15 +85,8 @@ export default async function HomePage({ params }: Args) {
         product={data.product}
         productSlug={productSlug}
       />
-      <Intro productSlug={productSlug} />
-      <Included />
-      <Technology />
       <HowItWorks />
-      <Audiences productSlug={productSlug} />
-      <CostCalculator
-        defaults={data.calc}
-        imbodyPrice={data.product?.priceEUR ?? FALLBACK_IMBODY_PRICE}
-      />
+      <Technology />
       <Testimonials items={testimonials} />
       <Gallery items={data.gallery} />
       <FaqPreview items={data.faqs} />

@@ -23,7 +23,8 @@ import { useLeadSubmit } from './useLeadSubmit'
 
 type Values = Omit<B2BRequestInput, 'locale' | 'startedAt' | 'units'> & { units: string }
 
-export const BUSINESS_TYPES = ['physio', 'clinic', 'gym', 'hotel', 'corporate', 'salon', 'other'] as const
+// Shown in the form; 'hotel' and 'salon' stay valid in the collection for older leads
+export const BUSINESS_TYPES = ['government', 'social', 'clinic', 'physio', 'gym', 'corporate', 'other'] as const
 
 export function B2BForm() {
   const t = useTranslations('forms')

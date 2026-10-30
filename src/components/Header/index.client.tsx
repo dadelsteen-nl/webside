@@ -43,18 +43,10 @@ export function HeaderClient({ socialLinks }: Props) {
           'fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,color,backdrop-filter] duration-1000 ease-(--ease-luxe)',
           solid
             ? 'border-ink/10 bg-sand/85 text-ink backdrop-blur-md'
-            : 'border-transparent bg-transparent text-cream',
+            : 'border-transparent bg-transparent text-ink',
         )}
         data-header-solid={solid ? 'true' : 'false'}
       >
-        {/* Soft scrim keeps cream text legible over bright hero frames. */}
-        <div
-          aria-hidden="true"
-          className={cn(
-            'pointer-events-none absolute inset-x-0 top-0 -z-10 h-32 bg-gradient-to-b from-ink/35 to-transparent transition-opacity duration-1000 ease-(--ease-luxe)',
-            solid ? 'opacity-0' : 'opacity-100',
-          )}
-        />
         <div
           className={cn(
             'mx-auto flex max-w-[96rem] items-center justify-between gap-6 px-5 transition-[height] duration-1000 ease-(--ease-luxe) md:px-8 xl:px-12',
@@ -66,7 +58,7 @@ export function HeaderClient({ socialLinks }: Props) {
             className="relative z-10 shrink-0"
             href="/"
           >
-            <Logo className="[&>span:last-child]:text-[0.95rem] sm:[&>span:last-child]:text-[1.1rem]" />
+            <Logo />
           </Link>
 
           <nav aria-label={t('mainNav')} className="hidden xl:block">
@@ -109,9 +101,7 @@ export function HeaderClient({ socialLinks }: Props) {
             <Link
               className={cn(
                 'hidden h-10 items-center border px-5 text-[0.625rem] font-medium uppercase tracking-[0.2em] transition-colors duration-700 ease-(--ease-luxe) md:inline-flex',
-                solid
-                  ? 'border-ink bg-ink text-cream hover:border-bronze-deep hover:bg-bronze-deep'
-                  : 'border-cream/70 text-cream hover:bg-cream hover:text-ink',
+                'border-forest bg-forest text-cream hover:border-bronze-deep hover:bg-bronze-deep',
               )}
               href="/demo"
             >

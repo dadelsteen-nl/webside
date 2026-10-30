@@ -1,37 +1,60 @@
 {
   "meta": {
-    "title": "imbody AI smart-mirror home gym in the Netherlands & Belgium",
-    "description": "Dadelsteen brings imbody to the Netherlands and Belgium: an AI smart mirror with digital resistance up to 120 kg, personal coaching and 400+ workouts. Strength from the core, at home.",
-    "organizationDescription": "Dadelsteen is the premium specialist in imbody AI smart-mirror home gyms for home and business use in the Netherlands and Belgium."
+    "title": "Partner in recovery and movement for government, care and fitness",
+    "description": "Dadelsteen supplies and implements imbody — smart, measurable strength training — for municipalities, government, rehabilitation centres, physiotherapy, social services and boutique fitness in the Netherlands and Belgium.",
+    "organizationDescription": "Dadelsteen is a supplier and implementation partner of smart movement and recovery systems (imbody) for government, care, social services and fitness in the Netherlands and Belgium."
   },
   "hero": {
-    "eyebrow": "imbody — AI smart mirror home gym",
-    "titleLine1": "Strength from",
-    "titleLine2": "the <em>core</em>.",
-    "subtitle": "A quiet mirror that sees you, understands you and makes you stronger. Digital resistance up to 120 kg and an AI coach that follows every rep — in less than one and a half square metres.",
-    "ctaPrimary": "Book a demo",
-    "ctaSecondary": "Discover imbody",
-    "scroll": "Scroll",
-    "videoLabel": "Ambient footage of training with imbody in a bright living room"
+    "eyebrow": "Dadelsteen — partner in recovery and movement",
+    "titleLine1": "Strong in recovery,",
+    "titleLine2": "<em>vital</em> in motion.",
+    "subtitle": "Dadelsteen supplies and implements smart strength training for municipalities, government, rehabilitation, physiotherapy, social services and boutique fitness. With imbody: measurable, compact and guided by AI.",
+    "ctaPrimary": "Schedule an introduction",
+    "ctaSecondary": "For home",
+    "videoLabel": "Training with the imbody system",
+    "mediaCaption": "The system we supply: imbody Pro S",
+    "sectorsLabel": "Sectors",
+    "sectors": [
+      {
+        "key": "government",
+        "label": "Municipalities & government"
+      },
+      {
+        "key": "social",
+        "label": "Social services"
+      },
+      {
+        "key": "rehab",
+        "label": "Rehabilitation"
+      },
+      {
+        "key": "physio",
+        "label": "Physiotherapy"
+      },
+      {
+        "key": "fitness",
+        "label": "Boutique fitness"
+      }
+    ]
   },
   "trust": {
     "label": "Our promise",
     "items": [
       {
-        "title": "Free delivery & installation",
-        "text": "By our own team, across the Netherlands and Belgium"
+        "title": "One dedicated contact",
+        "text": "A Dutch partner, in the Netherlands and Belgium"
       },
       {
-        "title": "2-year warranty",
-        "text": "On the device, motor and display"
+        "title": "Installation & instruction",
+        "text": "On site, by our own team"
       },
       {
-        "title": "No subscription required",
-        "text": "You choose what you add"
+        "title": "Pilot available",
+        "text": "Experience it in your organisation first, then decide"
       },
       {
-        "title": "14-day return window",
-        "text": "Experience it at home, without pressure"
+        "title": "Service & maintenance",
+        "text": "2-year warranty and fast support"
       }
     ]
   },
@@ -45,7 +68,7 @@
     "caption": "Switched off, simply a mirror"
   },
   "spotlight": {
-    "label": "01 — imbody",
+    "label": "04 — The system",
     "title": "One mirror. A complete gym.",
     "defaultName": "imbody Pro S",
     "defaultDescription": "A 43-inch touchscreen mirror with digital motor resistance, AI motion analysis and hundreds of guided workouts. Designed to blend into your interior — and come alive the moment you start.",
@@ -137,7 +160,7 @@
     }
   },
   "tech": {
-    "label": "04 — Technology",
+    "label": "06 — Technology",
     "title": "Designed around your body.",
     "intro": "Five technologies, one purpose: making every session smarter, safer and more personal.",
     "items": [
@@ -174,48 +197,68 @@
     ]
   },
   "how": {
-    "label": "05 — How it works",
-    "title": "From first meeting to first workout.",
+    "label": "05 — How we work",
+    "title": "From introduction to lasting use.",
     "steps": [
       {
-        "title": "Book a demo",
-        "text": "Experience imbody in our showroom or in your own home. We take time for your questions and your goals."
+        "title": "Introduction",
+        "text": "We discuss your target group, space and goals — on site, in the showroom or online."
       },
       {
-        "title": "Delivery & installation",
-        "text": "Our team delivers, assembles and calibrates imbody in the right spot. You don't lift a thing."
+        "title": "Demo or pilot",
+        "text": "Your team and target group experience imbody in practice, so you can decide on solid ground."
       },
       {
-        "title": "Train with your AI coach",
-        "text": "Choose a programme, follow your progress and grow stronger week after week — on your own time."
+        "title": "Implementation & training",
+        "text": "We install and calibrate, and teach your team to use the system safely and independently."
+      },
+      {
+        "title": "Support & evaluation",
+        "text": "We stay involved: we evaluate use and results and fine-tune the set-up together."
       }
     ],
-    "cta": "Plan your demo"
+    "cta": "Schedule an introduction"
   },
   "audiences": {
-    "label": "06 — For whom",
-    "title": "At home, in the clinic, in the studio.",
-    "intro": "imbody belongs wherever people want to train with intention.",
+    "label": "01 — Sectors",
+    "title": "The right partner for your organisation.",
+    "intro": "Dadelsteen serves organisations that take movement and recovery seriously — and anyone who wants the same at home.",
     "items": [
       {
-        "title": "Home",
-        "text": "A complete gym that blends into your interior.",
+        "key": "government",
+        "title": "Municipalities & government",
+        "text": "Vitality for civil servants and everyone working with and for government.",
+        "cta": "For government"
+      },
+      {
+        "key": "social",
+        "title": "Social services",
+        "text": "Accessible, guided exercise for clients of case managers and community teams.",
+        "cta": "For social services"
+      },
+      {
+        "key": "rehab",
+        "title": "Rehabilitation centres",
+        "text": "Dose load to the kilo and track recovery objectively.",
+        "cta": "For rehabilitation"
+      },
+      {
+        "key": "physio",
+        "title": "Physiotherapy",
+        "text": "Measurable exercise therapy that supports your treatment.",
+        "cta": "For physiotherapy"
+      },
+      {
+        "key": "fitness",
+        "title": "Boutique fitness & PT",
+        "text": "A distinctive, data-driven training spot for your members.",
+        "cta": "For fitness"
+      },
+      {
+        "key": "home",
+        "title": "At home",
+        "text": "A complete, guided gym that blends into your interior.",
         "cta": "Discover imbody"
-      },
-      {
-        "title": "Physiotherapy & clinics",
-        "text": "Measurable rehabilitation with precise, low resistance.",
-        "cta": "Business solutions"
-      },
-      {
-        "title": "Gyms & PT studios",
-        "text": "Data-driven coaching your clients can see and feel.",
-        "cta": "Business solutions"
-      },
-      {
-        "title": "Hotels & corporate",
-        "text": "A premium wellness experience for guests and teams.",
-        "cta": "Business solutions"
       }
     ]
   },
@@ -238,51 +281,27 @@
     "disclaimer": "Indicative calculation based on your input. Actual costs may vary; optional accessories and content packages are not included.",
     "tableTitle": "More than a sum",
     "tableCriterion": "Comparison",
-    "tableColumns": [
-      "imbody",
-      "Gym",
-      "Personal trainer"
-    ],
+    "tableColumns": ["imbody", "Gym", "Personal trainer"],
     "tableRows": [
       {
         "label": "Availability",
-        "values": [
-          "24/7, at home",
-          "Opening hours",
-          "By appointment"
-        ]
+        "values": ["24/7, at home", "Opening hours", "By appointment"]
       },
       {
         "label": "Personal guidance",
-        "values": [
-          "yes",
-          "no",
-          "yes"
-        ]
+        "values": ["yes", "no", "yes"]
       },
       {
         "label": "Progress tracked automatically",
-        "values": [
-          "yes",
-          "partial",
-          "partial"
-        ]
+        "values": ["yes", "partial", "partial"]
       },
       {
         "label": "Travel time",
-        "values": [
-          "None",
-          "Every visit",
-          "Every visit"
-        ]
+        "values": ["None", "Every visit", "Every visit"]
       },
       {
         "label": "Privacy",
-        "values": [
-          "yes",
-          "no",
-          "partial"
-        ]
+        "values": ["yes", "no", "partial"]
       }
     ],
     "yes": "Yes",
@@ -290,7 +309,7 @@
     "partial": "Partly"
   },
   "testimonials": {
-    "label": "08 — Experiences",
+    "label": "07 — Reviews",
     "title": "Rated by 200+ users.",
     "rating": "{rating} out of 5 stars",
     "items": [
@@ -306,7 +325,7 @@
     "shotsLabel": "How imbody looks at our customers’ homes"
   },
   "gallery": {
-    "label": "09 — At home in any interior",
+    "label": "08 — At home in any interior",
     "title": "Calm in the room.",
     "captions": [
       "Compact apartment",
@@ -317,7 +336,7 @@
     ]
   },
   "faq": {
-    "label": "10 — Questions",
+    "label": "09 — Questions",
     "title": "Good to know.",
     "cta": "All frequently asked questions",
     "items": [
@@ -344,16 +363,74 @@
     ]
   },
   "journal": {
-    "label": "11 — Journal",
+    "label": "10 — Journal",
     "title": "Stories on strength and calm.",
     "cta": "Visit the journal",
     "readMore": "Read on"
   },
   "cta": {
-    "eyebrow": "Strength from the core",
-    "title": "Experience it <em>yourself</em>.",
-    "text": "Book a personal demo in the showroom or at home. No obligations — just a first, convincing workout.",
-    "primary": "Book a demo",
+    "eyebrow": "Strong in recovery, vital in motion",
+    "title": "Let's <em>talk</em>.",
+    "text": "Schedule a no-obligation introduction or demo — at your location, in our showroom or online. For organisations and individuals alike.",
+    "primary": "Schedule a demo or introduction",
     "whatsapp": "Ask us on WhatsApp"
+  },
+  "why": {
+    "label": "02 — Why Dadelsteen",
+    "title": "One partner, from advice to <em>evaluation</em>.",
+    "text": "A date stone quietly carries everything it needs to grow. That is how we work too: calm, thorough and close by. imbody is the system we supply — Dadelsteen is the partner that makes it work in your organisation.",
+    "signature": "Dadelsteen — strong in recovery, vital in motion",
+    "cta": "See our approach",
+    "imageAlt": "Guided training with imbody",
+    "points": [
+      {
+        "title": "Tailored advice",
+        "text": "We map your target group, space and goals and recommend a fitting set-up."
+      },
+      {
+        "title": "On-site implementation",
+        "text": "Delivery, assembly and calibration by our own team — no hassle for your organisation."
+      },
+      {
+        "title": "Training your team",
+        "text": "Your staff, therapists or trainers learn to use the system safely and independently."
+      },
+      {
+        "title": "Insight into progress",
+        "text": "Training data from the system makes progress visible and easy to discuss."
+      },
+      {
+        "title": "Service & maintenance",
+        "text": "One contact for questions, updates and maintenance, also after installation."
+      }
+    ]
+  },
+  "roadmap": {
+    "label": "03 — Our path",
+    "title": "From municipality to <em>health insurer</em>.",
+    "intro": "Dadelsteen is building nationwide availability step by step. This is our path — and where we stand today.",
+    "steps": [
+      {
+        "status": "Now",
+        "title": "Local government",
+        "text": "Placements and pilots with municipalities: vitality for staff and accessible exercise for residents through social services."
+      },
+      {
+        "status": "In progress",
+        "title": "National government",
+        "text": "Nationwide availability through government services, for civil servants and everyone working with and for government."
+      },
+      {
+        "status": "In progress",
+        "title": "Rehabilitation & physiotherapy",
+        "text": "Deployment in rehabilitation centres and physiotherapy practices, with measurable load and progress per client."
+      },
+      {
+        "status": "Ambition",
+        "title": "Reimbursement by health insurers",
+        "text": "Our goal: that you can request imbody through your health insurer. We are working on it."
+      }
+    ],
+    "note": "Reimbursement by health insurers is not available at this time. We will let you know once definitive agreements are in place."
   }
 }

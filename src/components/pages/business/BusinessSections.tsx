@@ -12,6 +12,7 @@ import {
   buttonStyles,
   CtaBand,
   emphasis,
+  emphasisLight,
   indexLabel,
   PageHero,
   SectionHeader,
@@ -20,11 +21,12 @@ import {
 type Item = { title: string; text: string }
 
 const segmentImages: Record<string, typeof brand.studio> = {
-  corporate: brand.office,
-  gym: brand.personalTraining,
-  hotel: brand.modernLounge,
-  physio: brand.rehab,
-  salon: brand.stretch,
+  corporate: brand.modernLounge,
+  fitness: brand.studio,
+  government: brand.office,
+  physio: brand.personalTraining,
+  rehab: brand.rehab,
+  social: brand.stretch,
 }
 
 export async function BusinessHero() {
@@ -34,7 +36,7 @@ export async function BusinessHero() {
     <PageHero
       actions={
         <>
-          <a className={cn(buttonStyles.base, buttonStyles.ink)} href="#aanvraag">
+          <a className={cn(buttonStyles.base, buttonStyles.forest)} href="#aanvraag">
             {t('primary')}
             <ArrowIcon />
           </a>
@@ -80,21 +82,22 @@ export async function BusinessSegments() {
             return (
               <Reveal
                 as="li"
-                className={cn('flex flex-col border border-ink/10 bg-cream', i === 0 && 'md:col-span-2')}
+                className="flex scroll-mt-28 flex-col border border-ink/10 bg-cream"
                 delay={(i % 3) * 0.1}
+                id={item.key}
                 key={item.key}
               >
-                <div className={cn('relative aspect-[4/3] overflow-hidden bg-stone', i === 0 && 'md:aspect-[21/9]')}>
+                <div className="relative aspect-[4/3] overflow-hidden bg-stone">
                   <NextImage
                     alt={image.alt}
                     className="object-cover"
                     fill
-                    sizes={i === 0 ? '(min-width: 1024px) 66vw, 100vw' : '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     src={image.url}
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-8 md:p-10">
-                  <span className="font-display text-sm font-light text-bronze-deep">{indexLabel(i)}</span>
+                  <span className="font-display text-sm font-light text-palm">{indexLabel(i)}</span>
                   <h3 className="mt-6 font-display text-2xl font-light tracking-[-0.02em] md:text-3xl">{item.title}</h3>
                   <p className="mb-8 mt-4 leading-relaxed text-olive-grey">{item.text}</p>
                   <ul className="mt-auto space-y-3 border-t border-ink/10 pt-6">
@@ -119,12 +122,12 @@ export async function BusinessWhy() {
   const t = await getTranslations('pages.business.why')
   const items = t.raw('items') as Item[]
   return (
-    <section aria-labelledby="biz-why-title" className="relative overflow-hidden bg-ink py-24 text-cream md:py-36">
+    <section aria-labelledby="biz-why-title" className="relative overflow-hidden bg-forest py-24 text-cream md:py-36">
       <div className="container">
         <div className="max-w-3xl">
           <Reveal>
             <p className="flex items-center gap-3 font-sans text-[0.6875rem] font-medium uppercase tracking-[0.28em] text-cream/60">
-              <span aria-hidden="true" className="h-px w-8 bg-bronze" />
+              <span aria-hidden="true" className="h-px w-8 bg-clay" />
               {t('label')}
             </p>
           </Reveal>
@@ -133,14 +136,14 @@ export async function BusinessWhy() {
               className="mt-8 font-display text-[clamp(2.25rem,5vw,4.25rem)] font-light leading-[1.02] tracking-[-0.03em]"
               id="biz-why-title"
             >
-              {t.rich('title', emphasis)}
+              {t.rich('title', emphasisLight)}
             </h2>
           </Reveal>
         </div>
         <ul className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 md:mt-24 lg:grid-cols-5 lg:gap-x-8">
           {items.map((item, i) => (
             <Reveal as="li" className="border-t border-cream/20 pt-6" delay={i * 0.08} key={item.title}>
-              <span className="font-display text-sm font-light text-bronze">{indexLabel(i)}</span>
+              <span className="font-display text-sm font-light text-clay">{indexLabel(i)}</span>
               <h3 className="mt-6 font-display text-xl font-light tracking-[-0.01em] md:text-2xl">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-cream/65">{item.text}</p>
             </Reveal>
@@ -173,6 +176,42 @@ export async function BusinessProcess() {
             </Reveal>
           ))}
         </ol>
+      </div>
+    </section>
+  )
+}
+
+export async function BusinessProcurement() {
+  const t = await getTranslations('pages.business.procurement')
+  const items = t.raw('items') as Item[]
+  return (
+    <section aria-labelledby="biz-procurement-title" className="py-24 md:py-36">
+      <div className="container grid gap-14 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <SectionHeader
+            id="biz-procurement-title"
+            intro={t('intro')}
+            label={t('label')}
+            title={t.rich('title', emphasis)}
+          />
+          <Reveal className="mt-10" delay={0.2}>
+            <a className={cn(buttonStyles.base, buttonStyles.outlineBronze)} href="#aanvraag">
+              {t('cta')}
+              <ArrowIcon />
+            </a>
+          </Reveal>
+        </div>
+        <ul className="grid gap-px self-start border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:col-span-7">
+          {items.map((item, i) => (
+            <Reveal as="li" className="bg-cream p-8 md:p-10" delay={i * 0.08} key={item.title}>
+              <span className="font-display text-sm font-light text-palm">{indexLabel(i)}</span>
+              <h3 className="mt-5 font-display text-xl font-light tracking-[-0.01em] text-ink md:text-2xl">
+                {item.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-olive-grey">{item.text}</p>
+            </Reveal>
+          ))}
+        </ul>
       </div>
     </section>
   )

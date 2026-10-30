@@ -1,6 +1,6 @@
 {
   "brand": "Dadelsteen",
-  "tagline": "Strength from the core",
+  "tagline": "Strong in recovery, vital in motion",
   "bookDemo": "Book a demo",
   "shop": "Shop",
   "learnMore": "Discover more",
@@ -19,7 +19,7 @@
     "followOn": "Follow Dadelsteen on {platform}"
   },
   "footer": {
-    "statement": "Calm, strength and attention — at home, in your own time.",
+    "statement": "Recovery and movement, organised close by — for government, care and fitness.",
     "eyebrow": "Dadelsteen",
     "shop": "Shop",
     "company": "About Dadelsteen",
@@ -33,7 +33,7 @@
     "openingHours": "Opening hours",
     "rights": "All rights reserved.",
     "payments": "Secure payment with",
-    "trademark": "imbody is a trademark of its respective owner. Dadelsteen is an independent reseller.",
+    "trademark": "imbody is a trademark of its respective owner. Dadelsteen is an independent supplier and implementation partner.",
     "cookieSettings": "Cookie settings",
     "language": "Language",
     "followUs": "Follow us"
@@ -71,7 +71,7 @@
     "reference": "Reference"
   },
   "meta": {
-    "title": "Dadelsteen — imbody AI smart mirror home gym",
-    "description": "Dadelsteen brings the imbody AI smart mirror to the Netherlands and Belgium: personal training at home, guided by AI. Book a demo or explore the collection."
+    "title": "Dadelsteen — partner in recovery and movement",
+    "description": "Dadelsteen supplies and implements smart movement and recovery systems (imbody) for municipalities, government, rehabilitation, physiotherapy, social services and boutique fitness in the Netherlands and Belgium."
   }
 }

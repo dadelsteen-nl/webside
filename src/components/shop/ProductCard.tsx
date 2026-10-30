@@ -31,7 +31,7 @@ export function ProductCard({ className, product, sizes, wide }: Props) {
   return (
     <Link
       className={cn(
-        'group flex h-full flex-col bg-cream transition-shadow duration-700 ease-[var(--ease-luxe)] hover:shadow-[0_30px_60px_-40px_rgba(26,26,26,0.35)]',
+        'group flex h-full flex-col bg-cream transition-shadow duration-700 ease-[var(--ease-luxe)] hover:shadow-[0_30px_60px_-40px_rgba(46,31,22,0.35)]',
         className,
       )}
       href={{ pathname: '/products/[slug]', params: { slug: product.slug } }}
